@@ -13,6 +13,7 @@ import Blog from "./pages/Blog";
 import Newsletter from "./pages/Newsletter";
 import Gallery from "./pages/Gallery";
 import Contact from "./pages/Contact";
+import Branding from "./pages/Branding";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -34,6 +35,7 @@ const App = () => (
           <Route path="/newsletter" element={<Newsletter />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/branding" element={<Branding />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

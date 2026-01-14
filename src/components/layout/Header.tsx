@@ -68,17 +68,17 @@ export const Header = () => {
                 whileHover={{ scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 400 }}
               />
-              <div>
-                <span className="font-display font-semibold text-lg text-foreground">
-                  Budding Entrepreneurs
+              <div className="flex flex-col">
+                <span className="font-display font-semibold text-base leading-tight text-foreground whitespace-nowrap">
+                  Budding Entrepreneurs Forum
                 </span>
-                <span className="block text-xs text-muted-foreground">Forum</span>
+                <span className="text-xs text-muted-foreground leading-tight">MIT-WPU</span>
               </div>
             </Link>
           </div>
 
           {/* CENTER: Navigation Menu */}
-          <div className="flex items-center justify-center gap-0.5">
+          <div className="flex items-center justify-center gap-1 flex-nowrap">
             {navItems.map((item) => (
               <div
                 key={item.name}
@@ -88,7 +88,7 @@ export const Header = () => {
               >
                 <Link
                   to={item.path}
-                  className={`relative px-4 py-2 text-sm font-medium transition-all duration-300 ${
+                  className={`relative px-3 py-2 text-sm font-medium whitespace-nowrap transition-all duration-300 ${
                     isActive(item.path, item.children)
                       ? 'text-primary'
                       : 'text-muted-foreground hover:text-foreground'
@@ -156,7 +156,7 @@ export const Header = () => {
               <img 
                 src={mitWpuLogo} 
                 alt="MIT-WPU" 
-                className="h-11 w-auto object-contain"
+                className="h-12 w-auto object-contain"
               />
             </motion.a>
           </div>

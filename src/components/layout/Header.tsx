@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ChevronRight } from 'lucide-react';
 import logo from '@/assets/logo.png';
+import mitWpuLogo from '@/assets/mit-wpu-logo.jpg';
 
 const navItems = [
   { name: 'Home', path: '/' },
@@ -55,26 +56,29 @@ export const Header = () => {
       }`}
     >
       <div className="container-wide mx-auto px-4 md:px-8">
-        <nav className="flex items-center justify-between h-20">
-          {/* Logo */}
-          <Link to="/" className="flex items-center gap-3 group">
-            <motion.img 
-              src={logo} 
-              alt="Budding Entrepreneurs Forum" 
-              className="h-12 w-auto"
-              whileHover={{ scale: 1.05 }}
-              transition={{ type: "spring", stiffness: 400 }}
-            />
-            <div className="hidden md:block">
-              <span className="font-display font-semibold text-lg text-foreground">
-                Budding Entrepreneurs
-              </span>
-              <span className="block text-xs text-muted-foreground">MIT-WPU</span>
-            </div>
-          </Link>
+        {/* Desktop Navigation - Three Zone Layout */}
+        <nav className="hidden lg:grid grid-cols-3 items-center h-20">
+          {/* LEFT: BEF Logo */}
+          <div className="flex items-center justify-start">
+            <Link to="/" className="flex items-center gap-3 group">
+              <motion.img 
+                src={logo} 
+                alt="Budding Entrepreneurs Forum" 
+                className="h-12 w-auto"
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: "spring", stiffness: 400 }}
+              />
+              <div>
+                <span className="font-display font-semibold text-lg text-foreground">
+                  Budding Entrepreneurs
+                </span>
+                <span className="block text-xs text-muted-foreground">Forum</span>
+              </div>
+            </Link>
+          </div>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-0.5">
+          {/* CENTER: Navigation Menu */}
+          <div className="flex items-center justify-center gap-0.5">
             {navItems.map((item) => (
               <div
                 key={item.name}
@@ -139,13 +143,64 @@ export const Header = () => {
             ))}
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden p-2 text-foreground hover:bg-secondary rounded-lg transition-colors"
-          >
-            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          {/* RIGHT: MIT-WPU Logo */}
+          <div className="flex items-center justify-end">
+            <motion.a
+              href="https://mitwpu.edu.in"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block"
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 400 }}
+            >
+              <img 
+                src={mitWpuLogo} 
+                alt="MIT-WPU" 
+                className="h-11 w-auto object-contain"
+              />
+            </motion.a>
+          </div>
+        </nav>
+
+        {/* Mobile Navigation - Three Zone Layout */}
+        <nav className="lg:hidden grid grid-cols-3 items-center h-16">
+          {/* LEFT: Hamburger Menu */}
+          <div className="flex items-center justify-start">
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="p-2 text-foreground hover:bg-secondary rounded-lg transition-colors"
+            >
+              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
+
+          {/* CENTER: BEF Logo */}
+          <div className="flex items-center justify-center">
+            <Link to="/" className="flex items-center gap-2">
+              <motion.img 
+                src={logo} 
+                alt="Budding Entrepreneurs Forum" 
+                className="h-10 w-auto"
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: "spring", stiffness: 400 }}
+              />
+            </Link>
+          </div>
+
+          {/* RIGHT: MIT-WPU Logo */}
+          <div className="flex items-center justify-end">
+            <a
+              href="https://mitwpu.edu.in"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img 
+                src={mitWpuLogo} 
+                alt="MIT-WPU" 
+                className="h-8 w-auto object-contain"
+              />
+            </a>
+          </div>
         </nav>
       </div>
 

@@ -1,6 +1,7 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Layout } from '@/components/layout/Layout';
 import { GlassCard } from '@/components/ui/GlassCard';
+import brandingLogo from '@/assets/branding-logo.avif';
 import { 
   Palette, 
   Megaphone, 
@@ -165,10 +166,24 @@ const Branding = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 px-5 py-2.5 mb-10 rounded-full bg-primary/10 border border-primary/20"
+              className="inline-flex items-center gap-2 px-5 py-2.5 mb-6 rounded-full bg-primary/10 border border-primary/20"
             >
               <Sparkles className="w-4 h-4 text-primary" />
               <span className="text-sm font-medium text-primary">Branding Studio</span>
+            </motion.div>
+
+            {/* Branding Logo */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="mb-8"
+            >
+              <img 
+                src={brandingLogo} 
+                alt="Branding Studio Logo" 
+                className="w-24 h-24 md:w-32 md:h-32 mx-auto object-contain"
+              />
             </motion.div>
 
             {/* Main Headline */}

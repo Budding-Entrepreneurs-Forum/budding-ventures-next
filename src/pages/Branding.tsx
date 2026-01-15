@@ -140,7 +140,7 @@ const Branding = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section ref={heroRef} className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+      <section ref={heroRef} className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-24 md:pt-28">
         {/* Animated Background */}
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-primary/10" />
@@ -160,12 +160,12 @@ const Branding = () => {
           className="container-wide mx-auto px-4 md:px-8 relative z-10"
         >
           <div className="max-w-4xl mx-auto text-center">
-            {/* Badge */}
+            {/* Badge - Section Label */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 px-4 py-2 mb-8 rounded-full bg-primary/10 border border-primary/20"
+              className="inline-flex items-center gap-2 px-5 py-2.5 mb-10 rounded-full bg-primary/10 border border-primary/20"
             >
               <Sparkles className="w-4 h-4 text-primary" />
               <span className="text-sm font-medium text-primary">Branding Studio</span>
@@ -176,19 +176,11 @@ const Branding = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold mb-6 leading-tight"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold mb-8 leading-tight"
             >
               We Build{' '}
-              <span className="relative">
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-primary">
-                  Brand Stories
-                </span>
-                <motion.span 
-                  className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-primary to-accent rounded-full"
-                  initial={{ scaleX: 0 }}
-                  animate={{ scaleX: 1 }}
-                  transition={{ duration: 0.8, delay: 0.5 }}
-                />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-primary">
+                Brand Stories
               </span>
               <br />
               That Stick

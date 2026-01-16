@@ -6,82 +6,93 @@
 
 @layer base {
   :root {
-    /* Premium Dark Theme - Startup/Innovation Vibe */
-    --background: 222 47% 6%;
-    --foreground: 210 40% 98%;
+    /* Brand Color Palette - Light, Calm, Premium, Blue-based */
+    /* #F9F7F7 - Primary background / light base */
+    --background: 0 14% 97%;
+    --foreground: 213 64% 19%;
 
-    --card: 222 47% 9%;
-    --card-foreground: 210 40% 98%;
+    /* #DBE2EF - Secondary background / soft sections */
+    --card: 218 36% 89%;
+    --card-foreground: 213 64% 19%;
 
-    --popover: 222 47% 9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 0 14% 97%;
+    --popover-foreground: 213 64% 19%;
 
-    --primary: 190 95% 55%;
-    --primary-foreground: 222 47% 6%;
+    /* #3F72AF - Primary brand color */
+    --primary: 213 47% 47%;
+    --primary-foreground: 0 14% 97%;
 
-    --secondary: 222 47% 14%;
-    --secondary-foreground: 210 40% 98%;
+    /* #DBE2EF - Secondary */
+    --secondary: 218 36% 89%;
+    --secondary-foreground: 213 64% 19%;
 
-    --muted: 222 30% 18%;
-    --muted-foreground: 215 20% 65%;
+    --muted: 218 30% 92%;
+    --muted-foreground: 213 40% 40%;
 
-    --accent: 260 80% 65%;
-    --accent-foreground: 210 40% 98%;
+    /* #3F72AF - Accent (same as primary for consistency) */
+    --accent: 213 47% 47%;
+    --accent-foreground: 0 14% 97%;
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 14% 97%;
 
-    --border: 222 30% 18%;
-    --input: 222 30% 18%;
-    --ring: 190 95% 55%;
+    /* #112D4E - Dark accent for borders */
+    --border: 218 30% 82%;
+    --input: 218 30% 85%;
+    --ring: 213 47% 47%;
 
     --radius: 0.75rem;
 
     /* Custom Brand Colors */
-    --cyan-glow: 190 95% 55%;
-    --blue-deep: 220 90% 50%;
-    --purple-accent: 260 80% 65%;
-    --gradient-start: 190 95% 55%;
-    --gradient-end: 260 80% 65%;
+    --brand-light: 0 14% 97%;
+    --brand-soft: 218 36% 89%;
+    --brand-primary: 213 47% 47%;
+    --brand-dark: 213 64% 19%;
     
-    /* Glassmorphism */
-    --glass-bg: 222 47% 9% / 0.7;
-    --glass-border: 210 40% 98% / 0.1;
+    /* Gradient colors */
+    --gradient-start: 213 47% 47%;
+    --gradient-end: 213 64% 19%;
+    
+    /* Soft effects for light theme */
+    --glass-bg: 0 14% 97% / 0.8;
+    --glass-border: 213 64% 19% / 0.1;
     
     /* Shadows */
-    --shadow-glow: 0 0 60px hsl(190 95% 55% / 0.15);
-    --shadow-card: 0 8px 32px hsl(222 47% 4% / 0.5);
+    --shadow-soft: 0 4px 24px hsl(213 64% 19% / 0.08);
+    --shadow-card: 0 8px 32px hsl(213 64% 19% / 0.1);
+    --shadow-glow: 0 0 40px hsl(213 47% 47% / 0.15);
 
-    --sidebar-background: 222 47% 6%;
-    --sidebar-foreground: 210 40% 98%;
-    --sidebar-primary: 190 95% 55%;
-    --sidebar-primary-foreground: 222 47% 6%;
-    --sidebar-accent: 222 47% 14%;
-    --sidebar-accent-foreground: 210 40% 98%;
-    --sidebar-border: 222 30% 18%;
-    --sidebar-ring: 190 95% 55%;
+    --sidebar-background: 0 14% 97%;
+    --sidebar-foreground: 213 64% 19%;
+    --sidebar-primary: 213 47% 47%;
+    --sidebar-primary-foreground: 0 14% 97%;
+    --sidebar-accent: 218 36% 89%;
+    --sidebar-accent-foreground: 213 64% 19%;
+    --sidebar-border: 218 30% 82%;
+    --sidebar-ring: 213 47% 47%;
   }
 
+  /* Remove dark mode - keeping light theme only */
   .dark {
-    --background: 222 47% 6%;
-    --foreground: 210 40% 98%;
-    --card: 222 47% 9%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222 47% 9%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 190 95% 55%;
-    --primary-foreground: 222 47% 6%;
-    --secondary: 222 47% 14%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 222 30% 18%;
-    --muted-foreground: 215 20% 65%;
-    --accent: 260 80% 65%;
-    --accent-foreground: 210 40% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 222 30% 18%;
-    --input: 222 30% 18%;
-    --ring: 190 95% 55%;
+    --background: 0 14% 97%;
+    --foreground: 213 64% 19%;
+    --card: 218 36% 89%;
+    --card-foreground: 213 64% 19%;
+    --popover: 0 14% 97%;
+    --popover-foreground: 213 64% 19%;
+    --primary: 213 47% 47%;
+    --primary-foreground: 0 14% 97%;
+    --secondary: 218 36% 89%;
+    --secondary-foreground: 213 64% 19%;
+    --muted: 218 30% 92%;
+    --muted-foreground: 213 40% 40%;
+    --accent: 213 47% 47%;
+    --accent-foreground: 0 14% 97%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 14% 97%;
+    --border: 218 30% 82%;
+    --input: 218 30% 85%;
+    --ring: 213 47% 47%;
   }
 }
 
@@ -102,13 +113,14 @@
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Space Grotesk', system-ui, sans-serif;
     @apply font-semibold tracking-tight;
+    color: hsl(var(--brand-dark));
   }
 }
 
 @layer components {
-  /* Glass Card Effect */
+  /* Glass Card Effect - Light theme */
   .glass-card {
-    @apply bg-card/70 backdrop-blur-xl border border-white/10 rounded-2xl;
+    @apply bg-card/80 backdrop-blur-xl border border-border rounded-2xl;
     box-shadow: var(--shadow-card);
   }
 
@@ -133,7 +145,7 @@
     inset: 0;
     border-radius: inherit;
     padding: 1px;
-    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--brand-dark)));
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
@@ -145,7 +157,7 @@
     background: linear-gradient(
       135deg,
       hsl(var(--primary)) 0%,
-      hsl(var(--accent)) 50%,
+      hsl(var(--brand-dark)) 50%,
       hsl(var(--primary)) 100%
     );
     background-size: 200% 200%;
@@ -174,6 +186,31 @@
   .hover-underline:hover::after {
     @apply scale-x-100 origin-left;
   }
+
+  /* Brand-specific utility classes */
+  .bg-brand-light {
+    background-color: hsl(var(--brand-light));
+  }
+  
+  .bg-brand-soft {
+    background-color: hsl(var(--brand-soft));
+  }
+  
+  .bg-brand-primary {
+    background-color: hsl(var(--brand-primary));
+  }
+  
+  .bg-brand-dark {
+    background-color: hsl(var(--brand-dark));
+  }
+  
+  .text-brand-dark {
+    color: hsl(var(--brand-dark));
+  }
+  
+  .text-brand-primary {
+    color: hsl(var(--brand-primary));
+  }
 }
 
 @layer utilities {
@@ -189,8 +226,8 @@
   }
 
   @keyframes pulse-glow {
-    0%, 100% { box-shadow: 0 0 20px hsl(var(--primary) / 0.3); }
-    50% { box-shadow: 0 0 40px hsl(var(--primary) / 0.5); }
+    0%, 100% { box-shadow: 0 0 20px hsl(var(--primary) / 0.2); }
+    50% { box-shadow: 0 0 40px hsl(var(--primary) / 0.35); }
   }
 
   @keyframes slide-up {

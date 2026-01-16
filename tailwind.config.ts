@@ -62,14 +62,11 @@ export default {
           ring: "hsl(var(--sidebar-ring))",
         },
         // Custom brand colors
-        cyan: {
-          glow: "hsl(var(--cyan-glow))",
-        },
-        blue: {
-          deep: "hsl(var(--blue-deep))",
-        },
-        purple: {
-          accent: "hsl(var(--purple-accent))",
+        brand: {
+          light: "hsl(var(--brand-light))",
+          soft: "hsl(var(--brand-soft))",
+          primary: "hsl(var(--brand-primary))",
+          dark: "hsl(var(--brand-dark))",
         },
       },
       borderRadius: {

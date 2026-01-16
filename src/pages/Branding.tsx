@@ -1,7 +1,7 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Layout } from '@/components/layout/Layout';
 import { GlassCard } from '@/components/ui/GlassCard';
-import brandingLogo from '@/assets/branding-logo.avif';
+import brandingLogo from '@/assets/branding-logo.png';
 import { 
   Palette, 
   Megaphone, 

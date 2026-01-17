@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import About from "./pages/About";
 import VisionMission from "./pages/VisionMission";
 import Members from "./pages/Members";
+import DepartmentDetail from "./pages/DepartmentDetail";
 import Activities from "./pages/Activities";
 import EventPage from "./pages/EventPage";
 import Blog from "./pages/Blog";
@@ -29,6 +30,7 @@ const App = () => (
           <Route path="/about" element={<About />} />
           <Route path="/vision-mission" element={<VisionMission />} />
           <Route path="/members" element={<Members />} />
+          <Route path="/department/:id" element={<DepartmentDetail />} />
           <Route path="/activities" element={<Activities />} />
           <Route path="/activities/:slug" element={<EventPage />} />
           <Route path="/blog" element={<Blog />} />

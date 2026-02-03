@@ -141,33 +141,6 @@ const Blog = () => {
         </div>
       </section>
 
-      {/* Newsletter CTA */}
-      <section className="section-padding bg-card relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5" />
-        <div className="container-wide mx-auto relative z-10">
-          <div className="max-w-3xl mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-                Never Miss an Update
-              </h2>
-              <p className="text-muted-foreground text-lg mb-8">
-                Subscribe to our newsletter and get the latest articles, news, and insights delivered to your inbox.
-              </p>
-              <Link
-                to="/newsletter"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground rounded-xl font-semibold hover:opacity-90 transition-opacity"
-              >
-                Subscribe to Newsletter
-                <ArrowRight className="w-5 h-5" />
-              </Link>
-            </motion.div>
-          </div>
-        </div>
-      </section>
     </Layout>
   );
 };

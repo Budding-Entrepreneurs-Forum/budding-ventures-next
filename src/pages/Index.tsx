@@ -223,26 +223,21 @@ const Index = () => {
               viewport={{ once: true }}
               className="grid grid-cols-2 gap-4"
             >
-              <GlassCard className="text-center">
-                <Trophy className="w-10 h-10 text-primary mx-auto mb-3" />
-                <h4 className="font-display font-semibold text-foreground">Excellence</h4>
-                <p className="text-sm text-muted-foreground mt-1">Striving for greatness</p>
-              </GlassCard>
-              <GlassCard className="text-center mt-8">
-                <Users className="w-10 h-10 text-primary mx-auto mb-3" />
-                <h4 className="font-display font-semibold text-foreground">Community</h4>
-                <p className="text-sm text-muted-foreground mt-1">Stronger together</p>
-              </GlassCard>
-              <GlassCard className="text-center">
-                <Lightbulb className="w-10 h-10 text-primary mx-auto mb-3" />
-                <h4 className="font-display font-semibold text-foreground">Innovation</h4>
-                <p className="text-sm text-muted-foreground mt-1">Creative solutions</p>
-              </GlassCard>
-              <GlassCard className="text-center mt-8">
-                <Rocket className="w-10 h-10 text-primary mx-auto mb-3" />
-                <h4 className="font-display font-semibold text-foreground">Growth</h4>
-                <p className="text-sm text-muted-foreground mt-1">Continuous learning</p>
-              </GlassCard>
+              {[
+                { icon: Trophy, title: 'Excellence', subtitle: 'Striving for greatness' },
+                { icon: Users, title: 'Community', subtitle: 'Stronger together' },
+                { icon: Lightbulb, title: 'Innovation', subtitle: 'Creative solutions' },
+                { icon: Rocket, title: 'Growth', subtitle: 'Continuous learning' },
+              ].map((item, index) => (
+                <GlassCard 
+                  key={item.title}
+                  className="text-center h-[140px] flex flex-col items-center justify-center"
+                >
+                  <item.icon className="w-10 h-10 text-primary mb-3" />
+                  <h4 className="font-display font-semibold text-foreground">{item.title}</h4>
+                  <p className="text-sm text-muted-foreground mt-1">{item.subtitle}</p>
+                </GlassCard>
+              ))}
             </motion.div>
           </div>
         </div>

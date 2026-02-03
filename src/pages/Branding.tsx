@@ -12,7 +12,7 @@ import {
   Star,
   Lightbulb,
   ArrowRight,
-  Linkedin,
+  
   Quote,
   ExternalLink,
   Sparkles,
@@ -77,34 +77,6 @@ const missionVisionValues = [
   },
 ];
 
-// Team data
-const teamMembers = [
-  { name: 'Dr. Vinita Kale', role: 'Faculty Mentor', linkedin: 'https://www.linkedin.com/in/dr-vinita-ahire-kale/', image: 'https://buddingentrepreneurs.in/wp-content/uploads/2025/05/1712670155824-150x150.jpeg' },
-  { name: 'Anish Kashyap', role: 'President', linkedin: 'https://www.linkedin.com/in/anish-kashyap-916048194/', image: 'https://buddingentrepreneurs.in/wp-content/uploads/2024/07/Anish-150x150.png' },
-  { name: 'Shivam Dewangan', role: 'Vice President', linkedin: 'https://www.linkedin.com/in/shivam-dewangan-03b988188/', image: 'https://buddingentrepreneurs.in/wp-content/uploads/2024/07/Shivam-150x150.jpg' },
-  { name: 'Charu Dutt Joshi', role: 'General Secretary', linkedin: 'https://www.linkedin.com/in/charu-dutt-joshi-71842b287/', image: 'https://buddingentrepreneurs.in/wp-content/uploads/2024/07/Charu-scaled-e1721836184333-150x150.jpg' },
-  { name: 'Vaishnavi Srivastava', role: 'Advisor & Treasurer', linkedin: 'https://www.linkedin.com/in/vaishnavisrivastava23/', image: 'https://buddingentrepreneurs.in/wp-content/uploads/2025/05/Vaishnavi-S-150x150.jpg' },
-  { name: 'Karan Nawal', role: 'Technical Head', linkedin: 'https://www.linkedin.com/in/karan-nawal-b33955156/', image: 'https://buddingentrepreneurs.in/wp-content/uploads/2025/05/Karan-Pic-150x150.jpg' },
-  { name: 'Deeksha Pal', role: 'Team Member', linkedin: 'https://linkedin.com/in/deeksha-pal-3ab60131a', image: 'https://buddingentrepreneurs.in/wp-content/uploads/2025/05/IMG_3280-150x150.jpg' },
-  { name: 'Ayush Ghosekar', role: 'Team Member', linkedin: null, image: 'https://buddingentrepreneurs.in/wp-content/uploads/2025/05/Budding_Branding_Team_Report1_Page_20_Image_0013-150x150.jpg' },
-  { name: 'Jhanvi Odedra', role: 'Team Member', linkedin: 'https://www.linkedin.com/in/jhanvi-odedra-b4837426b', image: 'https://buddingentrepreneurs.in/wp-content/uploads/2025/05/Budding_Branding_Team_Report1_Page_20_Image_0003-150x150.jpg' },
-  { name: 'Bhavik Modi', role: 'Team Member', linkedin: 'https://www.linkedin.com/in/21bhavik', image: 'https://buddingentrepreneurs.in/wp-content/uploads/2025/05/Budding_Branding_Team_Report1_Page_20_Image_0006-150x150.jpg' },
-  { name: 'Manasi Sahare', role: 'Team Member', linkedin: 'https://linkedin.com/in/manasi-sahare-25ba62307', image: 'https://buddingentrepreneurs.in/wp-content/uploads/2025/05/Budding_Branding_Team_Report1_Page_20_Image_0012-150x150.jpg' },
-  { name: 'Ishit Yadav', role: 'Team Member', linkedin: 'https://www.linkedin.com/in/ishit-yadav-4a3729326', image: 'https://buddingentrepreneurs.in/wp-content/uploads/2025/05/Budding_Branding_Team_Report1_Page_20_Image_0005-150x150.jpg' },
-  { name: 'Priyanka Nagar', role: 'Team Member', linkedin: 'https://www.linkedin.com/in/priyanka-n-b9a466277', image: 'https://buddingentrepreneurs.in/wp-content/uploads/2025/05/Budding_Branding_Team_Report1_Page_20_Image_0002-150x150.jpg' },
-  { name: 'Nayan Pote', role: 'Team Member', linkedin: 'https://www.linkedin.com/in/nayanpote', image: 'https://buddingentrepreneurs.in/wp-content/uploads/2025/05/Budding_Branding_Team_Report1_Page_20_Image_0010-e1747684112530-150x150.jpg' },
-  { name: 'Sanjana Kashyap', role: 'Team Member', linkedin: 'https://www.linkedin.com/in/sanjana-kashyap-1ab802253', image: 'https://buddingentrepreneurs.in/wp-content/uploads/2025/05/WhatsApp-Image-2025-03-09-at-23.28.31_6cbebaf9-150x150.jpg' },
-  { name: 'Sohira Kshemkalyani', role: 'Team Member', linkedin: 'https://www.linkedin.com/in/sohira-kshemkalyani-2332b021b', image: 'https://buddingentrepreneurs.in/wp-content/uploads/2025/05/Budding_Branding_Team_Report1_Page_20_Image_0015-150x150.jpg' },
-  { name: 'Trupti Kulkarni', role: 'Team Member', linkedin: 'https://www.linkedin.com/in/trupti-kulkarni-4a53321b8', image: 'https://buddingentrepreneurs.in/wp-content/uploads/2025/05/Budding_Branding_Team_Report1_Page_20_Image_0007-150x150.jpg' },
-  { name: 'Varad Mulgund', role: 'Team Member', linkedin: 'https://www.linkedin.com/in/varad-mulgund-731aa632a/', image: 'https://buddingentrepreneurs.in/wp-content/uploads/2025/05/Budding_Branding_Team_Report1_Page_20_Image_0011-150x150.jpg' },
-  { name: 'Urja Wadgaye', role: 'Team Member', linkedin: 'https://www.linkedin.com/in/urja-wadgaye', image: 'https://buddingentrepreneurs.in/wp-content/uploads/2025/05/Budding_Branding_Team_Report1_Page_20_Image_0009-150x150.jpg' },
-  { name: 'Vishal Ishwale', role: 'Team Member', linkedin: 'https://www.linkedin.com/in/vishal-ishwale-230663245', image: 'https://buddingentrepreneurs.in/wp-content/uploads/2025/05/Budding_Branding_Team_Report1_Page_20_Image_0008-150x150.jpg' },
-  { name: 'Vedashree Ghotkar', role: 'Team Member', linkedin: 'https://www.linkedin.com/in/vedashree-ganesh-ghotkar-07b0b61bb', image: 'https://buddingentrepreneurs.in/wp-content/uploads/2025/05/Budding_Branding_Team_Report1_Page_20_Image_0016-150x150.jpg' },
-  { name: 'Dnyanesh Patil', role: 'Team Member', linkedin: 'https://www.linkedin.com/in/dnyanesh-patil-j050602/', image: 'https://buddingentrepreneurs.in/wp-content/uploads/2025/06/DP-150x150.jpeg' },
-  { name: 'Khushi Shethia', role: 'Team Member', linkedin: 'https://www.linkedin.com/in/khushi-shethia-7792a6205/', image: 'https://buddingentrepreneurs.in/wp-content/uploads/2025/06/IMG_8038-Khushi-Shethia-150x150.jpeg' },
-  { name: 'Vivek Gondil', role: 'Team Member', linkedin: 'https://www.linkedin.com/in/vivek-gondil/', image: 'https://buddingentrepreneurs.in/wp-content/uploads/2025/06/VG-150x150.jpeg' },
-  { name: 'Sushmita Poojari', role: 'Team Member', linkedin: 'https://www.linkedin.com/in/sushmita-poojari-649a23261/', image: 'https://buddingentrepreneurs.in/wp-content/uploads/2025/06/WhatsApp-Image-2025-01-16-at-8.25.21-PM-Sushmita-Poojari-150x150.jpeg' },
-];
 
 // Testimonials data
 const testimonials = [
@@ -542,99 +514,6 @@ const Branding = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
                   <span className="text-xs uppercase tracking-wider text-primary mb-1">{item.category}</span>
                   <h3 className="text-xl font-display font-bold text-foreground">{item.title}</h3>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Team Section */}
-      <section className="py-24 relative">
-        <div className="container-wide mx-auto px-4 md:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <span className="inline-block px-4 py-1.5 mb-6 text-xs font-medium tracking-wider uppercase bg-primary/10 text-primary rounded-full border border-primary/20">
-              Meet The Crew
-            </span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-4">
-              Our Team
-            </h2>
-            <p className="text-lg text-muted-foreground">
-              The creative minds behind every brand story
-            </p>
-          </motion.div>
-
-          {/* Leadership Row */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 mb-8">
-            {teamMembers.slice(0, 6).map((member, index) => (
-              <motion.div
-                key={member.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.05 }}
-              >
-                <GlassCard className="p-4 text-center group hover:border-primary/30 transition-all duration-300">
-                  <div className="relative mb-4">
-                    <img
-                      src={member.image}
-                      alt={member.name}
-                      className="w-20 h-20 rounded-full object-cover mx-auto border-2 border-primary/20 group-hover:border-primary/50 transition-colors"
-                    />
-                    {member.linkedin && (
-                      <a
-                        href={member.linkedin}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="absolute -bottom-1 -right-1 left-1/2 ml-4 w-7 h-7 rounded-full bg-primary flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hover:bg-primary/80"
-                      >
-                        <Linkedin className="w-4 h-4 text-primary-foreground" />
-                      </a>
-                    )}
-                  </div>
-                  <h4 className="font-display font-semibold text-sm text-foreground mb-1 line-clamp-1">{member.name}</h4>
-                  <p className="text-xs text-muted-foreground line-clamp-1">{member.role}</p>
-                </GlassCard>
-              </motion.div>
-            ))}
-          </div>
-
-          {/* Team Members Grid */}
-          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7 gap-3">
-            {teamMembers.slice(6).map((member, index) => (
-              <motion.div
-                key={member.name}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.03 }}
-                className="group relative"
-              >
-                <div className="aspect-square rounded-xl overflow-hidden bg-card border border-border group-hover:border-primary/30 transition-colors">
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                  />
-                  {/* Hover Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-2">
-                    <p className="text-xs font-medium text-foreground line-clamp-1">{member.name}</p>
-                    {member.linkedin && (
-                      <a
-                        href={member.linkedin}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 text-xs text-primary mt-1"
-                      >
-                        <Linkedin className="w-3 h-3" />
-                      </a>
-                    )}
-                  </div>
                 </div>
               </motion.div>
             ))}

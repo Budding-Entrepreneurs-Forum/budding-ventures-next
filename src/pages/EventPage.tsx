@@ -210,20 +210,12 @@ const EventPage = () => {
               <p className="text-muted-foreground text-lg mb-8">
                 Stay updated on registration dates and event announcements by following our social media channels.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link
-                  to="/contact"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary text-primary-foreground rounded-xl font-semibold hover:opacity-90 transition-opacity"
-                >
-                  Get in Touch
-                </Link>
-                <Link
-                  to="/newsletter"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-secondary text-foreground rounded-xl font-semibold hover:bg-secondary/80 transition-colors border border-border"
-                >
-                  Subscribe for Updates
-                </Link>
-              </div>
+              <Link
+                to="/contact"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary text-primary-foreground rounded-xl font-semibold hover:opacity-90 transition-opacity"
+              >
+                Get in Touch
+              </Link>
             </motion.div>
           </div>
         </div>

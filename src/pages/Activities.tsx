@@ -266,22 +266,14 @@ const Activities = () => {
                 Don't Miss Our Next Event
               </h2>
               <p className="text-muted-foreground text-lg mb-8">
-                Stay updated with our upcoming events and activities. Follow us on social media and subscribe to our newsletter.
+                Stay updated with our upcoming events and activities. Follow us on social media for the latest announcements.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link
-                  to="/newsletter"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary text-primary-foreground rounded-xl font-semibold hover:opacity-90 transition-opacity"
-                >
-                  Subscribe to Newsletter
-                </Link>
-                <Link
-                  to="/contact"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-secondary text-foreground rounded-xl font-semibold hover:bg-secondary/80 transition-colors border border-border"
-                >
-                  Contact Us
-                </Link>
-              </div>
+              <Link
+                to="/contact"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary text-primary-foreground rounded-xl font-semibold hover:opacity-90 transition-opacity"
+              >
+                Contact Us
+              </Link>
             </motion.div>
           </div>
         </div>

@@ -440,42 +440,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Newsletter CTA */}
-      <section className="section-padding bg-card relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5" />
-        <motion.div
-          animate={{ rotate: 360 }}
-          transition={{ duration: 100, repeat: Infinity, ease: "linear" }}
-          className="absolute -top-1/2 -right-1/4 w-[800px] h-[800px] bg-gradient-to-br from-primary/10 to-transparent rounded-full blur-3xl"
-        />
-        
-        <div className="container-wide mx-auto relative z-10">
-          <div className="max-w-3xl mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-            >
-              <span className="inline-block px-4 py-1.5 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">
-                Newsletter
-              </span>
-              <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-                Subscribe to <span className="gradient-text">Venturer's Voyage</span>
-              </h2>
-              <p className="text-muted-foreground text-lg mb-8">
-                Get our monthly digital newsletter focusing on topics related to innovation and entrepreneurship.
-              </p>
-              <Link
-                to="/newsletter"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground rounded-xl font-semibold text-lg hover:opacity-90 transition-opacity glow"
-              >
-                Explore Newsletters
-                <ArrowRight className="w-5 h-5" />
-              </Link>
-            </motion.div>
-          </div>
-        </div>
-      </section>
     </Layout>
   );
 };

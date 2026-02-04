@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ChevronRight } from 'lucide-react';
 import logo from '@/assets/logo.png';
 import mitWpuLogo from '@/assets/mit-wpu-logo.webp';
+import mitWpuLogoShort from '@/assets/mit-wpu-logo-short.jpg';
 
 const navItems = [
   { name: 'Home', path: '/' },
@@ -143,7 +144,7 @@ export const Header = () => {
             ))}
           </div>
 
-          {/* RIGHT: MIT-WPU Logo */}
+          {/* RIGHT: MIT-WPU Logo - Long version for desktop */}
           <div className="flex items-center justify-end">
             <motion.a
               href="https://mitwpu.edu.in"
@@ -187,7 +188,7 @@ export const Header = () => {
             </Link>
           </div>
 
-          {/* RIGHT: MIT-WPU Logo */}
+          {/* RIGHT: MIT-WPU Logo - Short version for mobile/tablet */}
           <div className="flex items-center justify-end">
             <a
               href="https://mitwpu.edu.in"
@@ -195,9 +196,9 @@ export const Header = () => {
               rel="noopener noreferrer"
             >
               <img 
-                src={mitWpuLogo} 
+                src={mitWpuLogoShort} 
                 alt="MIT-WPU" 
-                className="h-8 w-auto object-contain"
+                className="h-10 w-auto object-contain"
               />
             </a>
           </div>

@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Linkedin, Instagram, Youtube, Twitter, Mail, Phone, MapPin, Send } from 'lucide-react';
-import { useState } from 'react';
+import { Linkedin, Instagram, Youtube, Twitter, Mail, Phone, MapPin } from 'lucide-react';
 import logo from '@/assets/logo.png';
 
 const quickLinks = [
@@ -10,8 +9,6 @@ const quickLinks = [
   { name: 'Activities', path: '/activities' },
   { name: 'Forum Members', path: '/members' },
   { name: 'Blog', path: '/blog' },
-  { name: 'Newsletter', path: '/newsletter' },
-  { name: 'Gallery', path: '/gallery' },
   { name: 'Contact', path: '/contact' },
 ];
 
@@ -23,21 +20,13 @@ const socialLinks = [
 ];
 
 export const Footer = () => {
-  const [email, setEmail] = useState('');
-
-  const handleNewsletterSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle newsletter submission
-    setEmail('');
-  };
-
   return (
     <footer className="bg-card border-t border-border">
       {/* Main Footer */}
       <div className="container-wide mx-auto px-4 md:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
           {/* Brand Column */}
-          <div className="lg:col-span-1">
+          <div>
             <Link to="/" className="flex items-center gap-3 mb-6">
               <img src={logo} alt="Budding Entrepreneurs Forum" className="h-14 w-auto" />
             </Link>
@@ -62,9 +51,9 @@ export const Footer = () => {
           </div>
 
           {/* Quick Links */}
-          <div>
+          <div className="md:text-center">
             <h4 className="font-display font-semibold text-foreground mb-6">Quick Links</h4>
-            <ul className="space-y-3">
+            <ul className="space-y-3 md:inline-block md:text-left">
               {quickLinks.map((link) => (
                 <li key={link.name}>
                   <Link
@@ -79,63 +68,34 @@ export const Footer = () => {
           </div>
 
           {/* Contact Info */}
-          <div>
+          <div className="md:text-right">
             <h4 className="font-display font-semibold text-foreground mb-6">Contact Us</h4>
             <ul className="space-y-4">
-              <li className="flex gap-3 text-sm">
-                <MapPin className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                <span className="text-muted-foreground">
+              <li className="flex gap-3 text-sm md:justify-end">
+                <span className="text-muted-foreground text-right">
                   MIT-WPU, Kothrud, Pune, Maharashtra, India
                 </span>
+                <MapPin className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
               </li>
-              <li className="flex gap-3 text-sm">
-                <Mail className="w-4 h-4 text-primary flex-shrink-0" />
+              <li className="flex gap-3 text-sm md:justify-end">
                 <a
                   href="mailto:buddingentrepreneursforum@gmail.com"
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
                   buddingentrepreneursforum@gmail.com
                 </a>
+                <Mail className="w-4 h-4 text-primary flex-shrink-0" />
               </li>
-              <li className="flex gap-3 text-sm">
-                <Phone className="w-4 h-4 text-primary flex-shrink-0" />
+              <li className="flex gap-3 text-sm md:justify-end">
                 <a
                   href="tel:+918379943345"
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
                   +91 83799 43345
                 </a>
+                <Phone className="w-4 h-4 text-primary flex-shrink-0" />
               </li>
             </ul>
-          </div>
-
-          {/* Newsletter */}
-          <div>
-            <h4 className="font-display font-semibold text-foreground mb-6">Newsletter</h4>
-            <p className="text-muted-foreground text-sm mb-4">
-              Subscribe to our Venturer's Voyage newsletter for the latest updates.
-            </p>
-            <form onSubmit={handleNewsletterSubmit} className="space-y-3">
-              <div className="relative">
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Enter your email"
-                  className="w-full px-4 py-3 bg-secondary border border-border rounded-lg text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-                  required
-                />
-              </div>
-              <motion.button
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                type="submit"
-                className="w-full px-4 py-3 bg-primary text-primary-foreground rounded-lg font-medium text-sm flex items-center justify-center gap-2 hover:opacity-90 transition-opacity"
-              >
-                Subscribe
-                <Send className="w-4 h-4" />
-              </motion.button>
-            </form>
           </div>
         </div>
       </div>

@@ -1,9 +1,10 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
 import { Layout } from '@/components/layout/Layout';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { Linkedin, Mail } from 'lucide-react';
-import { departments, facultyLeadership, coreCommitteeMembers } from '@/data/departmentsData';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { facultyLeadership, coreCommitteeMembers, leadershipYears } from '@/data/departmentsData';
 
 // Member Card Component
 const MemberCard = ({ member, index }: { member: typeof coreCommitteeMembers[0]; index: number }) => (
@@ -91,39 +92,9 @@ const FacultyCard = ({ faculty, index }: { faculty: typeof facultyLeadership[0];
   </motion.div>
 );
 
-// Department Card Component (Clickable)
-const DepartmentCard = ({ department, index }: { department: typeof departments[0]; index: number }) => (
-  <motion.div
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    transition={{ delay: index * 0.05, duration: 0.4 }}
-  >
-    <Link
-      to={`/department/${department.id}`}
-      className="block bg-card rounded-2xl p-6 border border-border/50 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-center group"
-    >
-      {/* Icon Circle */}
-      <div className="w-14 h-14 rounded-full bg-secondary flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/10 transition-colors">
-        <span className="text-xl font-bold text-muted-foreground group-hover:text-primary transition-colors">
-          {department.shortName}
-        </span>
-      </div>
-      
-      {/* Name */}
-      <h3 className="font-display text-lg font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
-        {department.name}
-      </h3>
-      
-      {/* Description */}
-      <p className="text-sm text-muted-foreground line-clamp-2">
-        {department.description}
-      </p>
-    </Link>
-  </motion.div>
-);
-
 const Members = () => {
+  const [selectedYear, setSelectedYear] = useState('2025-2026');
+
   return (
     <Layout>
       {/* Hero Section */}
@@ -188,20 +159,45 @@ const Members = () => {
         </div>
       </section>
 
-      {/* Department Heads (Cards Only - Clickable) */}
+      {/* Our Legacy / Former Leaders Timeline */}
       <section className="section-padding bg-background">
         <div className="container-wide mx-auto">
           <SectionHeading
-            badge="Our Structure"
-            title="Department Heads"
-            description="Various departments manage different aspects of the forum's operations."
+            badge="Our Legacy"
+            title="Our Former Forum Leaders"
+            description="Honoring the leaders who built the foundation of our entrepreneurship community."
           />
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6">
-            {departments.map((department, index) => (
-              <DepartmentCard key={department.id} department={department} index={index} />
+          <Tabs defaultValue="2025-2026" value={selectedYear} onValueChange={setSelectedYear} className="w-full">
+            <div className="flex justify-center mb-8 md:mb-12">
+              <TabsList className="bg-secondary/50 p-1 rounded-full">
+                {leadershipYears.map((yearData) => (
+                  <TabsTrigger
+                    key={yearData.year}
+                    value={yearData.year}
+                    className="px-6 py-2.5 rounded-full text-sm font-medium data-[state=active]:bg-primary data-[state=active]:text-primary-foreground transition-all"
+                  >
+                    {yearData.year}
+                  </TabsTrigger>
+                ))}
+              </TabsList>
+            </div>
+
+            {leadershipYears.map((yearData) => (
+              <TabsContent key={yearData.year} value={yearData.year} className="mt-0">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4 }}
+                  className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 md:gap-6"
+                >
+                  {yearData.members.map((member, index) => (
+                    <MemberCard key={`${yearData.year}-${member.name}`} member={member} index={index} />
+                  ))}
+                </motion.div>
+              </TabsContent>
             ))}
-          </div>
+          </Tabs>
         </div>
       </section>
 

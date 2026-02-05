@@ -2,6 +2,9 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { Layout } from '@/components/layout/Layout';
 import { GlassCard } from '@/components/ui/GlassCard';
 import brandingLogo from '@/assets/branding-logo.png';
+import encaveLogo from '@/assets/brands/encave.jpg';
+import creatooLogo from '@/assets/brands/creatoo.jpg';
+import riwayatLogo from '@/assets/brands/riwayat.jpg';
 import { 
   Palette, 
   Megaphone, 
@@ -84,21 +87,21 @@ const testimonials = [
     quote: "The branding team's energy and strategy helped us break through the clutter. From creative reels to clear messaging—they elevated our social media game.",
     author: 'Creatoo Team',
     role: 'Brand Partner',
-    image: 'https://buddingentrepreneurs.in/wp-content/uploads/2025/05/WhatsApp-Image-2025-05-09-at-07.58.34_6076cb32-300x300-1.webp',
+    image: creatooLogo,
   },
   {
     quote: "Our brand Riwayat received a fresh identity that felt rooted and modern. The team understood our tone perfectly.",
     author: 'Famiya Kashani',
     role: 'Founder, Riwayat',
-    image: 'https://buddingentrepreneurs.in/wp-content/uploads/2025/05/Budding_Branding_Team_Report1_Page_08_Image_0002.webp',
+    image: riwayatLogo,
   },
 ];
 
 // Portfolio samples
 const portfolioItems = [
-  { image: 'https://buddingentrepreneurs.in/wp-content/uploads/2025/05/WhatsApp-Image-2025-05-09-at-07.58.34_6076cb32-300x300-1.webp', title: 'Creatoo', category: 'Social Media' },
-  { image: 'https://buddingentrepreneurs.in/wp-content/uploads/2025/06/WhatsApp-Image-2025-06-26-at-09.46.40_48d6119a-e1750912344633.jpg', title: 'Brand Identity', category: 'Visual Design' },
-  { image: 'https://buddingentrepreneurs.in/wp-content/uploads/2025/06/WhatsApp-Image-2025-06-16-at-15.40.11_935a07bf.jpg', title: 'Campaign Visual', category: 'Marketing' },
+  { image: creatooLogo, title: 'Creatoo', category: 'Social Media' },
+  { image: riwayatLogo, title: 'Riwayat', category: 'Brand Identity' },
+  { image: encaveLogo, title: 'Encave Café', category: 'Visual Design' },
 ];
 
 const Branding = () => {

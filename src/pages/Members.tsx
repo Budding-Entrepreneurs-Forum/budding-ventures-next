@@ -6,6 +6,16 @@ import { Linkedin, Mail } from 'lucide-react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { facultyLeadership, coreCommitteeMembers, leadershipYears } from '@/data/departmentsData';
 
+// Faculty images
+import deependraSharma from '@/assets/faculty/deependra-sharma.jpg';
+import vinitaAhireKale from '@/assets/faculty/vinita-ahire-kale.jpg';
+
+// Faculty image mapping
+const facultyImages: Record<string, string> = {
+  'deependra-sharma': deependraSharma,
+  'vinita-ahire-kale': vinitaAhireKale,
+};
+
 // Member Card Component
 const MemberCard = ({ member, index }: { member: typeof coreCommitteeMembers[0]; index: number }) => (
   <motion.div
@@ -52,7 +62,10 @@ const MemberCard = ({ member, index }: { member: typeof coreCommitteeMembers[0];
 );
 
 // Faculty Card Component
-const FacultyCard = ({ faculty, index }: { faculty: typeof facultyLeadership[0]; index: number }) => (
+const FacultyCard = ({ faculty, index }: { faculty: typeof facultyLeadership[0]; index: number }) => {
+  const facultyImage = facultyImages[faculty.image] || faculty.image;
+  
+  return (
   <motion.div
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
@@ -68,7 +81,7 @@ const FacultyCard = ({ faculty, index }: { faculty: typeof facultyLeadership[0];
         </span>
         <div className="w-32 h-32 md:w-40 md:h-40 rounded-xl overflow-hidden bg-secondary border-2 border-border">
           <img
-            src={faculty.image}
+            src={facultyImage}
             alt={faculty.name}
             className="w-full h-full object-cover object-top"
             loading="lazy"
@@ -90,7 +103,8 @@ const FacultyCard = ({ faculty, index }: { faculty: typeof facultyLeadership[0];
       </div>
     </div>
   </motion.div>
-);
+  );
+};
 
 const Members = () => {
   const [selectedYear, setSelectedYear] = useState('2025-2026');

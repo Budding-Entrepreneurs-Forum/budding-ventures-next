@@ -4,20 +4,24 @@ import { SectionHeading } from '@/components/ui/SectionHeading';
 import { GlassCard } from '@/components/ui/GlassCard';
 import { Linkedin, Users, Lightbulb, Target, BookOpen } from 'lucide-react';
 
+// Faculty images
+import deependraSharma from '@/assets/faculty/deependra-sharma.jpg';
+import vinitaAhireKale from '@/assets/faculty/vinita-ahire-kale.jpg';
+
 const leadership = [
   {
     name: 'Dr. Deependra Sharma',
     role: 'Dean, MIT WPU SOB',
     position: 'Recommended By',
     linkedin: 'https://www.linkedin.com/in/dr-deependra-sharma-579771167/',
-    image: 'https://buddingentrepreneurs.in/wp-content/uploads/elementor/thumbs/1680952760378-qz6g1h4cll3t34r12t750xsz4erauvj7bsh5xgb70k.jpeg',
+    image: deependraSharma,
   },
   {
     name: 'Prof. Dr. Vinita Ahire Kale',
     role: 'Forum Faculty Head, MIT WPU SOB',
     position: 'Proposed By',
     linkedin: 'https://www.linkedin.com/in/dr-vinita-ahire-kale-71619315/',
-    image: 'https://buddingentrepreneurs.in/wp-content/uploads/elementor/thumbs/1712670155824-qz6g49p2wuxhleoxrio7xqfaomzkqhmhdma4a262is.jpeg',
+    image: vinitaAhireKale,
   },
 ];
 

@@ -10,7 +10,7 @@ import { facultyLeadership, coreCommitteeMembers, leadershipYears } from '@/data
 import deependraSharma from '@/assets/faculty/deependra-sharma.jpg';
 import vinitaAhireKale from '@/assets/faculty/vinita-ahire-kale.jpg';
 
-// Member images
+// Member images - Batch 1 (first 10)
 import nayanPote from '@/assets/members/nayan-pote.webp';
 import ishitYadav from '@/assets/members/ishit-yadav.png';
 import jhanviOdedra from '@/assets/members/jhanvi-odedra.png';
@@ -22,6 +22,18 @@ import dnyaneshPatil from '@/assets/members/dnyanesh-patil.jpeg';
 import khushiSethia from '@/assets/members/khushi-sethia.png';
 import devangKaslikar from '@/assets/members/devang-kaslikar.png';
 
+// Member images - Batch 2 (new 10)
+import varadMulgund from '@/assets/members/varad-mulgund.png';
+import anshdhaChinchmalatpure from '@/assets/members/anshdha-chinchmalatpure.png';
+import ayushGhosekar from '@/assets/members/ayush-ghosekar.png';
+import pratikKadpe from '@/assets/members/pratik-kadpe.png';
+import bhavikModi from '@/assets/members/bhavik-modi.jpeg';
+import vedashreeGhotkar from '@/assets/members/vedashree-ghotkar.png';
+import nishantInamdar from '@/assets/members/nishant-inamdar.png';
+import manasiSahare from '@/assets/members/manasi-sahare.png';
+import tanayKanitkar from '@/assets/members/tanay-kanitkar.jpeg';
+import vivekGoondil from '@/assets/members/vivek-goondil.png';
+
 // Faculty image mapping
 const facultyImages: Record<string, string> = {
   'deependra-sharma': deependraSharma,
@@ -30,6 +42,7 @@ const facultyImages: Record<string, string> = {
 
 // Member image mapping
 const memberImages: Record<string, string> = {
+  // Batch 1
   'nayan-pote': nayanPote,
   'ishit-yadav': ishitYadav,
   'jhanvi-odedra': jhanviOdedra,
@@ -40,6 +53,17 @@ const memberImages: Record<string, string> = {
   'dnyanesh-patil': dnyaneshPatil,
   'khushi-sethia': khushiSethia,
   'devang-kaslikar': devangKaslikar,
+  // Batch 2
+  'varad-mulgund': varadMulgund,
+  'anshdha-chinchmalatpure': anshdhaChinchmalatpure,
+  'ayush-ghosekar': ayushGhosekar,
+  'pratik-kadpe': pratikKadpe,
+  'bhavik-modi': bhavikModi,
+  'vedashree-ghotkar': vedashreeGhotkar,
+  'nishant-inamdar': nishantInamdar,
+  'manasi-sahare': manasiSahare,
+  'tanay-kanitkar': tanayKanitkar,
+  'vivek-goondil': vivekGoondil,
 };
 
 // Member Card Component

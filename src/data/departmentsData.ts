@@ -314,61 +314,61 @@ export const coreCommitteeMembers = [
   {
     name: 'Varad Mulgund',
     role: 'Podcast Department Lead',
-    image: 'https://buddingentrepreneurs.in/wp-content/uploads/2025/07/Ventures-Voyage-July-2025-By-Budding-Entrepreneurs-Forum-_20250720_142332_0000_Page_19_Image_0015.jpg',
+    image: 'varad-mulgund', // Key for mapping to imported image
     linkedin: 'https://www.linkedin.com/in/varad-mulgund-731aa632a/',
   },
   {
     name: 'Anshdha Chinchmalatpure',
     role: 'Promotions Department Lead',
-    image: 'https://buddingentrepreneurs.in/wp-content/uploads/2025/07/Ventures-Voyage-July-2025-By-Budding-Entrepreneurs-Forum-_20250720_142332_0000_Page_19_Image_0017-768x1041.jpg',
+    image: 'anshdha-chinchmalatpure', // Key for mapping to imported image
     linkedin: 'https://www.linkedin.com/in/anshdha-chinchmalatpure/',
   },
   {
     name: 'Ayush Ghosekar',
     role: 'Event Department Lead',
-    image: 'https://buddingentrepreneurs.in/wp-content/uploads/2025/07/Ventures-Voyage-July-2025-By-Budding-Entrepreneurs-Forum-_20250720_142332_0000_Page_19_Image_0020.jpg',
+    image: 'ayush-ghosekar', // Key for mapping to imported image
     linkedin: 'https://www.linkedin.com/in/ayush-ghosekar-8a5948289/',
   },
   {
     name: 'Pratik Kadpe',
     role: 'Event Department Lead',
-    image: 'https://buddingentrepreneurs.in/wp-content/uploads/2025/07/Ventures-Voyage-July-2025-By-Budding-Entrepreneurs-Forum-_20250720_142332_0000_Page_19_Image_0028-768x1151.jpg',
+    image: 'pratik-kadpe', // Key for mapping to imported image
     linkedin: 'https://www.linkedin.com/in/pratik-kadpe-pk7172/',
   },
   {
     name: 'Bhavik Modi',
     role: 'Governance & Compliance Lead',
-    image: 'https://buddingentrepreneurs.in/wp-content/uploads/2025/07/Ventures-Voyage-July-2025-By-Budding-Entrepreneurs-Forum-_20250720_142332_0000_Page_19_Image_0018.jpg',
+    image: 'bhavik-modi', // Key for mapping to imported image
     linkedin: 'https://www.linkedin.com/in/21bhavik',
   },
   {
     name: 'Vedashree Ghotkar',
     role: 'Editorial Department Lead',
-    image: 'https://buddingentrepreneurs.in/wp-content/uploads/2025/07/Ventures-Voyage-July-2025-By-Budding-Entrepreneurs-Forum-_20250720_142332_0000_Page_19_Image_0021.jpg',
+    image: 'vedashree-ghotkar', // Key for mapping to imported image
     linkedin: 'https://www.linkedin.com/in/vedashree-ganesh-ghotkar-07b0b61bb',
   },
   {
     name: 'Nishant Inamdar',
     role: 'Editorial Department Lead',
-    image: 'https://buddingentrepreneurs.in/wp-content/uploads/2025/07/Ventures-Voyage-July-2025-By-Budding-Entrepreneurs-Forum-_20250720_142332_0000_Page_19_Image_0022.jpg',
+    image: 'nishant-inamdar', // Key for mapping to imported image
     linkedin: 'https://www.linkedin.com/in/nishant-inamdar-bb6444246',
   },
   {
     name: 'Manasi Sahare',
     role: 'IT Department Lead',
-    image: 'https://buddingentrepreneurs.in/wp-content/uploads/2025/07/Ventures-Voyage-July-2025-By-Budding-Entrepreneurs-Forum-_20250720_142332_0000_Page_19_Image_0023.jpg',
+    image: 'manasi-sahare', // Key for mapping to imported image
     linkedin: 'https://www.linkedin.com/in/manasi-sahare-25ba62307/',
   },
   {
     name: 'Tanay Kanitkar',
     role: 'IT Department Lead',
-    image: 'https://buddingentrepreneurs.in/wp-content/uploads/2025/07/Ventures-Voyage-July-2025-By-Budding-Entrepreneurs-Forum-_20250720_142332_0000_Page_19_Image_0024-768x1024.jpg',
+    image: 'tanay-kanitkar', // Key for mapping to imported image
     linkedin: 'https://www.linkedin.com/in/tanay-kanitkar/',
   },
   {
     name: 'Vivek Goondil',
     role: 'Photography Department Lead',
-    image: 'https://buddingentrepreneurs.in/wp-content/uploads/2025/07/Ventures-Voyage-July-2025-By-Budding-Entrepreneurs-Forum-_20250720_142332_0000_Page_19_Image_0025.jpg',
+    image: 'vivek-goondil', // Key for mapping to imported image
     linkedin: 'https://www.linkedin.com/in/vivek-gondil/',
   },
   {

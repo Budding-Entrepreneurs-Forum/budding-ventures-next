@@ -241,62 +241,62 @@ export const coreCommitteeMembers = [
   {
     name: 'Nayan Pote',
     role: 'President',
-    image: 'https://buddingentrepreneurs.in/wp-content/uploads/2025/07/Ventures-Voyage-July-2025-By-Budding-Entrepreneurs-Forum-_20250720_142332_0000_Page_19_Image_0002.jpg',
+    image: 'nayan-pote', // Key for mapping to imported image
     linkedin: 'http://linkedin.com/in/nayanpote',
   },
   {
     name: 'Ishit Yadav',
     role: 'Vice President – External',
-    image: 'https://buddingentrepreneurs.in/wp-content/uploads/2025/07/Ventures-Voyage-July-2025-By-Budding-Entrepreneurs-Forum-_20250720_142332_0000_Page_19_Image_0003.jpg',
+    image: 'ishit-yadav', // Key for mapping to imported image
     linkedin: 'https://www.linkedin.com/in/ishit-yadav-4a3729326',
   },
   {
     name: 'Jhanvi Odedra',
     role: 'Vice President – Internal',
-    image: 'https://buddingentrepreneurs.in/wp-content/uploads/2025/07/Ventures-Voyage-July-2025-By-Budding-Entrepreneurs-Forum-_20250720_142332_0000_Page_19_Image_0004.jpg',
+    image: 'jhanvi-odedra', // Key for mapping to imported image
     linkedin: 'https://www.linkedin.com/in/jhanvi-odedra-b4837426b/',
   },
   {
     name: 'Sanjana Kashyap',
     role: 'General Secretary',
-    image: 'https://buddingentrepreneurs.in/wp-content/uploads/2025/07/Ventures-Voyage-July-2025-By-Budding-Entrepreneurs-Forum-_20250720_142332_0000_Page_19_Image_0005.jpg',
+    image: 'sanjana-kashyap', // Key for mapping to imported image
     linkedin: 'https://www.linkedin.com/in/sanjana-kashyap-1ab802253',
   },
   {
     name: 'Deeksha Pal',
     role: 'General Advisor & Treasurer',
-    image: 'https://buddingentrepreneurs.in/wp-content/uploads/2025/07/Ventures-Voyage-July-2025-By-Budding-Entrepreneurs-Forum-_20250720_142332_0000_Page_19_Image_0006.jpg',
+    image: 'deeksha-pal', // Key for mapping to imported image
     linkedin: 'http://linkedin.com/in/deeksha-pal-3ab60131a',
   },
   // Department Heads
   {
     name: 'Sohira Kshemkalyani',
     role: 'Branding Team & Strategic Head',
-    image: 'https://buddingentrepreneurs.in/wp-content/uploads/2025/07/Ventures-Voyage-July-2025-By-Budding-Entrepreneurs-Forum-_20250720_142332_0000_Page_19_Image_0010.jpg',
+    image: 'sohira-kshemkalyani', // Key for mapping to imported image
     linkedin: 'https://www.linkedin.com/in/sohira-kshemkalyani-2332b021b/',
   },
   {
     name: 'Sushmita Poojari',
     role: 'Social Media Department Lead',
-    image: 'https://buddingentrepreneurs.in/wp-content/uploads/2025/07/Ventures-Voyage-July-2025-By-Budding-Entrepreneurs-Forum-_20250720_142332_0000_Page_19_Image_0007-768x1322.jpg',
+    image: 'sushmita-poojari', // Key for mapping to imported image
     linkedin: 'https://www.linkedin.com/in/sushmita-poojari-649a23261',
   },
   {
     name: 'Dnyanesh Patil',
     role: 'Creative Department Lead',
-    image: 'https://buddingentrepreneurs.in/wp-content/uploads/2025/07/Ventures-Voyage-July-2025-By-Budding-Entrepreneurs-Forum-_20250720_142332_0000_Page_19_Image_0008-768x490.jpg',
+    image: 'dnyanesh-patil', // Key for mapping to imported image
     linkedin: 'https://www.linkedin.com/in/dnyanesh-patil-j050602',
   },
   {
     name: 'Khushi Sethia',
     role: 'Creative Department Lead',
-    image: 'https://buddingentrepreneurs.in/wp-content/uploads/2025/07/Ventures-Voyage-July-2025-By-Budding-Entrepreneurs-Forum-_20250720_142332_0000_Page_19_Image_0009.jpg',
+    image: 'khushi-sethia', // Key for mapping to imported image
     linkedin: 'https://www.linkedin.com/in/khushi-shethia-7792a6205',
   },
   {
     name: 'Devang Kaslikar',
     role: 'Sponsorship Department Lead',
-    image: 'https://buddingentrepreneurs.in/wp-content/uploads/2025/07/Ventures-Voyage-July-2025-By-Budding-Entrepreneurs-Forum-_20250720_142332_0000_Page_19_Image_0012.jpg',
+    image: 'devang-kaslikar', // Key for mapping to imported image
     linkedin: 'https://www.linkedin.com/in/devang-kaslikar-1448b7206',
   },
   {

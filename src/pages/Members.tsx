@@ -10,14 +10,44 @@ import { facultyLeadership, coreCommitteeMembers, leadershipYears } from '@/data
 import deependraSharma from '@/assets/faculty/deependra-sharma.jpg';
 import vinitaAhireKale from '@/assets/faculty/vinita-ahire-kale.jpg';
 
+// Member images
+import nayanPote from '@/assets/members/nayan-pote.webp';
+import ishitYadav from '@/assets/members/ishit-yadav.png';
+import jhanviOdedra from '@/assets/members/jhanvi-odedra.png';
+import sanjanaKashyap from '@/assets/members/sanjana-kashyap.png';
+import deekshaPal from '@/assets/members/deeksha-pal.png';
+import sohiraKshemkalyani from '@/assets/members/sohira-kshemkalyani.png';
+import sushmitaPoojari from '@/assets/members/sushmita-poojari.png';
+import dnyaneshPatil from '@/assets/members/dnyanesh-patil.jpeg';
+import khushiSethia from '@/assets/members/khushi-sethia.png';
+import devangKaslikar from '@/assets/members/devang-kaslikar.png';
+
 // Faculty image mapping
 const facultyImages: Record<string, string> = {
   'deependra-sharma': deependraSharma,
   'vinita-ahire-kale': vinitaAhireKale,
 };
 
+// Member image mapping
+const memberImages: Record<string, string> = {
+  'nayan-pote': nayanPote,
+  'ishit-yadav': ishitYadav,
+  'jhanvi-odedra': jhanviOdedra,
+  'sanjana-kashyap': sanjanaKashyap,
+  'deeksha-pal': deekshaPal,
+  'sohira-kshemkalyani': sohiraKshemkalyani,
+  'sushmita-poojari': sushmitaPoojari,
+  'dnyanesh-patil': dnyaneshPatil,
+  'khushi-sethia': khushiSethia,
+  'devang-kaslikar': devangKaslikar,
+};
+
 // Member Card Component
-const MemberCard = ({ member, index }: { member: typeof coreCommitteeMembers[0]; index: number }) => (
+const MemberCard = ({ member, index }: { member: typeof coreCommitteeMembers[0]; index: number }) => {
+  // Use local image if available, otherwise fall back to external URL
+  const memberImage = memberImages[member.image] || member.image;
+  
+  return (
   <motion.div
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
@@ -29,7 +59,7 @@ const MemberCard = ({ member, index }: { member: typeof coreCommitteeMembers[0];
       {/* Image Container */}
       <div className="aspect-[3/4] overflow-hidden bg-secondary">
         <img
-          src={member.image}
+          src={memberImage}
           alt={member.name}
           className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
           loading="lazy"
@@ -59,7 +89,8 @@ const MemberCard = ({ member, index }: { member: typeof coreCommitteeMembers[0];
       </div>
     </div>
   </motion.div>
-);
+  );
+};
 
 // Faculty Card Component
 const FacultyCard = ({ faculty, index }: { faculty: typeof facultyLeadership[0]; index: number }) => {

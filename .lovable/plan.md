@@ -1,64 +1,44 @@
 
 
-# Remove "Our Team" Section from Branding Page
+## Plan: Three Changes to Blog and Home Page
 
-## Overview
-This plan removes the entire "Our Team" section from the Branding page, including all team member cards, headers, and related spacing. After removal, the page will flow smoothly from the Portfolio section directly to the CTA section.
+### 1. Flipbook PDF Files Needed
 
----
+The flipbook viewer currently only shows the cover image because no actual PDF files have been provided. **I cannot automatically download the PDFs from the reference website** due to access restrictions.
 
-## Current Page Structure
-1. Hero Section
-2. What is Branding Team Section
-3. Services Section
-4. Mission/Vision/Values Section
-5. Testimonials Section
-6. Portfolio Section
-7. **Our Team Section** ← To be removed
-8. CTA Section
+**Action required from you:** Please upload the PDF files for each newsletter. Once uploaded, I will integrate them into the flipbook viewer so each newsletter opens with full page-by-page reading.
 
-## Page Structure After Change
-1. Hero Section
-2. What is Branding Team Section
-3. Services Section
-4. Mission/Vision/Values Section
-5. Testimonials Section
-6. Portfolio Section
-7. CTA Section ← Flows directly after Portfolio
+For now, I will update the flipbook to clearly indicate that the full newsletter will be available soon, rather than showing just a static cover image.
 
----
+### 2. Remove Stats Bar from Blog Page
 
-## Technical Details
+Remove the entire stats section that shows:
+- "32 Editions"  
+- "June 2023 - December 2025"  
+- "Sorted latest to oldest"
 
-### Files to Modify
-- `src/pages/Branding.tsx`
+This is the `<section>` block between the hero and the newsletter grid in `src/pages/Blog.tsx` (lines ~53-67).
 
-### Changes Required
+### 3. Update Home Page "Latest Posts" to Use Newsletter Data
 
-**1. Remove Team Section (Lines 552-643)**
-Delete the entire section that contains:
-- The "Meet The Crew" badge
-- The "Our Team" heading and description
-- The Leadership Row (first 6 members in a 6-column grid)
-- The Team Members Grid (remaining members)
-
-**2. Remove Unused Data (Lines 80-107)**
-Delete the `teamMembers` array since it will no longer be used after the section is removed.
-
-**3. Remove Unused Import**
-Remove the `Linkedin` icon import if it's only used in the Team section (will verify other usages first).
-
-### Layout After Removal
-- Portfolio Section ends with its closing `</section>` tag
-- CTA Section begins immediately after
-- Both sections have their own `py-24` padding, ensuring proper spacing
-- No empty gaps or layout breaks
+Replace the hardcoded `blogPosts` array in `src/pages/Index.tsx` (which uses external hotlinked images) with the first 3 newsletters from the `newslettersData.ts` file. This will:
+- Use local cover images instead of external URLs
+- Keep data in sync automatically when new newsletters are added
+- Link each card to the Blog page
 
 ---
 
-## Visual Impact
-- The page will be shorter and more focused
-- Smooth visual flow from Portfolio to CTA
-- No broken layouts or spacing issues
-- All remaining sections unaffected
+### Technical Details
+
+**Files to modify:**
+
+1. **`src/pages/Blog.tsx`** -- Delete the stats `<section>` (lines 53-67) that contains "32 Editions", date range, and sort indicator.
+
+2. **`src/pages/Index.tsx`** -- 
+   - Import `newsletters` from `@/data/newslettersData`
+   - Remove the hardcoded `blogPosts` array (lines 61-77)
+   - Replace usage with `newsletters.slice(0, 3)` to show the 3 latest editions
+   - Update the card rendering to use `newsletter.coverImage`, `newsletter.title`, and `newsletter.date`
+
+3. **`src/components/FlipbookViewer.tsx`** -- No structural changes needed now; it already supports `pdfUrl` when available. Will be updated once PDF files are provided.
 

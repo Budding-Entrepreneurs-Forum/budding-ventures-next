@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Layout } from '@/components/layout/Layout';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { GlassCard } from '@/components/ui/GlassCard';
-import { BookOpen, Calendar } from 'lucide-react';
+import { BookOpen } from 'lucide-react';
 import { newsletters } from '@/data/newslettersData';
 import { FlipbookViewer } from '@/components/FlipbookViewer';
 
@@ -38,23 +38,6 @@ const Blog = () => {
               Our monthly digital newsletter exploring innovation, entrepreneurship, and the future of business. Browse all editions in our interactive flipbook reader.
             </p>
           </motion.div>
-        </div>
-      </section>
-
-      {/* Stats */}
-      <section className="py-8 bg-card border-b border-border">
-        <div className="container-wide mx-auto px-4 md:px-8">
-          <div className="flex flex-wrap items-center gap-6 md:gap-12">
-            <div className="flex items-center gap-2">
-              <BookOpen className="w-5 h-5 text-primary" />
-              <span className="text-sm font-medium text-foreground">{newsletters.length} Editions</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Calendar className="w-5 h-5 text-primary" />
-              <span className="text-sm font-medium text-foreground">June 2023 – December 2025</span>
-            </div>
-            <span className="text-xs text-muted-foreground">Sorted latest → oldest</span>
-          </div>
         </div>
       </section>
 

@@ -6,6 +6,7 @@ import { SectionHeading } from '@/components/ui/SectionHeading';
 import { Layout } from '@/components/layout/Layout';
 import heroCampus from '@/assets/hero-campus.jpg';
 import logo from '@/assets/logo.png';
+import { newsletters } from '@/data/newslettersData';
 
 const stats = [
   { value: '50+', label: 'Forum Members' },
@@ -58,23 +59,6 @@ const activities = [
   'Cross-Forum Collaborations',
 ];
 
-const blogPosts = [
-  {
-    title: 'Companies That Built INDIA – Across 7 Sectors',
-    date: 'December 2025',
-    image: 'https://buddingentrepreneurs.in/wp-content/uploads/2025/12/WhatsApp-Image-2025-10-26-at-16.30.16_66393760_Page_01-724x1024.jpg',
-  },
-  {
-    title: 'Where Tradition Meets Innovation – The Map of Mithai',
-    date: 'November 2025',
-    image: 'https://buddingentrepreneurs.in/wp-content/uploads/2025/11/Ventures-Voyage-November-2025-1_Page_01-724x1024.jpg',
-  },
-  {
-    title: 'Modern Defense Technologies and Global Security',
-    date: 'October 2025',
-    image: 'https://buddingentrepreneurs.in/wp-content/uploads/2025/10/Ventures-Voyage-October-2025_20251002_084546_0000_Page_01.jpg',
-  },
-];
 
 const Index = () => {
   return (
@@ -399,9 +383,9 @@ const Index = () => {
           />
 
           <div className="grid md:grid-cols-3 gap-6">
-            {blogPosts.map((post, index) => (
+            {newsletters.slice(0, 3).map((newsletter, index) => (
               <motion.article
-                key={post.title}
+                key={newsletter.id}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -411,15 +395,15 @@ const Index = () => {
                   <GlassCard className="overflow-hidden p-0">
                     <div className="aspect-[3/4] overflow-hidden">
                       <img
-                        src={post.image}
-                        alt={post.title}
+                        src={newsletter.coverImage}
+                        alt={newsletter.title}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       />
                     </div>
                     <div className="p-6">
-                      <span className="text-sm text-primary">{post.date}</span>
+                      <span className="text-sm text-primary">{newsletter.date}</span>
                       <h3 className="font-display text-lg font-semibold text-foreground mt-2 group-hover:text-primary transition-colors line-clamp-2">
-                        {post.title}
+                        {newsletter.title}
                       </h3>
                     </div>
                   </GlassCard>

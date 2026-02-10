@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { GlassCard } from '@/components/ui/GlassCard';
+import { Layout } from '@/components/layout/Layout';
 import brandingLogo from '@/assets/branding-logo.png';
 import encaveLogo from '@/assets/brands/encave.jpg';
 import creatooLogo from '@/assets/brands/creatoo.jpg';

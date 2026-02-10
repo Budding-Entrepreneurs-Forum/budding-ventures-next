@@ -21,8 +21,7 @@ import {
   ExternalLink,
   Sparkles,
   Zap,
-  Maximize2,
-  Download,
+  BookOpen,
 } from 'lucide-react';
 import { useRef } from 'react';
 import { Link } from 'react-router-dom';

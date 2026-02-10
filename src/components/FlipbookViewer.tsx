@@ -126,27 +126,31 @@ export const FlipbookViewer = ({ newsletter, onClose }: FlipbookViewerProps) => 
   // Page info
   const leftPageIdx = currentSpread;
   const rightPageIdx = currentSpread + 1;
+  const showAsSingle = isCoverPage || isLastSingle || !isDesktop;
   const displayStart = leftPageIdx + 1;
-  const displayEnd = isSpread && rightPageIdx < totalPages ? rightPageIdx + 1 : displayStart;
+  const displayEnd = !showAsSingle && rightPageIdx < totalPages ? rightPageIdx + 1 : displayStart;
 
-  // Animation variants
+  // Directional animation variants — right-to-left for next, left-to-right for prev
   const pageVariants = {
     enter: (dir: 'next' | 'prev') => ({
       opacity: 0,
-      rotateY: dir === 'next' ? -15 : 15,
-      scale: 0.96,
+      x: dir === 'next' ? 60 : -60,
+      rotateY: dir === 'next' ? -12 : 12,
+      scale: 0.97,
       filter: 'brightness(0.85)',
     }),
     center: {
       opacity: 1,
+      x: 0,
       rotateY: 0,
       scale: 1,
       filter: 'brightness(1)',
     },
     exit: (dir: 'next' | 'prev') => ({
       opacity: 0,
-      rotateY: dir === 'next' ? 15 : -15,
-      scale: 0.96,
+      x: dir === 'next' ? -60 : 60,
+      rotateY: dir === 'next' ? 12 : -12,
+      scale: 0.97,
       filter: 'brightness(0.85)',
     }),
   };

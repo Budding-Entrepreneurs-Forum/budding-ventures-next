@@ -556,37 +556,40 @@ const Branding = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.95 }}
                 viewport={{ once: true }}
-                className="max-w-sm mx-auto"
+                className="max-w-md mx-auto"
               >
-                <motion.div
-                  whileHover={{ y: -6 }}
-                  transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-                  className="group relative rounded-2xl overflow-hidden border border-border bg-card cursor-pointer shadow-lg"
-                  onClick={() => setShowFlipbook(true)}
-                >
-                  <div className="aspect-[3/4] overflow-hidden">
-                    <img
-                      src={brandingReportCover}
-                      alt="Branding Team Report 2025"
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                      draggable={false}
-                    />
-                  </div>
+                {/* Background Card Container */}
+                <div className="rounded-3xl bg-card/60 backdrop-blur-sm border border-border p-6 md:p-8 shadow-lg">
+                  <motion.div
+                    whileHover={{ y: -4 }}
+                    transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+                    className="group relative rounded-2xl overflow-hidden border border-border bg-card cursor-pointer shadow-md"
+                    onClick={() => setShowFlipbook(true)}
+                  >
+                    <div className="aspect-[3/4] overflow-hidden">
+                      <img
+                        src={brandingReportCover}
+                        alt="Branding Team Report 2025"
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        draggable={false}
+                      />
+                    </div>
 
-                  <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col items-center justify-center gap-3">
-                    <motion.div
-                      initial={{ scale: 0.8, opacity: 0 }}
-                      whileHover={{ scale: 1 }}
-                      className="w-16 h-16 rounded-full bg-primary/90 flex items-center justify-center shadow-xl"
-                    >
-                      <BookOpen className="w-7 h-7 text-primary-foreground" />
-                    </motion.div>
-                    <span className="text-lg font-display font-semibold text-foreground">
-                      Read Now
-                    </span>
-                  </div>
+                    {/* Unified CTA Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/50 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
+                      <div className="flex flex-col items-center gap-2">
+                        <div className="w-14 h-14 rounded-full bg-primary/90 flex items-center justify-center shadow-xl">
+                          <BookOpen className="w-6 h-6 text-primary-foreground" />
+                        </div>
+                        <span className="text-base font-display font-semibold text-foreground">
+                          Read Now
+                        </span>
+                      </div>
+                    </div>
+                  </motion.div>
 
-                  <div className="p-4 text-center border-t border-border">
+                  {/* Caption below thumbnail inside card */}
+                  <div className="pt-5 text-center">
                     <h3 className="font-display font-semibold text-foreground text-sm">
                       Branding Team Report 2025
                     </h3>
@@ -594,7 +597,7 @@ const Branding = () => {
                       Budding Entrepreneurs Forum
                     </p>
                   </div>
-                </motion.div>
+                </div>
               </motion.div>
             ) : (
               <motion.div

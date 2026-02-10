@@ -1,9 +1,10 @@
-import { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { useRef, useState } from 'react';
+import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import { Layout } from '@/components/layout/Layout';
 import { GlassCard } from '@/components/ui/GlassCard';
 import { PdfFlipbook } from '@/components/PdfFlipbook';
 import brandingLogo from '@/assets/branding-logo.png';
+import brandingReportCover from '@/assets/branding-report-cover.png';
 import encaveLogo from '@/assets/brands/encave.jpg';
 import creatooLogo from '@/assets/brands/creatoo.jpg';
 import riwayatLogo from '@/assets/brands/riwayat.jpg';
@@ -22,6 +23,7 @@ import {
   Sparkles,
   Zap,
   BookOpen,
+  X,
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -106,7 +108,7 @@ const portfolioItems = [
 ];
 
 const Branding = () => {
-  
+  const [showFlipbook, setShowFlipbook] = useState(false);
   const heroRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: heroRef,
@@ -526,7 +528,7 @@ const Branding = () => {
         </div>
       </section>
 
-      {/* Branding Report Flipbook Section */}
+      {/* Branding Report Section */}
       <section className="py-24 relative">
         <div className="container-wide mx-auto px-4 md:px-8">
           <motion.div
@@ -546,17 +548,80 @@ const Branding = () => {
             </p>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="max-w-5xl mx-auto"
-          >
-            <PdfFlipbook
-              pdfUrl="/pdfs/branding-report.pdf"
-              title="Budding Branding Team Report"
-            />
-          </motion.div>
+          <AnimatePresence mode="wait">
+            {!showFlipbook ? (
+              <motion.div
+                key="thumbnail"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                viewport={{ once: true }}
+                className="max-w-sm mx-auto"
+              >
+                <motion.div
+                  whileHover={{ y: -6 }}
+                  transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+                  className="group relative rounded-2xl overflow-hidden border border-border bg-card cursor-pointer shadow-lg"
+                  onClick={() => setShowFlipbook(true)}
+                >
+                  <div className="aspect-[3/4] overflow-hidden">
+                    <img
+                      src={brandingReportCover}
+                      alt="Branding Team Report 2025"
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      draggable={false}
+                    />
+                  </div>
+
+                  <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col items-center justify-center gap-3">
+                    <motion.div
+                      initial={{ scale: 0.8, opacity: 0 }}
+                      whileHover={{ scale: 1 }}
+                      className="w-16 h-16 rounded-full bg-primary/90 flex items-center justify-center shadow-xl"
+                    >
+                      <BookOpen className="w-7 h-7 text-primary-foreground" />
+                    </motion.div>
+                    <span className="text-lg font-display font-semibold text-foreground">
+                      Read Now
+                    </span>
+                  </div>
+
+                  <div className="p-4 text-center border-t border-border">
+                    <h3 className="font-display font-semibold text-foreground text-sm">
+                      Branding Team Report 2025
+                    </h3>
+                    <p className="text-xs text-muted-foreground mt-1">
+                      Budding Entrepreneurs Forum
+                    </p>
+                  </div>
+                </motion.div>
+              </motion.div>
+            ) : (
+              <motion.div
+                key="flipbook"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 20 }}
+                transition={{ duration: 0.4 }}
+                className="max-w-5xl mx-auto"
+              >
+                {/* Close button */}
+                <div className="flex justify-end mb-3">
+                  <button
+                    onClick={() => setShowFlipbook(false)}
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted/80 border border-border transition-colors"
+                  >
+                    <X className="w-4 h-4" />
+                    Close Reader
+                  </button>
+                </div>
+                <PdfFlipbook
+                  pdfUrl="/pdfs/branding-report.pdf"
+                  title="Budding Branding Team Report 2025"
+                />
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
       </section>
 

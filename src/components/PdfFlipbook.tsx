@@ -23,17 +23,16 @@ interface PdfFlipbookProps {
 
 export const PdfFlipbook = ({ pdfUrl, title }: PdfFlipbookProps) => {
   const [pages, setPages] = useState<string[]>([]);
-  const [currentSpread, setCurrentSpread] = useState(0); // index of left page in spread
+  const [currentSpread, setCurrentSpread] = useState(0);
   const [totalPages, setTotalPages] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [zoom, setZoom] = useState(1);
   const [flipDir, setFlipDir] = useState<'next' | 'prev'>('next');
+  const [isFlipping, setIsFlipping] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const isMobile = useIsMobile();
 
-  // In spread mode (desktop), we show 2 pages at a time
-  // In single mode (mobile), we show 1 page at a time
   const isSpread = !isMobile;
 
   // Load PDF pages
@@ -68,7 +67,6 @@ export const PdfFlipbook = ({ pdfUrl, title }: PdfFlipbookProps) => {
     return () => { cancelled = true; };
   }, [pdfUrl]);
 
-
   // Navigation
   const canGoNext = isSpread
     ? currentSpread + 2 < totalPages
@@ -77,16 +75,20 @@ export const PdfFlipbook = ({ pdfUrl, title }: PdfFlipbookProps) => {
   const canGoPrev = currentSpread > 0;
 
   const nextPage = useCallback(() => {
-    if (!canGoNext) return;
+    if (!canGoNext || isFlipping) return;
     setFlipDir('next');
+    setIsFlipping(true);
     setCurrentSpread(s => s + (isSpread ? 2 : 1));
-  }, [canGoNext, isSpread]);
+    setTimeout(() => setIsFlipping(false), 600);
+  }, [canGoNext, isSpread, isFlipping]);
 
   const prevPage = useCallback(() => {
-    if (!canGoPrev) return;
+    if (!canGoPrev || isFlipping) return;
     setFlipDir('prev');
+    setIsFlipping(true);
     setCurrentSpread(s => Math.max(0, s - (isSpread ? 2 : 1)));
-  }, [canGoPrev, isSpread]);
+    setTimeout(() => setIsFlipping(false), 600);
+  }, [canGoPrev, isSpread, isFlipping]);
 
   // Keyboard
   useEffect(() => {
@@ -122,19 +124,25 @@ export const PdfFlipbook = ({ pdfUrl, title }: PdfFlipbookProps) => {
   const displayStart = leftPageIdx + 1;
   const displayEnd = isSpread && rightPageIdx < totalPages ? rightPageIdx + 1 : displayStart;
 
-  // Flip animation variants
-  const flipVariants = {
+  // Smooth page-turn animation (fade + subtle 3D perspective lift)
+  const pageVariants = {
     enter: (dir: 'next' | 'prev') => ({
-      rotateY: dir === 'next' ? -90 : 90,
       opacity: 0,
+      rotateY: dir === 'next' ? -15 : 15,
+      scale: 0.96,
+      filter: 'brightness(0.85)',
     }),
     center: {
-      rotateY: 0,
       opacity: 1,
+      rotateY: 0,
+      scale: 1,
+      filter: 'brightness(1)',
     },
     exit: (dir: 'next' | 'prev') => ({
-      rotateY: dir === 'next' ? 90 : -90,
       opacity: 0,
+      rotateY: dir === 'next' ? 15 : -15,
+      scale: 0.96,
+      filter: 'brightness(0.85)',
     }),
   };
 
@@ -172,7 +180,7 @@ export const PdfFlipbook = ({ pdfUrl, title }: PdfFlipbookProps) => {
             {/* Left arrow */}
             <button
               onClick={prevPage}
-              disabled={!canGoPrev}
+              disabled={!canGoPrev || isFlipping}
               className="absolute left-1 md:left-4 z-10 p-2 rounded-full bg-background/80 border border-border text-foreground hover:bg-background transition-colors disabled:opacity-20 disabled:cursor-not-allowed"
             >
               <ChevronLeft className="w-5 h-5" />
@@ -181,21 +189,33 @@ export const PdfFlipbook = ({ pdfUrl, title }: PdfFlipbookProps) => {
             {/* Pages */}
             <div
               className="flex items-center justify-center py-6 px-8 md:px-16"
-              style={{ transform: `scale(${zoom})`, transformOrigin: 'center', transition: 'transform 0.3s ease' }}
+              style={{
+                perspective: '1200px',
+                transform: `scale(${zoom})`,
+                transformOrigin: 'center',
+                transition: 'transform 0.3s ease',
+              }}
             >
               <AnimatePresence mode="wait" custom={flipDir}>
                 <motion.div
                   key={currentSpread}
                   custom={flipDir}
-                  variants={flipVariants}
+                  variants={pageVariants}
                   initial="enter"
                   animate="center"
                   exit="exit"
-                  transition={{ duration: 0.4, ease: 'easeInOut' }}
-                  className={`flex ${isSpread ? 'flex-row' : 'flex-col'} shadow-2xl rounded-lg overflow-hidden`}
-                  style={{ perspective: 1200 }}
+                  transition={{
+                    duration: 0.5,
+                    ease: [0.25, 0.1, 0.25, 1],
+                    opacity: { duration: 0.35 },
+                  }}
+                  className={`flex ${isSpread ? 'flex-row' : 'flex-col'} rounded-lg overflow-hidden`}
+                  style={{
+                    transformStyle: 'preserve-3d',
+                    boxShadow: '0 8px 40px -12px rgba(0,0,0,0.3), 0 2px 12px -4px rgba(0,0,0,0.15)',
+                  }}
                 >
-                  {/* Left page (or single page on mobile) */}
+                  {/* Left page */}
                   {pages[leftPageIdx] && (
                     <div className="relative bg-background">
                       <img
@@ -207,12 +227,18 @@ export const PdfFlipbook = ({ pdfUrl, title }: PdfFlipbookProps) => {
                       {isSpread && (
                         <div className="absolute inset-y-0 right-0 w-px bg-border" />
                       )}
+                      {/* Spine shadow for realism */}
+                      {isSpread && (
+                        <div className="absolute inset-y-0 right-0 w-6 bg-gradient-to-l from-black/10 to-transparent pointer-events-none" />
+                      )}
                     </div>
                   )}
 
-                  {/* Right page (spread mode only) */}
+                  {/* Right page */}
                   {isSpread && pages[rightPageIdx] && (
                     <div className="relative bg-background">
+                      {/* Spine shadow for realism */}
+                      <div className="absolute inset-y-0 left-0 w-6 bg-gradient-to-r from-black/10 to-transparent pointer-events-none z-10" />
                       <img
                         src={pages[rightPageIdx]}
                         alt={`Page ${rightPageIdx + 1}`}
@@ -228,7 +254,7 @@ export const PdfFlipbook = ({ pdfUrl, title }: PdfFlipbookProps) => {
             {/* Right arrow */}
             <button
               onClick={nextPage}
-              disabled={!canGoNext}
+              disabled={!canGoNext || isFlipping}
               className="absolute right-1 md:right-4 z-10 p-2 rounded-full bg-background/80 border border-border text-foreground hover:bg-background transition-colors disabled:opacity-20 disabled:cursor-not-allowed"
             >
               <ChevronRight className="w-5 h-5" />

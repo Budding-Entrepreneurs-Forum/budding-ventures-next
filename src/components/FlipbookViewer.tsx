@@ -35,6 +35,7 @@ export const FlipbookViewer = ({ newsletter, onClose }: FlipbookViewerProps) => 
   const containerRef = useRef<HTMLDivElement>(null);
   const isMobile = useIsMobile();
   const isDesktop = !isMobile;
+  const hasPdf = !!newsletter.pdfUrl;
 
   // Determine if current spread shows as single or double page
   // Cover (index 0) = single, last page = single, middle = spread

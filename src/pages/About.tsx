@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { Layout } from '@/components/layout/Layout';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { GlassCard } from '@/components/ui/GlassCard';
+import { SkeletonImage } from '@/components/ui/SkeletonImage';
 import { Linkedin, Users, Lightbulb, Target, BookOpen } from 'lucide-react';
 
 // Faculty images
@@ -146,10 +147,12 @@ const About = () => {
                     {person.position}
                   </span>
                   <div className="w-32 h-32 rounded-full overflow-hidden mx-auto mb-4 border-4 border-primary/20">
-                    <img
+                    <SkeletonImage
                       src={person.image}
                       alt={person.name}
                       className="w-full h-full object-cover"
+                      wrapperClassName="w-full h-full"
+                      skeletonClassName="rounded-full"
                     />
                   </div>
                   <h3 className="font-display text-xl font-bold text-foreground">{person.name}</h3>

@@ -268,4 +268,10 @@
   .delay-300 { animation-delay: 300ms; }
   .delay-400 { animation-delay: 400ms; }
   .delay-500 { animation-delay: 500ms; }
+
+  @keyframes shimmer {
+    100% {
+      transform: translateX(200%);
+    }
+  }
 }

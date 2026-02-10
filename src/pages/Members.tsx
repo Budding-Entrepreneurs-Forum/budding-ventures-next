@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Layout } from '@/components/layout/Layout';
 import { SectionHeading } from '@/components/ui/SectionHeading';
+import { SkeletonImage } from '@/components/ui/SkeletonImage';
 import { Linkedin, Mail } from 'lucide-react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { facultyLeadership, coreCommitteeMembers, leadershipYears } from '@/data/departmentsData';
@@ -82,10 +83,12 @@ const MemberCard = ({ member, index }: { member: typeof coreCommitteeMembers[0];
     <div className="relative bg-card rounded-2xl overflow-hidden border border-border/50 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
       {/* Image Container */}
       <div className="aspect-[3/4] overflow-hidden bg-secondary">
-        <img
+        <SkeletonImage
           src={memberImage}
           alt={member.name}
           className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+          wrapperClassName="w-full h-full"
+          skeletonClassName="rounded-none"
           loading="lazy"
         />
       </div>
@@ -135,10 +138,12 @@ const FacultyCard = ({ faculty, index }: { faculty: typeof facultyLeadership[0];
           {faculty.tag}
         </span>
         <div className="w-32 h-32 md:w-40 md:h-40 rounded-xl overflow-hidden bg-secondary border-2 border-border">
-          <img
+          <SkeletonImage
             src={facultyImage}
             alt={faculty.name}
             className="w-full h-full object-cover object-top"
+            wrapperClassName="w-full h-full"
+            skeletonClassName="rounded-xl"
             loading="lazy"
           />
         </div>

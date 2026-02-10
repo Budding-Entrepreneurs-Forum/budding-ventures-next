@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Layout } from '@/components/layout/Layout';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { GlassCard } from '@/components/ui/GlassCard';
+import { SkeletonImage } from '@/components/ui/SkeletonImage';
 import { BookOpen } from 'lucide-react';
 import { newsletters } from '@/data/newslettersData';
 import { FlipbookViewer } from '@/components/FlipbookViewer';
@@ -64,10 +65,12 @@ const Blog = () => {
                     className="aspect-[3/4] overflow-hidden relative"
                     onClick={() => setSelectedNewsletter(item.id)}
                   >
-                    <img
+                    <SkeletonImage
                       src={item.coverImage}
                       alt={item.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      wrapperClassName="w-full h-full"
+                      skeletonClassName="rounded-none"
                       loading="lazy"
                     />
                     {/* Hover overlay */}

@@ -2,6 +2,7 @@ import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Layout } from '@/components/layout/Layout';
 import { SectionHeading } from '@/components/ui/SectionHeading';
+import { SkeletonImage } from '@/components/ui/SkeletonImage';
 import { departments } from '@/data/departmentsData';
 import { Linkedin, ArrowLeft, Users } from 'lucide-react';
 
@@ -109,10 +110,12 @@ const DepartmentDetail = () => {
                 <div className="relative bg-card rounded-2xl overflow-hidden border-2 border-primary/20 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
                   {/* Large Image */}
                   <div className="aspect-[3/4] overflow-hidden bg-secondary">
-                    <img
+                    <SkeletonImage
                       src={head.image}
                       alt={head.name}
                       className="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-105"
+                      wrapperClassName="w-full h-full"
+                      skeletonClassName="rounded-none"
                       loading="lazy"
                     />
                   </div>

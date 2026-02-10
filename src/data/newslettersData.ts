@@ -194,6 +194,7 @@ export const newsletters: Newsletter[] = [
     date: 'September 2024',
     sortDate: '2024-09',
     coverImage: socialPlaybook,
+    pdfUrl: '/pdfs/social-media-playbook.pdf',
     description: 'Essential social media strategies and playbooks for startup success.',
   },
   {

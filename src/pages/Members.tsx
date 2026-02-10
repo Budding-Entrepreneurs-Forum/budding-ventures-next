@@ -138,10 +138,12 @@ const FacultyCard = ({ faculty, index }: { faculty: typeof facultyLeadership[0];
           {faculty.tag}
         </span>
         <div className="w-32 h-32 md:w-40 md:h-40 rounded-xl overflow-hidden bg-secondary border-2 border-border">
-          <img
+          <SkeletonImage
             src={facultyImage}
             alt={faculty.name}
             className="w-full h-full object-cover object-top"
+            wrapperClassName="w-full h-full"
+            skeletonClassName="rounded-xl"
             loading="lazy"
           />
         </div>

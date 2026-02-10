@@ -316,6 +316,7 @@ export const newsletters: Newsletter[] = [
     date: 'July 2023',
     sortDate: '2023-07',
     coverImage: evaluatingBusiness,
+    pdfUrl: '/pdfs/evaluating-business.pdf',
     description: 'Frameworks and methods for evaluating business opportunities effectively.',
   },
   {

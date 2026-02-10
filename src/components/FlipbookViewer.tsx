@@ -34,55 +34,40 @@ export const FlipbookViewer = ({ newsletter, onClose }: FlipbookViewerProps) => 
   const [isFlipping, setIsFlipping] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const isMobile = useIsMobile();
-  const isSpread = !isMobile;
-  const hasPdf = !!newsletter.pdfUrl;
+  const isDesktop = !isMobile;
 
-  // Load PDF pages or fall back to cover image
-  useEffect(() => {
-    if (!hasPdf) {
-      setPages([newsletter.coverImage]);
-      setTotalPages(1);
-      setIsLoading(false);
-      return;
+  // Determine if current spread shows as single or double page
+  // Cover (index 0) = single, last page = single, middle = spread
+  const isCoverPage = currentSpread === 0;
+  const isLastSingle = isDesktop && totalPages > 1 && (() => {
+    // Check if current spread would show the last page as a lone right page
+    if (currentSpread === 0) return false; // cover handled separately
+    const rightIdx = currentSpread + 1;
+    return rightIdx >= totalPages;
+  })();
+  const isSpread = isDesktop && !isCoverPage && !isLastSingle;
+
+  // Navigation helpers
+  const getStepSize = (fromSpread: number, direction: 'next' | 'prev') => {
+    if (!isDesktop) return 1;
+    if (direction === 'next') {
+      if (fromSpread === 0) return 1; // cover is single, next goes to page index 1
+      // From a spread, step by 2
+      return 2;
+    } else {
+      // Going back
+      if (fromSpread <= 1) return fromSpread; // going back to cover
+      // Check if landing would be a lone page
+      const target = fromSpread - 2;
+      if (target === 0) return fromSpread; // jump back to cover (single)
+      return 2;
     }
+  };
 
-    let cancelled = false;
-    const loadPdf = async () => {
-      try {
-        const pdf = await pdfjsLib.getDocument(newsletter.pdfUrl!).promise;
-        if (cancelled) return;
-        setTotalPages(pdf.numPages);
-        const rendered: string[] = [];
-        for (let i = 1; i <= pdf.numPages; i++) {
-          const page = await pdf.getPage(i);
-          const scale = 2;
-          const viewport = page.getViewport({ scale });
-          const canvas = document.createElement('canvas');
-          canvas.width = viewport.width;
-          canvas.height = viewport.height;
-          const ctx = canvas.getContext('2d')!;
-          await page.render({ canvasContext: ctx, viewport }).promise;
-          rendered.push(canvas.toDataURL('image/jpeg', 0.85));
-          if (cancelled) return;
-        }
-        setPages(rendered);
-        setIsLoading(false);
-      } catch (err) {
-        console.error('PDF load error:', err);
-        // Fallback to cover
-        setPages([newsletter.coverImage]);
-        setTotalPages(1);
-        setIsLoading(false);
-      }
-    };
-    loadPdf();
-    return () => { cancelled = true; };
-  }, [newsletter.pdfUrl, newsletter.coverImage, hasPdf]);
-
-  // Navigation
-  const canGoNext = isSpread
-    ? currentSpread + 2 < totalPages
-    : currentSpread + 1 < totalPages;
+  const canGoNext = (() => {
+    const step = getStepSize(currentSpread, 'next');
+    return currentSpread + step < totalPages;
+  })();
   const canGoPrev = currentSpread > 0;
 
   const nextPage = useCallback(() => {

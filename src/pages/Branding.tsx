@@ -15,11 +15,12 @@ import {
   Star,
   Lightbulb,
   ArrowRight,
-  
   Quote,
   ExternalLink,
   Sparkles,
-  Zap
+  Zap,
+  Maximize2,
+  Download,
 } from 'lucide-react';
 import { useRef } from 'react';
 import { Link } from 'react-router-dom';

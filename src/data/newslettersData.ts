@@ -149,6 +149,7 @@ export const newsletters: Newsletter[] = [
     date: 'January 2025',
     sortDate: '2025-01',
     coverImage: passionHustles,
+    pdfUrl: '/pdfs/passion-side-hustles.pdf',
     description: 'How passion-driven side projects have evolved into lasting business legacies.',
   },
   {

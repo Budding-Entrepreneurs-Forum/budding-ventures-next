@@ -34,72 +34,65 @@ export const FlipbookViewer = ({ newsletter, onClose }: FlipbookViewerProps) => 
   const [isFlipping, setIsFlipping] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const isMobile = useIsMobile();
-  const isSpread = !isMobile;
-  const hasPdf = !!newsletter.pdfUrl;
+  const isDesktop = !isMobile;
 
-  // Load PDF pages or fall back to cover image
-  useEffect(() => {
-    if (!hasPdf) {
-      setPages([newsletter.coverImage]);
-      setTotalPages(1);
-      setIsLoading(false);
-      return;
+  // Determine if current spread shows as single or double page
+  // Cover (index 0) = single, last page = single, middle = spread
+  const isCoverPage = currentSpread === 0;
+  const isLastSingle = isDesktop && totalPages > 1 && (() => {
+    // Check if current spread would show the last page as a lone right page
+    if (currentSpread === 0) return false; // cover handled separately
+    const rightIdx = currentSpread + 1;
+    return rightIdx >= totalPages;
+  })();
+  const isSpread = isDesktop && !isCoverPage && !isLastSingle;
+
+  // Navigation helpers
+  const getStepSize = (fromSpread: number, direction: 'next' | 'prev') => {
+    if (!isDesktop) return 1;
+    if (direction === 'next') {
+      if (fromSpread === 0) return 1; // cover is single, next goes to page index 1
+      // From a spread, step by 2
+      return 2;
+    } else {
+      // Going back
+      if (fromSpread <= 1) return fromSpread; // going back to cover
+      // Check if landing would be a lone page
+      const target = fromSpread - 2;
+      if (target === 0) return fromSpread; // jump back to cover (single)
+      return 2;
     }
+  };
 
-    let cancelled = false;
-    const loadPdf = async () => {
-      try {
-        const pdf = await pdfjsLib.getDocument(newsletter.pdfUrl!).promise;
-        if (cancelled) return;
-        setTotalPages(pdf.numPages);
-        const rendered: string[] = [];
-        for (let i = 1; i <= pdf.numPages; i++) {
-          const page = await pdf.getPage(i);
-          const scale = 2;
-          const viewport = page.getViewport({ scale });
-          const canvas = document.createElement('canvas');
-          canvas.width = viewport.width;
-          canvas.height = viewport.height;
-          const ctx = canvas.getContext('2d')!;
-          await page.render({ canvasContext: ctx, viewport }).promise;
-          rendered.push(canvas.toDataURL('image/jpeg', 0.85));
-          if (cancelled) return;
-        }
-        setPages(rendered);
-        setIsLoading(false);
-      } catch (err) {
-        console.error('PDF load error:', err);
-        // Fallback to cover
-        setPages([newsletter.coverImage]);
-        setTotalPages(1);
-        setIsLoading(false);
-      }
-    };
-    loadPdf();
-    return () => { cancelled = true; };
-  }, [newsletter.pdfUrl, newsletter.coverImage, hasPdf]);
-
-  // Navigation
-  const canGoNext = isSpread
-    ? currentSpread + 2 < totalPages
-    : currentSpread + 1 < totalPages;
+  const canGoNext = (() => {
+    const step = getStepSize(currentSpread, 'next');
+    return currentSpread + step < totalPages;
+  })();
   const canGoPrev = currentSpread > 0;
 
   const nextPage = useCallback(() => {
     if (!canGoNext || isFlipping) return;
     setFlipDir('next');
     setIsFlipping(true);
-    setCurrentSpread(s => s + (isSpread ? 2 : 1));
+    setCurrentSpread(s => {
+      if (!isDesktop) return s + 1;
+      if (s === 0) return 1; // cover → first spread
+      return s + 2;
+    });
     setTimeout(() => setIsFlipping(false), 600);
-  }, [canGoNext, isSpread, isFlipping]);
+  }, [canGoNext, isDesktop, isFlipping]);
 
   const prevPage = useCallback(() => {
     if (!canGoPrev || isFlipping) return;
     setFlipDir('prev');
     setIsFlipping(true);
-    setCurrentSpread(s => Math.max(0, s - (isSpread ? 2 : 1)));
+    setCurrentSpread(s => {
+      if (!isDesktop) return Math.max(0, s - 1);
+      if (s <= 2) return 0; // back to cover
+      return s - 2;
+    });
     setTimeout(() => setIsFlipping(false), 600);
-  }, [canGoPrev, isSpread, isFlipping]);
+  }, [canGoPrev, isDesktop, isFlipping]);
 
   // Keyboard
   useEffect(() => {
@@ -133,27 +126,31 @@ export const FlipbookViewer = ({ newsletter, onClose }: FlipbookViewerProps) => 
   // Page info
   const leftPageIdx = currentSpread;
   const rightPageIdx = currentSpread + 1;
+  const showAsSingle = isCoverPage || isLastSingle || !isDesktop;
   const displayStart = leftPageIdx + 1;
-  const displayEnd = isSpread && rightPageIdx < totalPages ? rightPageIdx + 1 : displayStart;
+  const displayEnd = !showAsSingle && rightPageIdx < totalPages ? rightPageIdx + 1 : displayStart;
 
-  // Animation variants
+  // Directional animation variants — right-to-left for next, left-to-right for prev
   const pageVariants = {
     enter: (dir: 'next' | 'prev') => ({
       opacity: 0,
-      rotateY: dir === 'next' ? -15 : 15,
-      scale: 0.96,
+      x: dir === 'next' ? 60 : -60,
+      rotateY: dir === 'next' ? -12 : 12,
+      scale: 0.97,
       filter: 'brightness(0.85)',
     }),
     center: {
       opacity: 1,
+      x: 0,
       rotateY: 0,
       scale: 1,
       filter: 'brightness(1)',
     },
     exit: (dir: 'next' | 'prev') => ({
       opacity: 0,
-      rotateY: dir === 'next' ? 15 : -15,
-      scale: 0.96,
+      x: dir === 'next' ? -60 : 60,
+      rotateY: dir === 'next' ? 12 : -12,
+      scale: 0.97,
       filter: 'brightness(0.85)',
     }),
   };
@@ -227,13 +224,13 @@ export const FlipbookViewer = ({ newsletter, onClose }: FlipbookViewerProps) => 
                       ease: [0.25, 0.1, 0.25, 1],
                       opacity: { duration: 0.35 },
                     }}
-                    className={`flex ${isSpread ? 'flex-row' : 'flex-col'} rounded-lg overflow-hidden`}
+                    className={`flex ${showAsSingle ? 'flex-col items-center' : 'flex-row'} rounded-lg overflow-hidden`}
                     style={{
                       transformStyle: 'preserve-3d',
                       boxShadow: '0 8px 40px -12px rgba(0,0,0,0.4), 0 2px 12px -4px rgba(0,0,0,0.2)',
                     }}
                   >
-                    {/* Left page */}
+                    {/* Left / Single page */}
                     {pages[leftPageIdx] && (
                       <div className="relative bg-background">
                         <img
@@ -242,7 +239,7 @@ export const FlipbookViewer = ({ newsletter, onClose }: FlipbookViewerProps) => 
                           className="max-h-[75vh] w-auto object-contain select-none"
                           draggable={false}
                         />
-                        {isSpread && (
+                        {!showAsSingle && (
                           <>
                             <div className="absolute inset-y-0 right-0 w-px bg-foreground/10" />
                             <div className="absolute inset-y-0 right-0 w-6 bg-gradient-to-l from-black/10 to-transparent pointer-events-none" />
@@ -251,8 +248,8 @@ export const FlipbookViewer = ({ newsletter, onClose }: FlipbookViewerProps) => 
                       </div>
                     )}
 
-                    {/* Right page */}
-                    {isSpread && pages[rightPageIdx] && (
+                    {/* Right page (only in spread mode) */}
+                    {!showAsSingle && pages[rightPageIdx] && (
                       <div className="relative bg-background">
                         <div className="absolute inset-y-0 left-0 w-6 bg-gradient-to-r from-black/10 to-transparent pointer-events-none z-10" />
                         <img

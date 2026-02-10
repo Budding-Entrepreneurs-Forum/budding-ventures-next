@@ -553,43 +553,53 @@ const Branding = () => {
             viewport={{ once: true }}
             className="max-w-4xl mx-auto"
           >
-            <GlassCard className="p-0 overflow-hidden">
-              <div className="aspect-[3/4] md:aspect-[4/3] w-full">
+            <GlassCard className="p-0 overflow-hidden cursor-pointer group" hover>
+              <div
+                className="aspect-[3/4] md:aspect-[4/3] w-full relative overflow-hidden"
+                onClick={() => setShowReport(true)}
+              >
+                {/* Show first page preview via iframe (non-interactive) */}
                 <iframe
-                  src="/pdfs/branding-report.pdf"
-                  className="w-full h-full border-0"
-                  title="Branding Team Report"
+                  src="/pdfs/branding-report.pdf#page=1&toolbar=0&navpanes=0&scrollbar=0"
+                  className="w-full h-full border-0 pointer-events-none"
+                  title="Branding Team Report Preview"
                 />
+                {/* Hover overlay */}
+                <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/40 transition-colors duration-300 flex items-center justify-center">
+                  <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center gap-2">
+                    <div className="p-4 rounded-full bg-primary text-primary-foreground">
+                      <BookOpen className="w-8 h-8" />
+                    </div>
+                    <span className="text-base font-semibold text-primary-foreground">Open Flipbook</span>
+                  </div>
+                </div>
               </div>
               <div className="p-6 flex items-center justify-between border-t border-border">
                 <div>
                   <h4 className="font-display font-semibold text-foreground">Budding Branding Team Report</h4>
                   <p className="text-sm text-muted-foreground">Official branding performance & portfolio report</p>
                 </div>
-                <div className="flex items-center gap-2">
-                  <a
-                    href="/pdfs/branding-report.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 text-primary rounded-lg text-sm font-medium hover:bg-primary/20 transition-colors"
-                  >
-                    <Maximize2 className="w-4 h-4" />
-                    Fullscreen
-                  </a>
-                  <a
-                    href="/pdfs/branding-report.pdf"
-                    download
-                    className="inline-flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground rounded-lg text-sm font-medium hover:bg-primary/90 transition-colors"
-                  >
-                    <Download className="w-4 h-4" />
-                    Download
-                  </a>
-                </div>
+                <button
+                  onClick={() => setShowReport(true)}
+                  className="inline-flex items-center gap-2 px-5 py-2.5 bg-primary text-primary-foreground rounded-lg text-sm font-medium hover:bg-primary/90 transition-colors"
+                >
+                  <BookOpen className="w-4 h-4" />
+                  Read Now
+                </button>
               </div>
             </GlassCard>
           </motion.div>
         </div>
       </section>
+
+      {/* Branding Report Flipbook Modal */}
+      {showReport && (
+        <PdfFlipbook
+          pdfUrl="/pdfs/branding-report.pdf"
+          title="Budding Branding Team Report"
+          onClose={() => setShowReport(false)}
+        />
+      )}
 
       {/* CTA Section */}
       <section className="py-24 relative overflow-hidden">

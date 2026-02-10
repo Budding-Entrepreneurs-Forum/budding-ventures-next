@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Layout } from '@/components/layout/Layout';
 import { SectionHeading } from '@/components/ui/SectionHeading';
+import { SkeletonImage } from '@/components/ui/SkeletonImage';
 import { Linkedin, Mail } from 'lucide-react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { facultyLeadership, coreCommitteeMembers, leadershipYears } from '@/data/departmentsData';

@@ -68,8 +68,6 @@ export const PdfFlipbook = ({ pdfUrl, title }: PdfFlipbookProps) => {
     return () => { cancelled = true; };
   }, [pdfUrl]);
 
-  // Current page index (for display)
-  const currentPage = currentSpread;
 
   // Navigation
   const canGoNext = isSpread

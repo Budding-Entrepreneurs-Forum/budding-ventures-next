@@ -83,10 +83,12 @@ const MemberCard = ({ member, index }: { member: typeof coreCommitteeMembers[0];
     <div className="relative bg-card rounded-2xl overflow-hidden border border-border/50 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
       {/* Image Container */}
       <div className="aspect-[3/4] overflow-hidden bg-secondary">
-        <img
+        <SkeletonImage
           src={memberImage}
           alt={member.name}
           className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+          wrapperClassName="w-full h-full"
+          skeletonClassName="rounded-none"
           loading="lazy"
         />
       </div>

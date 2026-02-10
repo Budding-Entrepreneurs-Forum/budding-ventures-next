@@ -307,6 +307,7 @@ export const newsletters: Newsletter[] = [
     date: 'August 2023',
     sortDate: '2023-08',
     coverImage: blueOcean,
+    pdfUrl: '/pdfs/blue-ocean-strategies.pdf',
     description: 'Applying blue ocean strategies to create uncontested market spaces.',
   },
   {

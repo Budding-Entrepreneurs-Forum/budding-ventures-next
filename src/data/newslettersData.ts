@@ -50,6 +50,7 @@ export const newsletters: Newsletter[] = [
     date: 'December 2025',
     sortDate: '2025-12',
     coverImage: companiesIndia,
+    pdfUrl: '/pdfs/companies-that-built-india.pdf',
     description: 'Exploring the companies that have shaped India across seven major sectors and their impact on the economy.',
   },
   {
@@ -58,6 +59,7 @@ export const newsletters: Newsletter[] = [
     date: 'November 2025',
     sortDate: '2025-11',
     coverImage: mapOfMithai,
+    pdfUrl: '/pdfs/map-of-mithai.pdf',
     description: 'Discovering how the traditional Indian sweets industry is embracing innovation while preserving cultural heritage.',
   },
   {
@@ -66,6 +68,7 @@ export const newsletters: Newsletter[] = [
     date: 'October 2025',
     sortDate: '2025-10',
     coverImage: modernDefense,
+    pdfUrl: '/pdfs/modern-defense-technologies.pdf',
     description: 'An in-depth look at how modern defense technologies are shaping the global security landscape.',
   },
   {
@@ -82,6 +85,7 @@ export const newsletters: Newsletter[] = [
     date: 'August 2025',
     sortDate: '2025-08',
     coverImage: genZ,
+    pdfUrl: '/pdfs/gen-z-business-revolution.pdf',
     description: 'How Generation Z is reshaping the business world with fresh ideas and digital-first approaches.',
   },
   {
@@ -90,6 +94,7 @@ export const newsletters: Newsletter[] = [
     date: 'July 2025',
     sortDate: '2025-07',
     coverImage: synergyStories,
+    pdfUrl: '/pdfs/synergy-stories.pdf',
     description: 'Stories of successful brand collaborations and partnerships that created remarkable synergies.',
   },
   {
@@ -106,6 +111,7 @@ export const newsletters: Newsletter[] = [
     date: 'May 2025',
     sortDate: '2025-05',
     coverImage: travel,
+    pdfUrl: '/pdfs/entrepreneurship-in-travel.pdf',
     description: 'How entrepreneurship is transforming the travel and tourism industry worldwide.',
   },
   {
@@ -114,6 +120,7 @@ export const newsletters: Newsletter[] = [
     date: 'April 2025',
     sortDate: '2025-04',
     coverImage: agriculture,
+    pdfUrl: '/pdfs/agriculture-sector.pdf',
     description: 'Exploring entrepreneurial opportunities and innovations in the agriculture sector.',
   },
   {
@@ -122,6 +129,7 @@ export const newsletters: Newsletter[] = [
     date: 'March 2025',
     sortDate: '2025-03',
     coverImage: ideasToIncome,
+    pdfUrl: '/pdfs/success-ideas-to-income.pdf',
     description: 'The journey of turning innovative ideas into successful income-generating ventures.',
   },
   {
@@ -130,6 +138,7 @@ export const newsletters: Newsletter[] = [
     date: 'February 2025',
     sortDate: '2025-02',
     coverImage: businessModel,
+    pdfUrl: '/pdfs/business-model-and-business.pdf',
     description: 'Understanding different business models and how they drive sustainable growth.',
   },
   {

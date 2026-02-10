@@ -550,7 +550,6 @@ const Branding = () => {
 
           <AnimatePresence mode="wait">
             {!showFlipbook ? (
-              {/* Thumbnail Card */}
               <motion.div
                 key="thumbnail"
                 initial={{ opacity: 0, y: 30 }}
@@ -565,7 +564,6 @@ const Branding = () => {
                   className="group relative rounded-2xl overflow-hidden border border-border bg-card cursor-pointer shadow-lg"
                   onClick={() => setShowFlipbook(true)}
                 >
-                  {/* Cover Image */}
                   <div className="aspect-[3/4] overflow-hidden">
                     <img
                       src={brandingReportCover}
@@ -575,7 +573,6 @@ const Branding = () => {
                     />
                   </div>
 
-                  {/* Hover Overlay with Read Now CTA */}
                   <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col items-center justify-center gap-3">
                     <motion.div
                       initial={{ scale: 0.8, opacity: 0 }}
@@ -589,7 +586,6 @@ const Branding = () => {
                     </span>
                   </div>
 
-                  {/* Bottom Label */}
                   <div className="p-4 text-center border-t border-border">
                     <h3 className="font-display font-semibold text-foreground text-sm">
                       Branding Team Report 2025
@@ -601,7 +597,6 @@ const Branding = () => {
                 </motion.div>
               </motion.div>
             ) : (
-              {/* Inline Flipbook */}
               <motion.div
                 key="flipbook"
                 initial={{ opacity: 0, y: 20 }}

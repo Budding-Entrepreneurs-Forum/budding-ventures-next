@@ -77,6 +77,7 @@ export const newsletters: Newsletter[] = [
     date: 'September 2025',
     sortDate: '2025-09',
     coverImage: beyondIT,
+    pdfUrl: '/pdfs/beyond-it-startups.pdf',
     description: "Uncovering India's overlooked sectors beyond IT and startups that hold immense potential.",
   },
   {
@@ -103,6 +104,7 @@ export const newsletters: Newsletter[] = [
     date: 'June 2025',
     sortDate: '2025-06',
     coverImage: boxOffice,
+    pdfUrl: '/pdfs/business-at-box-office.pdf',
     description: 'The intersection of business and entertainment — exploring the economics behind the box office.',
   },
   {
@@ -147,6 +149,7 @@ export const newsletters: Newsletter[] = [
     date: 'January 2025',
     sortDate: '2025-01',
     coverImage: passionHustles,
+    pdfUrl: '/pdfs/passion-side-hustles.pdf',
     description: 'How passion-driven side projects have evolved into lasting business legacies.',
   },
   {
@@ -155,6 +158,7 @@ export const newsletters: Newsletter[] = [
     date: 'January 2025',
     sortDate: '2025-01',
     coverImage: nextgen,
+    pdfUrl: '/pdfs/nextgen-entrepreneurs.pdf',
     description: 'Spotlight on the next generation of entrepreneurs shaping the future of business.',
   },
   {
@@ -163,6 +167,7 @@ export const newsletters: Newsletter[] = [
     date: 'December 2024',
     sortDate: '2024-12',
     coverImage: nicheMarkets,
+    pdfUrl: '/pdfs/entrepreneurship-niche-markets.pdf',
     description: 'Discovering hidden opportunities in niche markets for aspiring entrepreneurs.',
   },
   {
@@ -171,6 +176,7 @@ export const newsletters: Newsletter[] = [
     date: 'November 2024',
     sortDate: '2024-11',
     coverImage: talesOfPassion,
+    pdfUrl: '/pdfs/tales-of-passion.pdf',
     description: 'Inspiring stories of entrepreneurs driven by passion, persistence and a clear sense of purpose.',
   },
   {
@@ -179,6 +185,7 @@ export const newsletters: Newsletter[] = [
     date: 'October 2024',
     sortDate: '2024-10',
     coverImage: carnival,
+    pdfUrl: '/pdfs/entrepreneurial-carnival.pdf',
     description: 'A celebration of ideas meeting opportunity in the entrepreneurial ecosystem.',
   },
   {
@@ -187,6 +194,7 @@ export const newsletters: Newsletter[] = [
     date: 'September 2024',
     sortDate: '2024-09',
     coverImage: socialPlaybook,
+    pdfUrl: '/pdfs/social-media-playbook.pdf',
     description: 'Essential social media strategies and playbooks for startup success.',
   },
   {
@@ -195,6 +203,7 @@ export const newsletters: Newsletter[] = [
     date: 'August 2024',
     sortDate: '2024-08',
     coverImage: budget2024,
+    pdfUrl: '/pdfs/budget-2024.pdf',
     description: 'Analysis of Budget 2024 and its impact on the entrepreneurial landscape.',
   },
   {
@@ -203,6 +212,7 @@ export const newsletters: Newsletter[] = [
     date: 'July 2024',
     sortDate: '2024-07',
     coverImage: unlockingCapital,
+    pdfUrl: '/pdfs/unlocking-capital.pdf',
     description: 'Strategies and insights for unlocking capital for your business ventures.',
   },
   {
@@ -211,6 +221,7 @@ export const newsletters: Newsletter[] = [
     date: 'June 2024',
     sortDate: '2024-06',
     coverImage: gigEconomy,
+    pdfUrl: '/pdfs/gig-economy.pdf',
     description: 'Exploring the rapidly growing gig economy and its implications for entrepreneurs.',
   },
   {

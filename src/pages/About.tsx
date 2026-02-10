@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { Layout } from '@/components/layout/Layout';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { GlassCard } from '@/components/ui/GlassCard';
+import { SkeletonImage } from '@/components/ui/SkeletonImage';
 import { Linkedin, Users, Lightbulb, Target, BookOpen } from 'lucide-react';
 
 // Faculty images

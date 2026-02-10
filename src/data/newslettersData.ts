@@ -230,6 +230,7 @@ export const newsletters: Newsletter[] = [
     date: 'May 2024',
     sortDate: '2024-05',
     coverImage: behindTank,
+    pdfUrl: '/pdfs/behind-the-tank.pdf',
     description: 'A behind-the-scenes look at the world of venture capital and startup pitching.',
   },
   {
@@ -270,6 +271,7 @@ export const newsletters: Newsletter[] = [
     date: 'December 2023',
     sortDate: '2023-12',
     coverImage: newAge,
+    pdfUrl: '/pdfs/new-age-entrepreneurship.pdf',
     description: 'Exploring the new age of entrepreneurship driven by technology and innovation.',
   },
   {
@@ -278,6 +280,7 @@ export const newsletters: Newsletter[] = [
     date: 'November 2023',
     sortDate: '2023-11',
     coverImage: powerMoney,
+    pdfUrl: '/pdfs/power-money-politics.pdf',
     description: 'The intricate relationship between power, money, and politics in business.',
   },
   {
@@ -286,6 +289,7 @@ export const newsletters: Newsletter[] = [
     date: 'October 2023',
     sortDate: '2023-10',
     coverImage: startupValuation,
+    pdfUrl: '/pdfs/startup-valuation.pdf',
     description: 'Understanding startup valuation methodologies and what drives company worth.',
   },
   {
@@ -294,6 +298,7 @@ export const newsletters: Newsletter[] = [
     date: 'September 2023',
     sortDate: '2023-09',
     coverImage: smartCity,
+    pdfUrl: '/pdfs/smart-city-innovation.pdf',
     description: 'How smart city innovations are creating new entrepreneurial opportunities.',
   },
   {
@@ -302,6 +307,7 @@ export const newsletters: Newsletter[] = [
     date: 'August 2023',
     sortDate: '2023-08',
     coverImage: blueOcean,
+    pdfUrl: '/pdfs/blue-ocean-strategies.pdf',
     description: 'Applying blue ocean strategies to create uncontested market spaces.',
   },
   {
@@ -310,6 +316,7 @@ export const newsletters: Newsletter[] = [
     date: 'July 2023',
     sortDate: '2023-07',
     coverImage: evaluatingBusiness,
+    pdfUrl: '/pdfs/evaluating-business.pdf',
     description: 'Frameworks and methods for evaluating business opportunities effectively.',
   },
   {
@@ -318,6 +325,7 @@ export const newsletters: Newsletter[] = [
     date: 'June 2023',
     sortDate: '2023-06',
     coverImage: metaverse,
+    pdfUrl: '/pdfs/metaverse.pdf',
     description: 'Exploring the boundless possibilities of the metaverse for entrepreneurs.',
   },
 ];

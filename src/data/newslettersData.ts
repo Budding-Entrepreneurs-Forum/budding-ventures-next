@@ -203,6 +203,7 @@ export const newsletters: Newsletter[] = [
     date: 'August 2024',
     sortDate: '2024-08',
     coverImage: budget2024,
+    pdfUrl: '/pdfs/budget-2024.pdf',
     description: 'Analysis of Budget 2024 and its impact on the entrepreneurial landscape.',
   },
   {

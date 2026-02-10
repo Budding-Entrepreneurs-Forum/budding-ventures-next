@@ -158,6 +158,7 @@ export const newsletters: Newsletter[] = [
     date: 'January 2025',
     sortDate: '2025-01',
     coverImage: nextgen,
+    pdfUrl: '/pdfs/nextgen-entrepreneurs.pdf',
     description: 'Spotlight on the next generation of entrepreneurs shaping the future of business.',
   },
   {

@@ -2,6 +2,7 @@ import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Layout } from '@/components/layout/Layout';
 import { SectionHeading } from '@/components/ui/SectionHeading';
+import { SkeletonImage } from '@/components/ui/SkeletonImage';
 import { departments } from '@/data/departmentsData';
 import { Linkedin, ArrowLeft, Users } from 'lucide-react';
 

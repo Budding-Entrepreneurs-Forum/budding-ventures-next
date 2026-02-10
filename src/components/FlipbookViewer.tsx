@@ -74,17 +74,25 @@ export const FlipbookViewer = ({ newsletter, onClose }: FlipbookViewerProps) => 
     if (!canGoNext || isFlipping) return;
     setFlipDir('next');
     setIsFlipping(true);
-    setCurrentSpread(s => s + (isSpread ? 2 : 1));
+    setCurrentSpread(s => {
+      if (!isDesktop) return s + 1;
+      if (s === 0) return 1; // cover → first spread
+      return s + 2;
+    });
     setTimeout(() => setIsFlipping(false), 600);
-  }, [canGoNext, isSpread, isFlipping]);
+  }, [canGoNext, isDesktop, isFlipping]);
 
   const prevPage = useCallback(() => {
     if (!canGoPrev || isFlipping) return;
     setFlipDir('prev');
     setIsFlipping(true);
-    setCurrentSpread(s => Math.max(0, s - (isSpread ? 2 : 1)));
+    setCurrentSpread(s => {
+      if (!isDesktop) return Math.max(0, s - 1);
+      if (s <= 2) return 0; // back to cover
+      return s - 2;
+    });
     setTimeout(() => setIsFlipping(false), 600);
-  }, [canGoPrev, isSpread, isFlipping]);
+  }, [canGoPrev, isDesktop, isFlipping]);
 
   // Keyboard
   useEffect(() => {

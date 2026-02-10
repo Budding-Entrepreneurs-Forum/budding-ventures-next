@@ -289,6 +289,7 @@ export const newsletters: Newsletter[] = [
     date: 'October 2023',
     sortDate: '2023-10',
     coverImage: startupValuation,
+    pdfUrl: '/pdfs/startup-valuation.pdf',
     description: 'Understanding startup valuation methodologies and what drives company worth.',
   },
   {

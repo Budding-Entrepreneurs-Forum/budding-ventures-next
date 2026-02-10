@@ -176,6 +176,7 @@ export const newsletters: Newsletter[] = [
     date: 'November 2024',
     sortDate: '2024-11',
     coverImage: talesOfPassion,
+    pdfUrl: '/pdfs/tales-of-passion.pdf',
     description: 'Inspiring stories of entrepreneurs driven by passion, persistence and a clear sense of purpose.',
   },
   {

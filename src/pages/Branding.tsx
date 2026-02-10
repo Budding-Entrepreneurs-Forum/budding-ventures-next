@@ -15,11 +15,12 @@ import {
   Star,
   Lightbulb,
   ArrowRight,
-  
   Quote,
   ExternalLink,
   Sparkles,
-  Zap
+  Zap,
+  Maximize2,
+  Download,
 } from 'lucide-react';
 import { useRef } from 'react';
 import { Link } from 'react-router-dom';
@@ -521,6 +522,70 @@ const Branding = () => {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Branding Report Flipbook Section */}
+      <section className="py-24 relative">
+        <div className="container-wide mx-auto px-4 md:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <span className="inline-block px-4 py-1.5 mb-6 text-xs font-medium tracking-wider uppercase bg-primary/10 text-primary rounded-full border border-primary/20">
+              Annual Report
+            </span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-4">
+              Branding Team Report
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Explore our official branding report in an interactive flipbook format
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="max-w-4xl mx-auto"
+          >
+            <GlassCard className="p-0 overflow-hidden">
+              <div className="aspect-[3/4] md:aspect-[4/3] w-full">
+                <iframe
+                  src="/pdfs/branding-report.pdf"
+                  className="w-full h-full border-0"
+                  title="Branding Team Report"
+                />
+              </div>
+              <div className="p-6 flex items-center justify-between border-t border-border">
+                <div>
+                  <h4 className="font-display font-semibold text-foreground">Budding Branding Team Report</h4>
+                  <p className="text-sm text-muted-foreground">Official branding performance & portfolio report</p>
+                </div>
+                <div className="flex items-center gap-2">
+                  <a
+                    href="/pdfs/branding-report.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 text-primary rounded-lg text-sm font-medium hover:bg-primary/20 transition-colors"
+                  >
+                    <Maximize2 className="w-4 h-4" />
+                    Fullscreen
+                  </a>
+                  <a
+                    href="/pdfs/branding-report.pdf"
+                    download
+                    className="inline-flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground rounded-lg text-sm font-medium hover:bg-primary/90 transition-colors"
+                  >
+                    <Download className="w-4 h-4" />
+                    Download
+                  </a>
+                </div>
+              </div>
+            </GlassCard>
+          </motion.div>
         </div>
       </section>
 

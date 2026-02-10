@@ -108,7 +108,7 @@ const portfolioItems = [
 ];
 
 const Branding = () => {
-  
+  const [showFlipbook, setShowFlipbook] = useState(false);
   const heroRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: heroRef,

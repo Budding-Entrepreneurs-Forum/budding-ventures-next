@@ -185,6 +185,7 @@ export const newsletters: Newsletter[] = [
     date: 'October 2024',
     sortDate: '2024-10',
     coverImage: carnival,
+    pdfUrl: '/pdfs/entrepreneurial-carnival.pdf',
     description: 'A celebration of ideas meeting opportunity in the entrepreneurial ecosystem.',
   },
   {

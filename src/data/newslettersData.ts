@@ -325,6 +325,7 @@ export const newsletters: Newsletter[] = [
     date: 'June 2023',
     sortDate: '2023-06',
     coverImage: metaverse,
+    pdfUrl: '/pdfs/metaverse.pdf',
     description: 'Exploring the boundless possibilities of the metaverse for entrepreneurs.',
   },
 ];

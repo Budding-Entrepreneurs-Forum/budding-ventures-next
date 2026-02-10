@@ -1,9 +1,10 @@
-import { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { useRef, useState } from 'react';
+import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import { Layout } from '@/components/layout/Layout';
 import { GlassCard } from '@/components/ui/GlassCard';
 import { PdfFlipbook } from '@/components/PdfFlipbook';
 import brandingLogo from '@/assets/branding-logo.png';
+import brandingReportCover from '@/assets/branding-report-cover.png';
 import encaveLogo from '@/assets/brands/encave.jpg';
 import creatooLogo from '@/assets/brands/creatoo.jpg';
 import riwayatLogo from '@/assets/brands/riwayat.jpg';
@@ -22,6 +23,7 @@ import {
   Sparkles,
   Zap,
   BookOpen,
+  X,
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 

@@ -212,6 +212,7 @@ export const newsletters: Newsletter[] = [
     date: 'July 2024',
     sortDate: '2024-07',
     coverImage: unlockingCapital,
+    pdfUrl: '/pdfs/unlocking-capital.pdf',
     description: 'Strategies and insights for unlocking capital for your business ventures.',
   },
   {

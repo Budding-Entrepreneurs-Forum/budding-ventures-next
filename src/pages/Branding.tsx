@@ -107,7 +107,7 @@ const portfolioItems = [
 ];
 
 const Branding = () => {
-  const [showReport, setShowReport] = useState(false);
+  
   const heroRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: heroRef,

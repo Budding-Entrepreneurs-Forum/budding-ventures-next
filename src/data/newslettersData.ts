@@ -230,6 +230,7 @@ export const newsletters: Newsletter[] = [
     date: 'May 2024',
     sortDate: '2024-05',
     coverImage: behindTank,
+    pdfUrl: '/pdfs/behind-the-tank.pdf',
     description: 'A behind-the-scenes look at the world of venture capital and startup pitching.',
   },
   {

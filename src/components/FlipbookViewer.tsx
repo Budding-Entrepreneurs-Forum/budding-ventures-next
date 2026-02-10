@@ -37,6 +37,47 @@ export const FlipbookViewer = ({ newsletter, onClose }: FlipbookViewerProps) => 
   const isDesktop = !isMobile;
   const hasPdf = !!newsletter.pdfUrl;
 
+  // Load PDF pages or fall back to cover image
+  useEffect(() => {
+    if (!hasPdf) {
+      setPages([newsletter.coverImage]);
+      setTotalPages(1);
+      setIsLoading(false);
+      return;
+    }
+
+    let cancelled = false;
+    const loadPdf = async () => {
+      try {
+        const pdf = await pdfjsLib.getDocument(newsletter.pdfUrl!).promise;
+        if (cancelled) return;
+        setTotalPages(pdf.numPages);
+        const rendered: string[] = [];
+        for (let i = 1; i <= pdf.numPages; i++) {
+          const page = await pdf.getPage(i);
+          const scale = 2;
+          const viewport = page.getViewport({ scale });
+          const canvas = document.createElement('canvas');
+          canvas.width = viewport.width;
+          canvas.height = viewport.height;
+          const ctx = canvas.getContext('2d')!;
+          await page.render({ canvasContext: ctx, viewport }).promise;
+          rendered.push(canvas.toDataURL('image/jpeg', 0.85));
+          if (cancelled) return;
+        }
+        setPages(rendered);
+        setIsLoading(false);
+      } catch (err) {
+        console.error('PDF load error:', err);
+        setPages([newsletter.coverImage]);
+        setTotalPages(1);
+        setIsLoading(false);
+      }
+    };
+    loadPdf();
+    return () => { cancelled = true; };
+  }, [newsletter.pdfUrl, newsletter.coverImage, hasPdf]);
+
   // Determine if current spread shows as single or double page
   // Cover (index 0) = single, last page = single, middle = spread
   const isCoverPage = currentSpread === 0;

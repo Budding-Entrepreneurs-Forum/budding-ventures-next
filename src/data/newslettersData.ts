@@ -221,6 +221,7 @@ export const newsletters: Newsletter[] = [
     date: 'June 2024',
     sortDate: '2024-06',
     coverImage: gigEconomy,
+    pdfUrl: '/pdfs/gig-economy.pdf',
     description: 'Exploring the rapidly growing gig economy and its implications for entrepreneurs.',
   },
   {

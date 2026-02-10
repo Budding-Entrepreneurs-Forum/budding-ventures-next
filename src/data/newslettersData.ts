@@ -167,6 +167,7 @@ export const newsletters: Newsletter[] = [
     date: 'December 2024',
     sortDate: '2024-12',
     coverImage: nicheMarkets,
+    pdfUrl: '/pdfs/entrepreneurship-niche-markets.pdf',
     description: 'Discovering hidden opportunities in niche markets for aspiring entrepreneurs.',
   },
   {

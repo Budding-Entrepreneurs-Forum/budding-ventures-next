@@ -280,6 +280,7 @@ export const newsletters: Newsletter[] = [
     date: 'November 2023',
     sortDate: '2023-11',
     coverImage: powerMoney,
+    pdfUrl: '/pdfs/power-money-politics.pdf',
     description: 'The intricate relationship between power, money, and politics in business.',
   },
   {

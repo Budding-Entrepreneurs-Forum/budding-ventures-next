@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import {} from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Layout } from '@/components/layout/Layout';
 import { GlassCard } from '@/components/ui/GlassCard';

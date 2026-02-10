@@ -224,13 +224,13 @@ export const FlipbookViewer = ({ newsletter, onClose }: FlipbookViewerProps) => 
                       ease: [0.25, 0.1, 0.25, 1],
                       opacity: { duration: 0.35 },
                     }}
-                    className={`flex ${isSpread ? 'flex-row' : 'flex-col'} rounded-lg overflow-hidden`}
+                    className={`flex ${showAsSingle ? 'flex-col items-center' : 'flex-row'} rounded-lg overflow-hidden`}
                     style={{
                       transformStyle: 'preserve-3d',
                       boxShadow: '0 8px 40px -12px rgba(0,0,0,0.4), 0 2px 12px -4px rgba(0,0,0,0.2)',
                     }}
                   >
-                    {/* Left page */}
+                    {/* Left / Single page */}
                     {pages[leftPageIdx] && (
                       <div className="relative bg-background">
                         <img
@@ -239,7 +239,7 @@ export const FlipbookViewer = ({ newsletter, onClose }: FlipbookViewerProps) => 
                           className="max-h-[75vh] w-auto object-contain select-none"
                           draggable={false}
                         />
-                        {isSpread && (
+                        {!showAsSingle && (
                           <>
                             <div className="absolute inset-y-0 right-0 w-px bg-foreground/10" />
                             <div className="absolute inset-y-0 right-0 w-6 bg-gradient-to-l from-black/10 to-transparent pointer-events-none" />
@@ -248,8 +248,8 @@ export const FlipbookViewer = ({ newsletter, onClose }: FlipbookViewerProps) => 
                       </div>
                     )}
 
-                    {/* Right page */}
-                    {isSpread && pages[rightPageIdx] && (
+                    {/* Right page (only in spread mode) */}
+                    {!showAsSingle && pages[rightPageIdx] && (
                       <div className="relative bg-background">
                         <div className="absolute inset-y-0 left-0 w-6 bg-gradient-to-r from-black/10 to-transparent pointer-events-none z-10" />
                         <img

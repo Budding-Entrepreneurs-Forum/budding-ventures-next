@@ -298,6 +298,7 @@ export const newsletters: Newsletter[] = [
     date: 'September 2023',
     sortDate: '2023-09',
     coverImage: smartCity,
+    pdfUrl: '/pdfs/smart-city-innovation.pdf',
     description: 'How smart city innovations are creating new entrepreneurial opportunities.',
   },
   {

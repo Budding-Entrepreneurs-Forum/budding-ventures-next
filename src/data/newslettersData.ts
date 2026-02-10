@@ -271,6 +271,7 @@ export const newsletters: Newsletter[] = [
     date: 'December 2023',
     sortDate: '2023-12',
     coverImage: newAge,
+    pdfUrl: '/pdfs/new-age-entrepreneurship.pdf',
     description: 'Exploring the new age of entrepreneurship driven by technology and innovation.',
   },
   {

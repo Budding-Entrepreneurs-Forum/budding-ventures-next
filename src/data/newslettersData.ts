@@ -77,6 +77,7 @@ export const newsletters: Newsletter[] = [
     date: 'September 2025',
     sortDate: '2025-09',
     coverImage: beyondIT,
+    pdfUrl: '/pdfs/beyond-it-startups.pdf',
     description: "Uncovering India's overlooked sectors beyond IT and startups that hold immense potential.",
   },
   {

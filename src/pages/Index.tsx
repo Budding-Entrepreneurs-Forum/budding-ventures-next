@@ -7,6 +7,7 @@ import { Layout } from '@/components/layout/Layout';
 import heroCampus from '@/assets/hero-campus.jpg';
 import logo from '@/assets/logo.png';
 import { newsletters } from '@/data/newslettersData';
+import { ChatbaseWidget } from '@/components/ChatbaseWidget';
 
 const stats = [
   { value: '50+', label: 'Forum Members' },
@@ -63,6 +64,7 @@ const activities = [
 const Index = () => {
   return (
     <Layout>
+      <ChatbaseWidget />
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
         {/* Background Image with Overlay */}

@@ -61,7 +61,7 @@ const Contact = () => {
               </GlassCard>
 
               <div className="aspect-video rounded-xl overflow-hidden border border-border">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.502684897692!2d73.80847857519095!3d18.51610098259!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bf8d8be93aad%3A0x2c6c0c9a4b9ad1!2sMIT%20World%20Peace%20University!5e0!3m2!1sen!2sin!4v1704888000000!5m2!1sen!2sin" width="100%" height="100%" style={{ border: 0 }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" />
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d472.9056112956792!2d73.81498533714024!3d18.517832442364977!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bfb9e53a05f9%3A0x2be5e8da02be693e!2sMIT%20World%20Peace%20University%20(MIT-WPU)!5e0!3m2!1sen!2sin!4v1770808812648!5m2!1sen!2sin" width="100%" height="100%" style={{ border: 0 }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" />
               </div>
             </motion.div>
           </div>

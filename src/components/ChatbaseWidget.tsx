@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 declare global {
   interface Window {
     chatbase: any;
+    chatbaseConfig: any;
   }
 }
 
@@ -10,6 +11,14 @@ const CHATBASE_SCRIPT_ID = 'E3dWQBjyI-sDqO3DZeaQp';
 
 export const ChatbaseWidget = () => {
   useEffect(() => {
+    // Set chatbase config with brand color
+    window.chatbaseConfig = {
+      chatbotId: CHATBASE_SCRIPT_ID,
+      theme: {
+        primaryColor: '#3F72AF',
+      },
+    };
+
     // Initialize chatbase
     if (!window.chatbase || window.chatbase("getState") !== "initialized") {
       window.chatbase = (...args: any[]) => {

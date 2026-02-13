@@ -1,13 +1,15 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Sparkles, Users, Target, Lightbulb, Rocket, Award, Trophy, Handshake, BookOpen, Camera, Mic, Monitor, Megaphone, FileCheck } from 'lucide-react';
+import { ArrowRight, Sparkles, Users, Target, Lightbulb, Rocket, Award, Trophy, Handshake, BookOpen, Camera, Mic, Monitor, Megaphone, FileCheck, Loader2 } from 'lucide-react';
 import { GlassCard } from '@/components/ui/GlassCard';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { Layout } from '@/components/layout/Layout';
 import heroCampus from '@/assets/hero-campus.jpg';
 import logo from '@/assets/logo.png';
-import { newsletters } from '@/data/newslettersData';
 import { ChatbaseWidget } from '@/components/ChatbaseWidget';
+import { useNewsletters, type DbNewsletter } from '@/hooks/useNewsletters';
+import { FlipbookViewer } from '@/components/FlipbookViewer';
 
 const stats = [
   { value: '50+', label: 'Forum Members' },
@@ -62,6 +64,9 @@ const activities = [
 
 
 const Index = () => {
+  const { newsletters: latestNewsletters, isLoading: newslettersLoading } = useNewsletters(3);
+  const [selectedNewsletter, setSelectedNewsletter] = useState<DbNewsletter | null>(null);
+
   return (
     <Layout>
       <ChatbaseWidget />
@@ -384,35 +389,43 @@ const Index = () => {
             description="Stay updated with our latest insights and news from the entrepreneurship world."
           />
 
-          <div className="grid md:grid-cols-3 gap-6">
-            {newsletters.slice(0, 3).map((newsletter, index) => (
-              <motion.article
-                key={newsletter.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-              >
-                <Link to="/blog" className="group block">
-                  <GlassCard className="overflow-hidden p-0">
-                    <div className="aspect-[3/4] overflow-hidden">
-                      <img
-                        src={newsletter.coverImage}
-                        alt={newsletter.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                      />
-                    </div>
-                    <div className="p-6">
-                      <span className="text-sm text-primary">{newsletter.date}</span>
-                      <h3 className="font-display text-lg font-semibold text-foreground mt-2 group-hover:text-primary transition-colors line-clamp-2">
-                        {newsletter.title}
-                      </h3>
-                    </div>
-                  </GlassCard>
-                </Link>
-              </motion.article>
-            ))}
-          </div>
+          {newslettersLoading ? (
+            <div className="flex justify-center py-12">
+              <Loader2 className="w-8 h-8 animate-spin text-primary" />
+            </div>
+          ) : latestNewsletters.length === 0 ? (
+            <p className="text-center text-muted-foreground py-12">No newsletters published yet.</p>
+          ) : (
+            <div className="grid md:grid-cols-3 gap-6">
+              {latestNewsletters.map((newsletter, index) => (
+                <motion.article
+                  key={newsletter.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                >
+                  <div className="group block cursor-pointer" onClick={() => setSelectedNewsletter(newsletter)}>
+                    <GlassCard className="overflow-hidden p-0">
+                      <div className="aspect-[3/4] overflow-hidden">
+                        <img
+                          src={newsletter.thumbnail_url}
+                          alt={newsletter.title}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
+                      </div>
+                      <div className="p-6">
+                        <span className="text-sm text-primary">{newsletter.month} {newsletter.year}</span>
+                        <h3 className="font-display text-lg font-semibold text-foreground mt-2 group-hover:text-primary transition-colors line-clamp-2">
+                          {newsletter.title}
+                        </h3>
+                      </div>
+                    </GlassCard>
+                  </div>
+                </motion.article>
+              ))}
+            </div>
+          )}
 
           <div className="text-center mt-12">
             <Link
@@ -425,6 +438,22 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Flipbook Viewer */}
+      {selectedNewsletter && (
+        <FlipbookViewer
+          newsletter={{
+            id: selectedNewsletter.id,
+            title: selectedNewsletter.title,
+            date: `${selectedNewsletter.month} ${selectedNewsletter.year}`,
+            sortDate: '',
+            coverImage: selectedNewsletter.thumbnail_url,
+            pdfUrl: selectedNewsletter.pdf_url,
+            description: '',
+          }}
+          onClose={() => setSelectedNewsletter(null)}
+        />
+      )}
 
     </Layout>
   );

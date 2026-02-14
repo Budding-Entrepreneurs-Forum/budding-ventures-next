@@ -106,12 +106,12 @@ export const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
             <p>© {new Date().getFullYear()} Budding Entrepreneurs Forum, MIT-WPU. All rights reserved.</p>
             <div className="flex gap-6">
-              <Link to="/privacy" className="hover:text-primary transition-colors">
+              <a href="/privacy" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
                 Privacy Policy
-              </Link>
-              <Link to="/terms" className="hover:text-primary transition-colors">
+              </a>
+              <a href="/terms" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
                 Terms of Service
-              </Link>
+              </a>
             </div>
           </div>
         </div>

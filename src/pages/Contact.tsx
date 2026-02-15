@@ -1,19 +1,42 @@
 import { motion } from 'framer-motion';
 import { Layout } from '@/components/layout/Layout';
 import { GlassCard } from '@/components/ui/GlassCard';
-import { Mail, Phone, MapPin, Send, Linkedin, Instagram, Youtube, Twitter } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Linkedin, Instagram, Youtube, Twitter, Loader2 } from 'lucide-react';
 import { useState, useEffect } from 'react';
+import { supabase } from '@/integrations/supabase/client';
+import { toast } from 'sonner';
 
 const Contact = () => {
   const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
     document.title = 'Contact Us | Budding Entrepreneurs Forum MIT-WPU Pune';
   }, []);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setFormData({ name: '', email: '', subject: '', message: '' });
+    setIsSubmitting(true);
+
+    try {
+      const { data, error } = await supabase.functions.invoke('send-contact-email', {
+        body: formData,
+      });
+
+      if (error) throw error;
+
+      toast.success('Message sent successfully. We\'ll get back to you soon.', {
+        duration: 4000,
+      });
+      setFormData({ name: '', email: '', subject: '', message: '' });
+    } catch (error) {
+      console.error('Contact form error:', error);
+      toast.error('Something went wrong. Please try again later.', {
+        duration: 4000,
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -40,7 +63,9 @@ const Contact = () => {
                   <input type="email" placeholder="Your Email" value={formData.email} onChange={(e) => setFormData({...formData, email: e.target.value})} className="w-full px-4 py-3 bg-secondary border border-border rounded-lg text-sm" required />
                   <input type="text" placeholder="Subject" value={formData.subject} onChange={(e) => setFormData({...formData, subject: e.target.value})} className="w-full px-4 py-3 bg-secondary border border-border rounded-lg text-sm" required />
                   <textarea placeholder="Your Message" rows={5} value={formData.message} onChange={(e) => setFormData({...formData, message: e.target.value})} className="w-full px-4 py-3 bg-secondary border border-border rounded-lg text-sm resize-none" required />
-                  <button type="submit" className="w-full px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium flex items-center justify-center gap-2">Send Message <Send className="w-4 h-4" /></button>
+                  <button type="submit" disabled={isSubmitting} className="w-full px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed">
+                    {isSubmitting ? (<><Loader2 className="w-4 h-4 animate-spin" />Sending...</>) : (<>Send Message <Send className="w-4 h-4" /></>)}
+                  </button>
                 </form>
               </GlassCard>
             </motion.div>

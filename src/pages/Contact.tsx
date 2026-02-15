@@ -3,8 +3,13 @@ import { Layout } from '@/components/layout/Layout';
 import { GlassCard } from '@/components/ui/GlassCard';
 import { Mail, Phone, MapPin, Send, Linkedin, Instagram, Youtube, Twitter, Loader2 } from 'lucide-react';
 import { useState, useEffect } from 'react';
-import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
+import emailjs from '@emailjs/browser';
+
+// EmailJS configuration — replace these with your own values from emailjs.com
+const EMAILJS_SERVICE_ID = 'YOUR_SERVICE_ID';
+const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';
+const EMAILJS_PUBLIC_KEY = 'YOUR_PUBLIC_KEY';
 
 const Contact = () => {
   const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
@@ -19,11 +24,17 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      const { data, error } = await supabase.functions.invoke('send-contact-email', {
-        body: formData,
-      });
-
-      if (error) throw error;
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+        },
+        EMAILJS_PUBLIC_KEY
+      );
 
       toast.success('Message sent successfully. We\'ll get back to you soon.', {
         duration: 4000,

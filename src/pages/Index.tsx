@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Sparkles, Users, Target, Lightbulb, Rocket, Award, Trophy, Handshake, BookOpen, Camera, Mic, Monitor, Megaphone, FileCheck, Loader2 } from 'lucide-react';
@@ -66,6 +66,10 @@ const activities = [
 const Index = () => {
   const { newsletters: latestNewsletters, isLoading: newslettersLoading } = useNewsletters(3);
   const [selectedNewsletter, setSelectedNewsletter] = useState<DbNewsletter | null>(null);
+
+  useEffect(() => {
+    document.title = 'Budding Entrepreneurs Forum | MIT-WPU Student Startup & Innovation Community Pune';
+  }, []);
 
   return (
     <Layout>

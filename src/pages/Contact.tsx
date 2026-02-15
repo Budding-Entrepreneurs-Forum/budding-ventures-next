@@ -2,10 +2,14 @@ import { motion } from 'framer-motion';
 import { Layout } from '@/components/layout/Layout';
 import { GlassCard } from '@/components/ui/GlassCard';
 import { Mail, Phone, MapPin, Send, Linkedin, Instagram, Youtube, Twitter } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const Contact = () => {
   const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
+
+  useEffect(() => {
+    document.title = 'Contact Us | Budding Entrepreneurs Forum MIT-WPU Pune';
+  }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();

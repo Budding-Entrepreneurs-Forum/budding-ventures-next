@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { Layout } from '@/components/layout/Layout';
 import { SectionHeading } from '@/components/ui/SectionHeading';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const galleryImages = [
   'https://buddingentrepreneurs.in/wp-content/uploads/elementor/thumbs/filters_formatjpeg-qiz8vlcn2ygaoi0kdexxlgu7r6bt8o66l09zc8vps4.jpg',
@@ -14,6 +14,10 @@ const galleryImages = [
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
+  useEffect(() => {
+    document.title = 'Gallery | Budding Entrepreneurs Forum MIT-WPU – Event Photos & Moments';
+  }, []);
 
   return (
     <Layout>

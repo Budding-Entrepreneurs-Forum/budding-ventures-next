@@ -3,7 +3,7 @@ import { Layout } from '@/components/layout/Layout';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { GlassCard } from '@/components/ui/GlassCard';
 import { FileText, Download, Send } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const newsletters = [
   { title: 'Companies That Built INDIA', date: 'December 2025', image: 'https://buddingentrepreneurs.in/wp-content/uploads/2025/12/WhatsApp-Image-2025-10-26-at-16.30.16_66393760_Page_01-724x1024.jpg' },
@@ -13,6 +13,10 @@ const newsletters = [
 
 const Newsletter = () => {
   const [email, setEmail] = useState('');
+
+  useEffect(() => {
+    document.title = "Newsletter | Budding Entrepreneurs Forum – Venturer's Voyage";
+  }, []);
 
   return (
     <Layout>

@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Layout } from '@/components/layout/Layout';
 import { SectionHeading } from '@/components/ui/SectionHeading';
@@ -68,6 +69,10 @@ const values = [
 ];
 
 const VisionMission = () => {
+  useEffect(() => {
+    document.title = 'Vision & Mission | Budding Entrepreneurs Forum MIT-WPU Pune';
+  }, []);
+
   return (
     <Layout>
       {/* Hero Section */}

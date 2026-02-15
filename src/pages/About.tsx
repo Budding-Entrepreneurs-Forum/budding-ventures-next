@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Layout } from '@/components/layout/Layout';
 import { SectionHeading } from '@/components/ui/SectionHeading';
@@ -27,6 +28,10 @@ const leadership = [
 ];
 
 const About = () => {
+  useEffect(() => {
+    document.title = 'About Us | Budding Entrepreneurs Forum – MIT World Peace University Pune';
+  }, []);
+
   return (
     <Layout>
       {/* Hero Section */}

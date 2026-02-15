@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import { Layout } from '@/components/layout/Layout';
 import { GlassCard } from '@/components/ui/GlassCard';
@@ -110,6 +110,10 @@ const portfolioItems = [
 const Branding = () => {
   const [showFlipbook, setShowFlipbook] = useState(false);
   const heroRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    document.title = 'Branding Studio | Budding Entrepreneurs Forum – Student Branding & Strategy Pune';
+  }, []);
   const { scrollYProgress } = useScroll({
     target: heroRef,
     offset: ["start start", "end start"]

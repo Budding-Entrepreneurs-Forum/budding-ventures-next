@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Layout } from '@/components/layout/Layout';
@@ -64,6 +65,10 @@ const processSteps = [
 ];
 
 const Activities = () => {
+  useEffect(() => {
+    document.title = 'Events | Budding Entrepreneurs Forum MIT-WPU | Startup & Business Events Pune';
+  }, []);
+
   return (
     <Layout>
       {/* Hero Section */}

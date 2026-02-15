@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Layout } from '@/components/layout/Layout';
 import { SectionHeading } from '@/components/ui/SectionHeading';
@@ -168,6 +168,10 @@ const FacultyCard = ({ faculty, index }: { faculty: typeof facultyLeadership[0];
 
 const Members = () => {
   const [selectedYear, setSelectedYear] = useState('2025-2026');
+
+  useEffect(() => {
+    document.title = 'Forum Members | Budding Entrepreneurs Forum MIT-WPU School of Business';
+  }, []);
 
   return (
     <Layout>

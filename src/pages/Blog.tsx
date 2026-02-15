@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Layout } from '@/components/layout/Layout';
 import { SectionHeading } from '@/components/ui/SectionHeading';
@@ -11,6 +11,10 @@ import { FlipbookViewer } from '@/components/FlipbookViewer';
 const Blog = () => {
   const { newsletters, isLoading } = useNewsletters();
   const [selectedNewsletter, setSelectedNewsletter] = useState<DbNewsletter | null>(null);
+
+  useEffect(() => {
+    document.title = 'Blog | Budding Entrepreneurs Forum – Entrepreneurship & Startup Insights';
+  }, []);
 
   return (
     <Layout>

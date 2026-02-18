@@ -226,9 +226,9 @@ const Index = () => {
               ].map((item, index) => (
                 <GlassCard 
                   key={item.title}
-                  className="text-center h-[140px] flex flex-col items-center justify-center"
+                  className="text-center h-[160px] flex flex-col items-center justify-center p-6"
                 >
-                  <item.icon className="w-10 h-10 text-primary mb-3" />
+                  <item.icon className="w-12 h-12 text-primary mb-3" />
                   <h4 className="font-display font-semibold text-foreground">{item.title}</h4>
                   <p className="text-sm text-muted-foreground mt-1">{item.subtitle}</p>
                 </GlassCard>

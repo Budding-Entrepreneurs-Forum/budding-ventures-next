@@ -160,19 +160,6 @@ const FacultyCard = ({ faculty, index }: { faculty: typeof facultyLeadership[0];
             loading="lazy"
           />
         </div>
-      </div>
-      
-      {/* Content */}
-      <div className="flex-1 text-center md:text-left">
-        <h3 className="font-display text-xl md:text-2xl font-bold text-foreground mb-1">
-          {faculty.name}
-        </h3>
-        <p className="text-primary font-medium mb-4">
-          {faculty.role}
-        </p>
-        <p className="text-muted-foreground leading-relaxed mb-4">
-          {faculty.description}
-        </p>
         {faculty.linkedin && (
           <a
             href={faculty.linkedin}
@@ -184,6 +171,19 @@ const FacultyCard = ({ faculty, index }: { faculty: typeof facultyLeadership[0];
             <span>Connect on LinkedIn</span>
           </a>
         )}
+      </div>
+      
+      {/* Content */}
+      <div className="flex-1 text-center md:text-left">
+        <h3 className="font-display text-xl md:text-2xl font-bold text-foreground mb-1">
+          {faculty.name}
+        </h3>
+        <p className="text-primary font-medium mb-4">
+          {faculty.role}
+        </p>
+        <p className="text-muted-foreground leading-relaxed">
+          {faculty.description}
+        </p>
       </div>
     </div>
   </motion.div>

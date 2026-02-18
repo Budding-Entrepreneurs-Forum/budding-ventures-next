@@ -6,6 +6,46 @@ import { SkeletonImage } from '@/components/ui/SkeletonImage';
 import { departments } from '@/data/departmentsData';
 import { Linkedin, ArrowLeft, Users } from 'lucide-react';
 
+import dnyaneshPatil from '@/assets/members/dnyanesh-patil.jpeg';
+import khushiSethia from '@/assets/members/khushi-sethia.png';
+import vedashreeGhotkar from '@/assets/members/vedashree-ghotkar.png';
+import nishantInamdar from '@/assets/members/nishant-inamdar.png';
+import sushmitaPoojari from '@/assets/members/sushmita-poojari.png';
+import sohiraKshemkalyani from '@/assets/members/sohira-kshemkalyani.png';
+import manasiSahare from '@/assets/members/manasi-sahare.png';
+import tanayKanitkar from '@/assets/members/tanay-kanitkar.jpeg';
+import ayushGhosekar from '@/assets/members/ayush-ghosekar.png';
+import pratikKadpe from '@/assets/members/pratik-kadpe.png';
+import devangKaslikar from '@/assets/members/devang-kaslikar.png';
+import famiyaKashani from '@/assets/members/famiya-kashani.jpg';
+import anshdhaChinchmalatpure from '@/assets/members/anshdha-chinchmalatpure.png';
+import urjaWadgaye from '@/assets/members/urja-wadgaye.jpg';
+import varadMulgund from '@/assets/members/varad-mulgund.png';
+import vivekGoondil from '@/assets/members/vivek-goondil.png';
+import vishalIshwale from '@/assets/members/vishal-ishwale.png';
+import bhavikModi from '@/assets/members/bhavik-modi.jpeg';
+
+const headImages: Record<string, string> = {
+  'dnyanesh-patil': dnyaneshPatil,
+  'khushi-sethia': khushiSethia,
+  'vedashree-ghotkar': vedashreeGhotkar,
+  'nishant-inamdar': nishantInamdar,
+  'sushmita-poojari': sushmitaPoojari,
+  'sohira-kshemkalyani': sohiraKshemkalyani,
+  'manasi-sahare': manasiSahare,
+  'tanay-kanitkar': tanayKanitkar,
+  'ayush-ghosekar': ayushGhosekar,
+  'pratik-kadpe': pratikKadpe,
+  'devang-kaslikar': devangKaslikar,
+  'famiya-kashani': famiyaKashani,
+  'anshdha-chinchmalatpure': anshdhaChinchmalatpure,
+  'urja-wadgaye': urjaWadgaye,
+  'varad-mulgund': varadMulgund,
+  'vivek-goondil': vivekGoondil,
+  'vishal-ishwale': vishalIshwale,
+  'bhavik-modi': bhavikModi,
+};
+
 const DepartmentDetail = () => {
   const { id } = useParams<{ id: string }>();
   const department = departments.find((d) => d.id === id);
@@ -111,7 +151,7 @@ const DepartmentDetail = () => {
                   {/* Large Image */}
                   <div className="aspect-[3/4] overflow-hidden bg-secondary">
                     <SkeletonImage
-                      src={head.image}
+                      src={headImages[head.image] || head.image}
                       alt={head.name}
                       className="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-105"
                       wrapperClassName="w-full h-full"

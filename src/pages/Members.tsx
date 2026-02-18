@@ -35,6 +35,13 @@ import manasiSahare from '@/assets/members/manasi-sahare.png';
 import tanayKanitkar from '@/assets/members/tanay-kanitkar.jpeg';
 import vivekGoondil from '@/assets/members/vivek-goondil.png';
 
+// Member images - Batch 3 (new uploads)
+import famiyaKashani from '@/assets/members/famiya-kashani.jpg';
+import urjaWadgaye from '@/assets/members/urja-wadgaye.jpg';
+import vishalIshwale from '@/assets/members/vishal-ishwale.png';
+import atharvaShinkar from '@/assets/members/atharva-shinkar.jpg';
+import gauravShinde from '@/assets/members/gaurav-shinde.png';
+
 // Faculty image mapping
 const facultyImages: Record<string, string> = {
   'deependra-sharma': deependraSharma,
@@ -65,6 +72,12 @@ const memberImages: Record<string, string> = {
   'manasi-sahare': manasiSahare,
   'tanay-kanitkar': tanayKanitkar,
   'vivek-goondil': vivekGoondil,
+  // Batch 3
+  'famiya-kashani': famiyaKashani,
+  'urja-wadgaye': urjaWadgaye,
+  'vishal-ishwale': vishalIshwale,
+  'atharva-shinkar': atharvaShinkar,
+  'gaurav-shinde': gauravShinde,
 };
 
 // Member Card Component

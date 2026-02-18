@@ -138,7 +138,7 @@ export const departments: Department[] = [
       {
         name: 'Famiya Kashani',
         role: 'Sponsorship Department Lead',
-        image: 'https://buddingentrepreneurs.in/wp-content/uploads/2025/07/Ventures-Voyage-July-2025-By-Budding-Entrepreneurs-Forum-_20250720_142332_0000_Page_19_Image_0013-768x679.jpg',
+        image: 'famiya-kashani',
         linkedin: 'https://www.linkedin.com/in/famiya-kashani-2422a3273',
       },
     ],
@@ -168,13 +168,13 @@ export const departments: Department[] = [
       {
         name: 'Urja Wadgaye',
         role: 'Podcast Department Lead',
-        image: 'https://buddingentrepreneurs.in/wp-content/uploads/2025/07/Ventures-Voyage-July-2025-By-Budding-Entrepreneurs-Forum-_20250720_142332_0000_Page_19_Image_0014.jpg',
+        image: 'urja-wadgaye',
         linkedin: 'https://www.linkedin.com/in/urja-wadgaye',
       },
       {
         name: 'Varad Mulgund',
         role: 'Podcast Department Lead',
-        image: 'https://buddingentrepreneurs.in/wp-content/uploads/2025/07/Ventures-Voyage-July-2025-By-Budding-Entrepreneurs-Forum-_20250720_142332_0000_Page_19_Image_0015.jpg',
+        image: 'varad-mulgund',
         linkedin: 'https://www.linkedin.com/in/varad-mulgund-731aa632a/',
       },
     ],
@@ -195,7 +195,7 @@ export const departments: Department[] = [
       {
         name: 'Vishal Ishwale',
         role: 'Photography Department Lead',
-        image: 'https://buddingentrepreneurs.in/wp-content/uploads/2025/07/Ventures-Voyage-July-2025-By-Budding-Entrepreneurs-Forum-_20250720_142332_0000_Page_19_Image_0026.jpg',
+        image: 'vishal-ishwale',
         linkedin: 'https://www.linkedin.com/in/vishal-ishwale-230663245',
       },
     ],
@@ -302,13 +302,13 @@ export const coreCommitteeMembers = [
   {
     name: 'Famiya Kashani',
     role: 'Sponsorship Department Lead',
-    image: 'https://buddingentrepreneurs.in/wp-content/uploads/2025/07/Ventures-Voyage-July-2025-By-Budding-Entrepreneurs-Forum-_20250720_142332_0000_Page_19_Image_0013-768x679.jpg',
+    image: 'famiya-kashani',
     linkedin: 'https://www.linkedin.com/in/famiya-kashani-2422a3273',
   },
   {
     name: 'Urja Wadgaye',
     role: 'Podcast Department Lead',
-    image: 'https://buddingentrepreneurs.in/wp-content/uploads/2025/07/Ventures-Voyage-July-2025-By-Budding-Entrepreneurs-Forum-_20250720_142332_0000_Page_19_Image_0014.jpg',
+    image: 'urja-wadgaye',
     linkedin: 'https://www.linkedin.com/in/urja-wadgaye',
   },
   {
@@ -374,19 +374,19 @@ export const coreCommitteeMembers = [
   {
     name: 'Vishal Ishwale',
     role: 'Photography Department Lead',
-    image: 'https://buddingentrepreneurs.in/wp-content/uploads/2025/07/Ventures-Voyage-July-2025-By-Budding-Entrepreneurs-Forum-_20250720_142332_0000_Page_19_Image_0026.jpg',
+    image: 'vishal-ishwale',
     linkedin: 'https://www.linkedin.com/in/vishal-ishwale-230663245',
   },
   {
     name: 'Atharv Shinkar',
     role: 'Executive Core Member',
-    image: 'https://buddingentrepreneurs.in/wp-content/uploads/2025/07/Ventures-Voyage-July-2025-By-Budding-Entrepreneurs-Forum-_20250720_142332_0000_Page_19_Image_0029-298x300.jpg',
+    image: 'atharva-shinkar',
     linkedin: 'https://www.linkedin.com/in/atharva-shinkar-wani-390002325',
   },
   {
     name: 'Gaurav Shinde',
     role: 'Executive Core Member',
-    image: 'https://buddingentrepreneurs.in/wp-content/uploads/2025/07/Ventures-Voyage-July-2025-By-Budding-Entrepreneurs-Forum-_20250720_142332_0000_Page_19_Image_0030-768x890.jpg',
+    image: 'gaurav-shinde',
     linkedin: 'https://www.linkedin.com/in/gauravshinde7999/',
   },
 ];

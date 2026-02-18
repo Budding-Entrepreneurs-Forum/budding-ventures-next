@@ -223,15 +223,17 @@ export const facultyLeadership = [
     name: 'Dr. Deependra Sharma',
     role: 'Dean, MIT WPU SOB',
     tag: 'Recommended By',
-    image: 'deependra-sharma', // Key for mapping to imported image
+    image: 'deependra-sharma',
     description: 'Approving events and documents related to event planning. Supporting events held by the forum. Organize training programs through workshops, mentorship, networking, seminars, etc.',
+    linkedin: 'https://www.linkedin.com/in/dr-deependra-sharma-579771167/',
   },
   {
     name: 'Prof. Dr. Vinita Ahire Kale',
     role: 'Forum Faculty Head, MIT WPU SOB',
     tag: 'Proposed By',
-    image: 'vinita-ahire-kale', // Key for mapping to imported image
+    image: 'vinita-ahire-kale',
     description: 'Provides opportunities for stimulating and augmenting the entrepreneurial spirit. Creates a culture of entrepreneurship and promotes entrepreneurial studies.',
+    linkedin: 'https://www.linkedin.com/in/dr-vinita-ahire-kale/',
   },
 ];
 

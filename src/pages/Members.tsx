@@ -170,9 +170,20 @@ const FacultyCard = ({ faculty, index }: { faculty: typeof facultyLeadership[0];
         <p className="text-primary font-medium mb-4">
           {faculty.role}
         </p>
-        <p className="text-muted-foreground leading-relaxed">
+        <p className="text-muted-foreground leading-relaxed mb-4">
           {faculty.description}
         </p>
+        {faculty.linkedin && (
+          <a
+            href={faculty.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition-colors font-medium"
+          >
+            <Linkedin className="w-4 h-4" />
+            <span>Connect on LinkedIn</span>
+          </a>
+        )}
       </div>
     </div>
   </motion.div>

@@ -202,7 +202,7 @@ const Index = () => {
                 India is going through transition times. As citizens of India, we must think and change our old ways of living and making an earning for living. The outcome of Education is a job; we need to change this attitude. India doesn't need job seekers; this is the time for business owners.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                The School of Business at MIT WPU encourages its students to develop overall skills outside the classroom, such as leadership, teamwork, and communication skills — skills that will bring success in their corporate career while contributing to their overall growth.
+                The School of Business at MIT WPU encourages its students to develop overall skills outside the classroom, such as leadership, teamwork, and communication skills that help build long-term success in their corporate career while contributing to their overall growth.
               </p>
               <Link
                 to="/about"

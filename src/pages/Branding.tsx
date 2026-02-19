@@ -38,7 +38,7 @@ const services = [
   {
     icon: Megaphone,
     title: 'Social Media & Content Strategy',
-    description: 'From memes to meaningful stories—we make every post count.',
+    description: 'From memes to meaningful stories, we make every post count.',
     gradient: 'from-purple-500 to-accent',
   },
   {
@@ -87,7 +87,7 @@ const missionVisionValues = [
 // Testimonials data
 const testimonials = [
   {
-    quote: "The branding team's energy and strategy helped us break through the clutter. From creative reels to clear messaging—they elevated our social media game.",
+    quote: "The branding team's energy and strategy helped us break through the clutter. From creative reels to clear messaging, they elevated our social media game.",
     author: 'Creatoo Team',
     role: 'Brand Partner',
     image: creatooLogo,
@@ -191,7 +191,7 @@ const Branding = () => {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8"
             >
-              The creative arm of Budding Entrepreneurs Forum. End-to-end brand-building for student startups and emerging ventures.
+              The creative arm of Budding Entrepreneurs Forum, delivering complete brand building solutions for student startups and emerging ventures.
             </motion.p>
 
             {/* Tagline Pills */}
@@ -277,7 +277,7 @@ const Branding = () => {
                 We are the creative arm of the Budding Entrepreneurs Forum, offering end-to-end brand-building services for student startups and emerging ventures. More than just making things look good, we focus on what makes a brand <strong className="text-foreground">resonate</strong>, <strong className="text-foreground">connect</strong>, and <strong className="text-foreground">convert</strong>.
               </p>
               <p className="text-xl font-display font-semibold text-foreground">
-                Our goal? To help you become more than just a business—to become a{' '}
+                Our goal is to help you become more than just a business, to become a{' '}
                 <span className="text-primary">brand people remember</span>.
               </p>
             </motion.div>

@@ -105,7 +105,7 @@ export const newsletters: Newsletter[] = [
     sortDate: '2025-06',
     coverImage: boxOffice,
     pdfUrl: '/pdfs/business-at-box-office.pdf',
-    description: 'The intersection of business and entertainment — exploring the economics behind the box office.',
+    description: 'The intersection of business and entertainment, exploring the economics behind the box office.',
   },
   {
     id: 'entrepreneurship-in-travel',

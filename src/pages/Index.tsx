@@ -240,7 +240,7 @@ const Index = () => {
       </section>
 
       {/* Launch Your Vision – Founder's League Section */}
-      <section className="section-padding bg-card">
+      <section className="section-padding bg-background">
         <div className="container-wide mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <motion.div

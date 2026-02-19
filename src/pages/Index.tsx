@@ -239,6 +239,63 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Launch Your Vision – Founder's League Section */}
+      <section className="section-padding bg-card">
+        <div className="container-wide mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="space-y-6"
+            >
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full">
+                <Rocket className="w-4 h-4 text-primary" />
+                <span className="text-sm font-medium text-primary">Founder's League</span>
+              </div>
+              <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">
+                Launch Your <span className="gradient-text">Vision</span>
+              </h2>
+              <p className="text-muted-foreground leading-relaxed text-lg">
+                Founder's League is a dedicated initiative to encourage student founders and transform ideas into real ventures. We support aspiring entrepreneurs who have startup ideas but are unsure of the next steps. From idea validation to implementation guidance, we help founders turn vision into action.
+              </p>
+              <a
+                href="https://forms.gle/LMM6CCEuRT73Q5BA9"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground rounded-xl font-semibold text-lg hover:opacity-90 transition-all glow"
+              >
+                Join Founder's League
+                <ArrowRight className="w-5 h-5" />
+              </a>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="grid grid-cols-2 gap-4"
+            >
+              {[
+                { icon: Lightbulb, title: 'Idea Validation', subtitle: 'Refine your concepts' },
+                { icon: Target, title: 'Strategic Guidance', subtitle: 'Plan your roadmap' },
+                { icon: Users, title: 'Mentor Network', subtitle: 'Learn from founders' },
+                { icon: Sparkles, title: 'Launch Support', subtitle: 'Build and grow' },
+              ].map((item) => (
+                <GlassCard
+                  key={item.title}
+                  className="text-center h-[160px] flex flex-col items-center justify-center p-6"
+                >
+                  <item.icon className="w-12 h-12 text-primary mb-3" />
+                  <h4 className="font-display font-semibold text-foreground">{item.title}</h4>
+                  <p className="text-sm text-muted-foreground mt-1">{item.subtitle}</p>
+                </GlassCard>
+              ))}
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Vision, Mission, Goal Section */}
       <section className="section-padding bg-card">
         <div className="container-wide mx-auto">

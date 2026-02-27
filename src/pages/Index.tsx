@@ -51,6 +51,8 @@ const departments = [
   { name: 'Governance & Compliance', icon: FileCheck },
   { name: 'Visual Production Department', icon: Clapperboard },
   { name: 'Corporate Connect', icon: Building2 },
+  { name: 'Branding Department', icon: Palette },
+  { name: 'Founders League', icon: Flag },
 ];
 
 const activities = [

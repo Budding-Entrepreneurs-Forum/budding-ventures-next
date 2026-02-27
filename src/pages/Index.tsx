@@ -43,7 +43,7 @@ const departments = [
   { name: 'Creative Department', icon: Sparkles },
   { name: 'Editorial Department', icon: BookOpen },
   { name: 'Social Media Department', icon: Users },
-  { name: 'Technical Department', icon: Monitor },
+  { name: 'IT Department', icon: Monitor },
   { name: 'Event Department', icon: Award },
   { name: 'Podcast Department', icon: Mic },
   { name: 'Sponsorship Department', icon: Handshake },

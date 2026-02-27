@@ -239,7 +239,7 @@ const Activities = () => {
       </section>
 
       {/* Event Process */}
-      <section className="section-padding bg-card">
+      <section className="section-padding bg-background">
         <div className="container-wide mx-auto">
           <SectionHeading
             badge="Our Process"
@@ -275,7 +275,7 @@ const Activities = () => {
       </section>
 
       {/* Rules & Code of Conduct */}
-      <section className="section-padding bg-background">
+      <section className="section-padding bg-card">
         <div className="container-wide mx-auto">
           <div className="max-w-4xl mx-auto">
             <motion.div
@@ -327,7 +327,7 @@ const Activities = () => {
       </section>
 
       {/* CTA */}
-      <section className="section-padding bg-card relative overflow-hidden">
+      <section className="section-padding bg-background relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5" />
         <div className="container-wide mx-auto relative z-10">
           <div className="max-w-3xl mx-auto text-center">

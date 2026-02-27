@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Sparkles, Users, Target, Lightbulb, Rocket, Award, Trophy, Handshake, BookOpen, Clapperboard, Mic, Monitor, Megaphone, FileCheck, Loader2, Building2, Palette, Flag } from 'lucide-react';
+import { ArrowRight, Sparkles, Users, Target, Lightbulb, Rocket, Award, Trophy, Handshake, BookOpen, Clapperboard, Mic, Monitor, Megaphone, FileCheck, Loader2, Building2, TrendingUp, Flag } from 'lucide-react';
 import { GlassCard } from '@/components/ui/GlassCard';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { Layout } from '@/components/layout/Layout';
@@ -51,8 +51,8 @@ const departments = [
   { name: 'Governance & Compliance', icon: FileCheck },
   { name: 'Visual Production Department', icon: Clapperboard },
   { name: 'Corporate Connect', icon: Building2 },
-  { name: 'Branding Department', icon: Palette },
-  { name: 'Founders League', icon: Flag },
+  { name: 'Branding Department', icon: TrendingUp },
+  { name: 'Founders League', icon: Rocket },
 ];
 
 const activities = [

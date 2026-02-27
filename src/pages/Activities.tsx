@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { Layout } from '@/components/layout/Layout';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { GlassCard } from '@/components/ui/GlassCard';
-import { ArrowRight, Calendar, Users, Trophy, Mic, BookOpen, Handshake } from 'lucide-react';
+import { ArrowRight, Calendar, Users, Trophy, Mic, BookOpen, Handshake, Heart, GraduationCap, Leaf, Lightbulb } from 'lucide-react';
 
 const flagshipEvents = [
   {
@@ -161,6 +161,76 @@ const Activities = () => {
                   <activity.icon className="w-10 h-10 text-primary mb-4" />
                   <h4 className="font-display text-lg font-bold text-foreground mb-2">{activity.title}</h4>
                   <p className="text-muted-foreground text-sm">{activity.description}</p>
+                </GlassCard>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CSR Activities */}
+      <section className="section-padding bg-card">
+        <div className="container-wide mx-auto">
+          <SectionHeading
+            badge="CSR Activities"
+            title="CSR Activities"
+            description="Giving back to society through responsible action and student-led initiatives."
+          />
+
+          <div className="max-w-3xl mx-auto mb-12">
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-muted-foreground text-center leading-relaxed"
+            >
+              The Budding Entrepreneurs Forum believes that entrepreneurship goes beyond business and profit. Through our Corporate Social Responsibility (CSR) initiatives, we aim to create meaningful social impact by encouraging students to contribute to society with empathy, responsibility, and purpose.
+            </motion.p>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-muted-foreground text-center leading-relaxed mt-4"
+            >
+              Our CSR activities focus on awareness, education, sustainability, and community engagement. By participating in these initiatives, students develop leadership qualities, social sensitivity, and a deeper understanding of real-world challenges.
+            </motion.p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              {
+                title: 'Community Outreach',
+                description: 'Supporting local communities through awareness drives, volunteering, and social campaigns.',
+                icon: Heart,
+              },
+              {
+                title: 'Education & Awareness',
+                description: 'Conducting workshops, mentorship sessions, and knowledge-sharing programs for underprivileged groups.',
+                icon: GraduationCap,
+              },
+              {
+                title: 'Sustainability Initiatives',
+                description: 'Promoting eco-friendly practices, cleanliness drives, and environmental responsibility.',
+                icon: Leaf,
+              },
+              {
+                title: 'Student-Led Social Impact',
+                description: 'Encouraging students to ideate and lead CSR projects that create long-term positive change.',
+                icon: Lightbulb,
+              },
+            ].map((item, index) => (
+              <motion.div
+                key={item.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+              >
+                <GlassCard className="h-full">
+                  <item.icon className="w-10 h-10 text-primary mb-4" />
+                  <h4 className="font-display text-lg font-bold text-foreground mb-2">{item.title}</h4>
+                  <p className="text-muted-foreground text-sm">{item.description}</p>
                 </GlassCard>
               </motion.div>
             ))}

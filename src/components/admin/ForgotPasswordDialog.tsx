@@ -12,7 +12,6 @@ import {
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
 
-const ADMIN_EMAIL = 'buddingentrepreneursforum@gmail.com';
 const PASSWORD_REGEX = /^(?=.*[0-9])(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]).{7,}$/;
 
 interface Props {
@@ -23,6 +22,7 @@ interface Props {
 export const ForgotPasswordDialog = ({ open, onOpenChange }: Props) => {
   const [step, setStep] = useState<'confirm' | 'otp' | 'reset' | 'done'>('confirm');
   const [otp, setOtp] = useState('');
+  const [otpId, setOtpId] = useState('');
   const [newPassword, setNewPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [loading, setLoading] = useState(false);
@@ -30,8 +30,12 @@ export const ForgotPasswordDialog = ({ open, onOpenChange }: Props) => {
   const handleSendOtp = async () => {
     setLoading(true);
     try {
-      const { error } = await supabase.auth.signInWithOtp({ email: ADMIN_EMAIL });
-      if (error) throw error;
+      const { data, error } = await supabase.functions.invoke('admin-forgot-password', {
+        method: 'POST',
+        body: {},
+      });
+      if (error) throw new Error(error.message);
+      if (data?.error) throw new Error(data.error);
       toast.success('OTP sent to the registered admin email.');
       setStep('otp');
     } catch (err: any) {
@@ -48,12 +52,13 @@ export const ForgotPasswordDialog = ({ open, onOpenChange }: Props) => {
     }
     setLoading(true);
     try {
-      const { error } = await supabase.auth.verifyOtp({
-        email: ADMIN_EMAIL,
-        token: otp,
-        type: 'email',
+      const { data, error } = await supabase.functions.invoke('admin-verify-otp', {
+        method: 'POST',
+        body: { otp },
       });
-      if (error) throw error;
+      if (error) throw new Error(error.message);
+      if (data?.error) throw new Error(data.error);
+      setOtpId(data.otp_id);
       toast.success('OTP verified successfully.');
       setStep('reset');
     } catch (err: any) {
@@ -75,9 +80,12 @@ export const ForgotPasswordDialog = ({ open, onOpenChange }: Props) => {
     }
     setLoading(true);
     try {
-      const { error } = await supabase.auth.updateUser({ password: newPassword });
-      if (error) throw error;
-      await supabase.auth.signOut();
+      const { data, error } = await supabase.functions.invoke('admin-reset-password', {
+        method: 'POST',
+        body: { otp_id: otpId, new_password: newPassword },
+      });
+      if (error) throw new Error(error.message);
+      if (data?.error) throw new Error(data.error);
       toast.success('Password reset successfully! Please log in with your new password.');
       setStep('done');
     } catch (err: any) {
@@ -90,6 +98,7 @@ export const ForgotPasswordDialog = ({ open, onOpenChange }: Props) => {
   const handleClose = () => {
     setStep('confirm');
     setOtp('');
+    setOtpId('');
     setNewPassword('');
     setConfirmPassword('');
     onOpenChange(false);

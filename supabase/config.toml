@@ -1,1 +1,10 @@
 project_id = "ivatakxbopgpoviykhgr"
+
+[functions.admin-forgot-password]
+verify_jwt = false
+
+[functions.admin-verify-otp]
+verify_jwt = false
+
+[functions.admin-reset-password]
+verify_jwt = false

@@ -184,7 +184,7 @@ const Activities = () => {
               viewport={{ once: true }}
               className="text-muted-foreground text-center leading-relaxed"
             >
-              The Budding Entrepreneurs Forum believes that entrepreneurship goes beyond business and profit. Through our Corporate Social Responsibility (CSR) initiatives, we aim to create meaningful social impact by encouraging students to contribute to society with empathy, responsibility, and purpose.
+              The Budding Entrepreneurs Forum believes that entrepreneurship goes beyond business and profit. Through our Corporate Social Responsibility (CSR) initiatives, we aim to create meaningful social impact by encouraging students to contribute to society with empathy, responsibility and purpose.
             </motion.p>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -193,7 +193,7 @@ const Activities = () => {
               transition={{ delay: 0.1 }}
               className="text-muted-foreground text-center leading-relaxed mt-4"
             >
-              Our CSR activities focus on awareness, education, sustainability, and community engagement. By participating in these initiatives, students develop leadership qualities, social sensitivity, and a deeper understanding of real-world challenges.
+              Our CSR activities focus on awareness, education, sustainability and community engagement. By participating in these initiatives, students develop leadership qualities, social sensitivity and a deeper understanding of challenges in the real world.
             </motion.p>
           </div>
 
@@ -206,17 +206,17 @@ const Activities = () => {
               },
               {
                 title: 'Education & Awareness',
-                description: 'Conducting workshops, mentorship sessions, and knowledge-sharing programs for underprivileged groups.',
+                description: 'Conducting workshops, mentorship sessions and knowledge sharing programs for underprivileged groups.',
                 icon: GraduationCap,
               },
               {
                 title: 'Sustainability Initiatives',
-                description: 'Promoting eco-friendly practices, cleanliness drives, and environmental responsibility.',
+                description: 'Promoting eco friendly practices, cleanliness drives and environmental responsibility.',
                 icon: Leaf,
               },
               {
-                title: 'Student-Led Social Impact',
-                description: 'Encouraging students to ideate and lead CSR projects that create long-term positive change.',
+                title: 'Social Impact Led by Students',
+                description: 'Encouraging students to ideate and lead CSR projects that create lasting positive change.',
                 icon: Lightbulb,
               },
             ].map((item, index) => (

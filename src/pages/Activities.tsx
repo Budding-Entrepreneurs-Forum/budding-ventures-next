@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { Layout } from '@/components/layout/Layout';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { GlassCard } from '@/components/ui/GlassCard';
-import { ArrowRight, Calendar, Users, Trophy, Mic, BookOpen, Handshake, Heart, GraduationCap, Leaf, Lightbulb } from 'lucide-react';
+import { Calendar, Users, Trophy, Mic, BookOpen, Handshake, Heart, GraduationCap, Leaf, Lightbulb } from 'lucide-react';
 
 const flagshipEvents = [
   {

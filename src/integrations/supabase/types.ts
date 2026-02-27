@@ -14,6 +14,33 @@ export type Database = {
   }
   public: {
     Tables: {
+      admin_otps: {
+        Row: {
+          created_at: string
+          expires_at: string
+          id: string
+          otp_hash: string
+          used: boolean
+          verified: boolean
+        }
+        Insert: {
+          created_at?: string
+          expires_at: string
+          id?: string
+          otp_hash: string
+          used?: boolean
+          verified?: boolean
+        }
+        Update: {
+          created_at?: string
+          expires_at?: string
+          id?: string
+          otp_hash?: string
+          used?: boolean
+          verified?: boolean
+        }
+        Relationships: []
+      }
       newsletters: {
         Row: {
           created_at: string

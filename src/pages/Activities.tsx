@@ -1,10 +1,11 @@
 import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+
 import { Layout } from '@/components/layout/Layout';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { GlassCard } from '@/components/ui/GlassCard';
-import { ArrowRight, Calendar, Users, Trophy, Mic, BookOpen, Handshake, Heart, GraduationCap, Leaf, Lightbulb } from 'lucide-react';
+import { Calendar, Users, Trophy, Mic, BookOpen, Handshake, Heart, GraduationCap, Leaf, Lightbulb } from 'lucide-react';
 
 const flagshipEvents = [
   {
@@ -117,22 +118,16 @@ const Activities = () => {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
               >
-                <Link to={`/activities/${event.slug}`}>
-                  <GlassCard className="h-full relative overflow-hidden group cursor-pointer">
-                    <div className={`absolute top-0 right-0 w-48 h-48 bg-gradient-to-br ${event.color} opacity-10 blur-3xl group-hover:opacity-20 transition-opacity`} />
-                    <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${event.color} flex items-center justify-center mb-6`}>
-                      <event.icon className="w-8 h-8 text-white" />
-                    </div>
-                    <h3 className="font-display text-2xl font-bold text-foreground mb-4 group-hover:text-primary transition-colors">
-                      {event.title}
-                    </h3>
-                    <p className="text-muted-foreground mb-6">{event.description}</p>
-                    <span className="inline-flex items-center gap-2 text-primary font-medium">
-                      Learn More
-                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                    </span>
-                  </GlassCard>
-                </Link>
+                <GlassCard className="h-full relative overflow-hidden group">
+                  <div className={`absolute top-0 right-0 w-48 h-48 bg-gradient-to-br ${event.color} opacity-10 blur-3xl group-hover:opacity-20 transition-opacity`} />
+                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${event.color} flex items-center justify-center mb-6`}>
+                    <event.icon className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="font-display text-2xl font-bold text-foreground mb-4">
+                    {event.title}
+                  </h3>
+                  <p className="text-muted-foreground">{event.description}</p>
+                </GlassCard>
               </motion.div>
             ))}
           </div>

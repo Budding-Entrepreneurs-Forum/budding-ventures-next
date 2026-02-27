@@ -198,28 +198,7 @@ const Index = () => {
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="space-y-6"
-            >
-              <p className="text-muted-foreground leading-relaxed">
-                India is going through transition times. As citizens of India, we must think and change our old ways of living and making an earning for living. The outcome of Education is a job; we need to change this attitude. India doesn't need job seekers; this is the time for business owners.
-              </p>
-              <p className="text-muted-foreground leading-relaxed">
-                The School of Business at MIT WPU encourages its students to develop overall skills outside the classroom, such as leadership, teamwork, and communication skills that help build long term success in their corporate career while contributing to their overall growth.
-              </p>
-              <Link
-                to="/about"
-                className="inline-flex items-center gap-2 text-primary font-medium hover-underline"
-              >
-                Learn more about us
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="grid grid-cols-2 gap-4"
+              className="grid grid-cols-2 gap-4 order-2 md:order-1"
             >
               {[
                 { icon: Trophy, title: 'Excellence', subtitle: 'Striving for greatness' },
@@ -236,6 +215,27 @@ const Index = () => {
                   <p className="text-sm text-muted-foreground mt-1">{item.subtitle}</p>
                 </GlassCard>
               ))}
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="space-y-6 order-1 md:order-2"
+            >
+              <p className="text-muted-foreground leading-relaxed">
+                India is going through transition times. As citizens of India, we must think and change our old ways of living and making an earning for living. The outcome of Education is a job; we need to change this attitude. India doesn't need job seekers; this is the time for business owners.
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                The School of Business at MIT WPU encourages its students to develop overall skills outside the classroom, such as leadership, teamwork, and communication skills that help build long term success in their corporate career while contributing to their overall growth.
+              </p>
+              <Link
+                to="/about"
+                className="inline-flex items-center gap-2 text-primary font-medium hover-underline"
+              >
+                Learn more about us
+                <ArrowRight className="w-4 h-4" />
+              </Link>
             </motion.div>
           </div>
         </div>

@@ -29,6 +29,12 @@ export const Footer = () => {
           <div>
             <Link to="/" className="flex items-center gap-3 mb-6">
               <img src={logo} alt="Budding Entrepreneurs Forum" className="h-14 w-auto" />
+              <div className="flex flex-col">
+                <span className="font-display font-semibold text-base leading-tight text-foreground">
+                  Budding Entrepreneurs Forum
+                </span>
+                <span className="text-xs text-muted-foreground leading-tight">MIT-WPU</span>
+              </div>
             </Link>
             <p className="text-muted-foreground text-sm leading-relaxed mb-6">
               Fostering entrepreneurial spirit among students at MIT-WPU. Building tomorrow's business leaders and innovators through community, mentorship, and hands-on experience.

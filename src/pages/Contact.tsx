@@ -64,8 +64,8 @@ const Contact = () => {
       </section>
 
       <section className="section-padding bg-card">
-        <div className="container-wide mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12">
+        <div className="container-wide mx-auto px-4 md:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 w-full min-w-0">
             <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
               <GlassCard>
                 <h3 className="font-display text-2xl font-bold text-foreground mb-6">Send us a Message</h3>

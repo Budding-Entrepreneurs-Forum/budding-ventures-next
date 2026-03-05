@@ -63,17 +63,17 @@ const Contact = () => {
         </div>
       </section>
 
-      <section className="section-padding bg-card">
-        <div className="container-wide mx-auto px-4 md:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 w-full min-w-0">
-            <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-              <GlassCard>
+      <section className="section-padding bg-card overflow-x-hidden">
+        <div className="container-wide mx-auto px-4 md:px-8 max-w-full">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 w-full min-w-0">
+            <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="min-w-0">
+              <GlassCard className="overflow-hidden">
                 <h3 className="font-display text-2xl font-bold text-foreground mb-6">Send us a Message</h3>
                 <form onSubmit={handleSubmit} className="space-y-4">
-                  <input type="text" placeholder="Your Name" value={formData.name} onChange={(e) => setFormData({...formData, name: e.target.value})} className="w-full px-4 py-3 bg-secondary border border-border rounded-lg text-sm" required />
-                  <input type="email" placeholder="Your Email" value={formData.email} onChange={(e) => setFormData({...formData, email: e.target.value})} className="w-full px-4 py-3 bg-secondary border border-border rounded-lg text-sm" required />
-                  <input type="text" placeholder="Subject" value={formData.subject} onChange={(e) => setFormData({...formData, subject: e.target.value})} className="w-full px-4 py-3 bg-secondary border border-border rounded-lg text-sm" required />
-                  <textarea placeholder="Your Message" rows={5} value={formData.message} onChange={(e) => setFormData({...formData, message: e.target.value})} className="w-full px-4 py-3 bg-secondary border border-border rounded-lg text-sm resize-none" required />
+                  <input type="text" placeholder="Your Name" value={formData.name} onChange={(e) => setFormData({...formData, name: e.target.value})} className="w-full px-4 py-3 bg-secondary border border-border rounded-lg text-sm box-border" required />
+                  <input type="email" placeholder="Your Email" value={formData.email} onChange={(e) => setFormData({...formData, email: e.target.value})} className="w-full px-4 py-3 bg-secondary border border-border rounded-lg text-sm box-border" required />
+                  <input type="text" placeholder="Subject" value={formData.subject} onChange={(e) => setFormData({...formData, subject: e.target.value})} className="w-full px-4 py-3 bg-secondary border border-border rounded-lg text-sm box-border" required />
+                  <textarea placeholder="Your Message" rows={5} value={formData.message} onChange={(e) => setFormData({...formData, message: e.target.value})} className="w-full px-4 py-3 bg-secondary border border-border rounded-lg text-sm resize-none box-border" required />
                   <button type="submit" disabled={isSubmitting} className="w-full px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed">
                     {isSubmitting ? (<><Loader2 className="w-4 h-4 animate-spin" />Sending...</>) : (<>Send Message <Send className="w-4 h-4" /></>)}
                   </button>
@@ -81,17 +81,17 @@ const Contact = () => {
               </GlassCard>
             </motion.div>
 
-            <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="space-y-6">
-              <GlassCard>
+            <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="space-y-6 min-w-0">
+              <GlassCard className="overflow-hidden">
                 <h3 className="font-display text-xl font-bold text-foreground mb-4">Contact Information</h3>
                 <div className="space-y-4">
-                  <div className="flex gap-4"><MapPin className="w-5 h-5 text-primary flex-shrink-0" /><span className="text-muted-foreground">MIT-WPU, Kothrud, Pune, Maharashtra, India</span></div>
-                  <div className="flex gap-4"><Mail className="w-5 h-5 text-primary flex-shrink-0" /><a href="mailto:buddingentrepreneursforum@gmail.com" className="text-muted-foreground hover:text-primary">buddingentrepreneursforum@gmail.com</a></div>
+                  <div className="flex gap-4"><MapPin className="w-5 h-5 text-primary flex-shrink-0" /><span className="text-muted-foreground break-words">MIT-WPU, Kothrud, Pune, Maharashtra, India</span></div>
+                  <div className="flex gap-4 min-w-0"><Mail className="w-5 h-5 text-primary flex-shrink-0" /><a href="mailto:buddingentrepreneursforum@gmail.com" className="text-muted-foreground hover:text-primary break-all min-w-0">buddingentrepreneursforum@gmail.com</a></div>
                   <div className="flex gap-4"><Phone className="w-5 h-5 text-primary flex-shrink-0" /><a href="tel:+918379943345" className="text-muted-foreground hover:text-primary">+91 83799 43345</a></div>
                 </div>
               </GlassCard>
 
-              <GlassCard>
+              <GlassCard className="overflow-hidden">
                 <h3 className="font-display text-xl font-bold text-foreground mb-4">Follow Us</h3>
                 <div className="flex gap-3">
                   {[{ icon: Linkedin, href: 'https://www.linkedin.com/in/be-mitwpu/' }, { icon: Instagram, href: 'https://www.instagram.com/budding_entrepreneur.mitwpu' }, { icon: Youtube, href: 'https://www.youtube.com/@budding_entrepreneur.mitwpu' }, { icon: Twitter, href: 'https://x.com/BuddingForumMIT' }].map((s, i) => (

@@ -241,7 +241,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Launch Your Vision – Founder's League Section */}
+      {/* Launch Your Vision – Founders League Section */}
       <section className="section-padding bg-background">
         <div className="container-wide mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -253,13 +253,13 @@ const Index = () => {
             >
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full">
                 <Rocket className="w-4 h-4 text-primary" />
-                <span className="text-sm font-medium text-primary">Founder's League</span>
+                <span className="text-sm font-medium text-primary">Founders League</span>
               </div>
               <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">
                 Launch Your <span className="gradient-text">Vision</span>
               </h2>
               <p className="text-muted-foreground leading-relaxed text-lg">
-                Founder's League is a dedicated initiative to encourage student founders and transform ideas into real ventures. We support aspiring entrepreneurs who have startup ideas but are unsure of the next steps. From idea validation to implementation guidance, we help founders turn vision into action.
+                Founders League is a dedicated initiative to encourage student founders and transform ideas into real ventures. We support aspiring entrepreneurs who have startup ideas but are unsure of the next steps. From idea validation to implementation guidance, we help founders turn vision into action.
               </p>
               <a
                 href="https://forms.gle/LMM6CCEuRT73Q5BA9"
@@ -267,7 +267,7 @@ const Index = () => {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground rounded-xl font-semibold text-lg hover:opacity-90 transition-all glow"
               >
-                Join Founder's League
+                Join Founders League
                 <ArrowRight className="w-5 h-5" />
               </a>
             </motion.div>

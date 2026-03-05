@@ -286,11 +286,13 @@ const Index = () => {
               ].map((item) => (
                 <GlassCard
                   key={item.title}
-                  className="text-center h-[160px] flex flex-col items-center justify-center p-6"
+                  className="text-center h-[160px] flex flex-col items-center justify-center p-4 md:p-6"
                 >
-                  <item.icon className="w-12 h-12 text-primary mb-3" />
-                  <h4 className="font-display font-semibold text-foreground">{item.title}</h4>
-                  <p className="text-sm text-muted-foreground mt-1">{item.subtitle}</p>
+                  <div className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center mb-3 shrink-0">
+                    <item.icon className="w-10 h-10 md:w-12 md:h-12 text-primary" />
+                  </div>
+                  <h4 className="font-display text-sm md:text-base font-semibold text-foreground">{item.title}</h4>
+                  <p className="text-xs md:text-sm text-muted-foreground mt-1">{item.subtitle}</p>
                 </GlassCard>
               ))}
             </motion.div>

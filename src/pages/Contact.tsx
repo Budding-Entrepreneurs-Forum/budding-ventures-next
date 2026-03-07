@@ -28,6 +28,7 @@ const Contact = () => {
           email: formData.email,
           subject: formData.subject,
           message: formData.message,
+          _subject: `${formData.subject} – BEF Contact Form`,
         }),
       });
 

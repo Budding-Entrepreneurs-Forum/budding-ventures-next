@@ -190,8 +190,16 @@ const FacultyCard = ({ faculty, index }: { faculty: typeof facultyLeadership[0];
   );
 };
 
+// Members temporarily hidden from display (can be restored by removing from this list)
+const hiddenMembers = [
+  'Sohira Kshemkalyani',
+  'Famiya Kashani',
+  'Urja Wadgaye',
+];
+
 const Members = () => {
   const [selectedYear, setSelectedYear] = useState('2025-2026');
+  const visibleMembers = coreCommitteeMembers.filter(m => !hiddenMembers.includes(m.name));
 
   useEffect(() => {
     document.title = 'Forum Members | Budding Entrepreneurs Forum MIT-WPU School of Business';

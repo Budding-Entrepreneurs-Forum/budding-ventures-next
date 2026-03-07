@@ -4,12 +4,8 @@ import { GlassCard } from '@/components/ui/GlassCard';
 import { Mail, Phone, MapPin, Send, Linkedin, Instagram, Youtube, Twitter, Loader2 } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { toast } from 'sonner';
-import emailjs from '@emailjs/browser';
 
-// EmailJS configuration — replace these with your own values from emailjs.com
-const EMAILJS_SERVICE_ID = 'YOUR_SERVICE_ID';
-const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';
-const EMAILJS_PUBLIC_KEY = 'YOUR_PUBLIC_KEY';
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xgonebod';
 
 const Contact = () => {
   const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
@@ -24,27 +20,24 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      await emailjs.send(
-        EMAILJS_SERVICE_ID,
-        EMAILJS_TEMPLATE_ID,
-        {
-          from_name: formData.name,
-          from_email: formData.email,
+      const res = await fetch(FORMSPREE_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
           subject: formData.subject,
           message: formData.message,
-        },
-        EMAILJS_PUBLIC_KEY
-      );
-
-      toast.success('Message sent successfully. We\'ll get back to you soon.', {
-        duration: 4000,
+        }),
       });
+
+      if (!res.ok) throw new Error('Failed to send');
+
+      toast.success('Thank you! Your message has been sent successfully.', { duration: 4000 });
       setFormData({ name: '', email: '', subject: '', message: '' });
     } catch (error) {
       console.error('Contact form error:', error);
-      toast.error('Something went wrong. Please try again later.', {
-        duration: 4000,
-      });
+      toast.error('Something went wrong. Please try again later.', { duration: 4000 });
     } finally {
       setIsSubmitting(false);
     }

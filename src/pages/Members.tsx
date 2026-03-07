@@ -81,9 +81,15 @@ const memberImages: Record<string, string> = {
 };
 
 // Member Card Component
+// Members that need custom image zoom/position overrides
+const imageOverrides: Record<string, string> = {
+  'dnyanesh-patil': 'scale-[1.35] object-[center_35%]',
+};
+
 const MemberCard = ({ member, index }: { member: typeof coreCommitteeMembers[0]; index: number }) => {
   // Use local image if available, otherwise fall back to external URL
   const memberImage = memberImages[member.image] || member.image;
+  const overrideClass = imageOverrides[member.image] || '';
   
   return (
   <motion.div
@@ -99,7 +105,7 @@ const MemberCard = ({ member, index }: { member: typeof coreCommitteeMembers[0];
         <SkeletonImage
           src={memberImage}
           alt={member.name}
-          className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+          className={`w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105 ${overrideClass}`}
           wrapperClassName="w-full h-full"
           skeletonClassName="rounded-none"
           loading="lazy"

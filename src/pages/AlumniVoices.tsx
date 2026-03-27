@@ -42,8 +42,8 @@ const AlumniVoices = () => {
 
         <div className="container-wide mx-auto px-4 md:px-8 relative z-10">
           <SectionHeading
-            badge="Alumni"
-            title="Voices of Our Leaders"
+            badge="Leadership"
+            title="Our Presidents"
             description="Hear from the presidents who shaped Budding Entrepreneurs Forum and carried its legacy forward."
           />
         </div>

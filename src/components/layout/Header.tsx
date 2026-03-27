@@ -59,9 +59,9 @@ export const Header = () => {
     >
       <div className="container-wide mx-auto px-4 md:px-8">
         {/* Desktop Navigation - Three Zone Layout */}
-        <nav className="hidden lg:grid grid-cols-3 items-center h-24">
+        <nav className="hidden lg:flex items-center justify-between h-24">
           {/* LEFT: BEF Logo */}
-          <div className="flex items-center justify-start">
+          <div className="flex items-center justify-start flex-shrink-0">
             <Link to="/" className="flex items-center gap-3 group">
               <motion.img 
                 src={logo} 
@@ -80,7 +80,7 @@ export const Header = () => {
           </div>
 
           {/* CENTER: Navigation Menu */}
-          <div className="flex items-center justify-center gap-1 flex-nowrap">
+          <div className="flex-1 flex items-center justify-center gap-1 flex-nowrap">
             {navItems.map((item) => (
               <div
                 key={item.name}
@@ -146,7 +146,7 @@ export const Header = () => {
           </div>
 
           {/* RIGHT: MIT-WPU Logo - Long version for desktop */}
-          <div className="flex items-center justify-end">
+          <div className="flex items-center justify-end flex-shrink-0">
             <motion.a
               href="https://mitwpu.edu.in"
               target="_blank"

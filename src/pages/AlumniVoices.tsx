@@ -13,7 +13,7 @@ const presidents = [
     year: '2023–2024',
     photo: namanImg,
     linkedin: 'https://www.linkedin.com/in/naman-jain-2154b01b8?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app',
-    testimonial: `As a former President, I've seen firsthand that the best of the best lead this forum. We have built a legacy of excellence that never fades—a continuous cycle of leading the new generation toward unmatched success.\n\nThis is the premier arena for networking and building your own name. To the visionaries joining us: you aren't just joining a forum; you are stepping into a powerhouse of innovation. Lead from the front and make your mark`,
+    testimonial: `As a former President, I've seen firsthand that the best of the best lead this forum. We have built a legacy of excellence that never testimonial: `As a former President, I've seen firsthand that the best of the best lead this forum. We have built a legacy of excellence that never fades, a continuous cycle of leading the new generation toward unmatched success.\n\nThis is the premier arena for networking and building your own name. To the visionaries joining us: you aren't just joining a forum; you are stepping into a powerhouse of innovation. Lead from the front and make your mark`, cycle of leading the new generation toward unmatched success.\n\nThis is the premier arena for networking and building your own name. To the visionaries joining us: you aren't just joining a forum; you are stepping into a powerhouse of innovation. Lead from the front and make your mark`,
   },
   {
     name: 'Anish Kashyap',

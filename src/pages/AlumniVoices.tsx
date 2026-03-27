@@ -84,9 +84,12 @@ const AlumniVoices = () => {
 
                     {/* Photo placeholder + Name */}
                     <div className="flex items-center gap-4 mb-5">
-                      <div className="w-16 h-16 rounded-full bg-muted flex items-center justify-center text-muted-foreground font-display text-xl font-bold shrink-0 ring-2 ring-primary/10">
-                        {president.name.split(' ').map(n => n[0]).join('')}
-                      </div>
+                      <SkeletonImage
+                        src={president.photo}
+                        alt={president.name}
+                        wrapperClassName="w-16 h-16 rounded-full shrink-0 ring-2 ring-primary/10"
+                        className="w-full h-full object-cover rounded-full"
+                      />
                       <div>
                         <h3 className="font-display text-lg font-bold text-foreground">
                           {president.name}

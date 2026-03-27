@@ -3,8 +3,8 @@ import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ChevronRight } from 'lucide-react';
 import logo from '@/assets/logo.png';
-import mitWpuLogo from '@/assets/mit-wpu-logo.webp';
-import mitWpuLogoShort from '@/assets/mit-wpu-logo-short.jpg';
+import mitWpuLogo from '@/assets/mit-wpu-logo-new.png';
+import mitWpuLogoShort from '@/assets/mit-wpu-logo-short-new.png';
 
 const navItems = [
   { name: 'Home', path: '/' },

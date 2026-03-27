@@ -292,7 +292,7 @@ const Branding = () => {
             >
               {[
                 { number: '25+', label: 'Team Members' },
-                { number: '10+', label: 'Brands Served' },
+                { number: '3+', label: 'Brands Served' },
                 { number: '50+', label: 'Projects Delivered' },
                 { number: '100%', label: 'Client Satisfaction' },
               ].map((stat, index) => (

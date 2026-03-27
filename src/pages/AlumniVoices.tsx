@@ -1,24 +1,31 @@
 import { Layout } from '@/components/layout/Layout';
 import { SectionHeading } from '@/components/ui/SectionHeading';
+import { SkeletonImage } from '@/components/ui/SkeletonImage';
 import { motion } from 'framer-motion';
 import { Linkedin, Quote } from 'lucide-react';
+import namanImg from '@/assets/alumni/naman-jain.jpg';
+import anishImg from '@/assets/alumni/anish-kashyap.jpg';
+import nayanImg from '@/assets/alumni/nayan-pote.jpg';
 
 const presidents = [
   {
     name: 'Naman Jain',
     year: '2023–2024',
+    photo: namanImg,
     linkedin: 'https://www.linkedin.com/in/naman-jain-2154b01b8?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app',
     testimonial: `As a former President, I've seen firsthand that the best of the best lead this forum. We have built a legacy of excellence that never fades—a continuous cycle of leading the new generation toward unmatched success.\n\nThis is the premier arena for networking and building your own name. To the visionaries joining us: you aren't just joining a forum; you are stepping into a powerhouse of innovation. Lead from the front and make your mark`,
   },
   {
     name: 'Anish Kashyap',
     year: '2024–2025',
+    photo: anishImg,
     linkedin: 'https://www.linkedin.com/in/anish-kashyap-916048194?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app',
     testimonial: `I never wanted to join Budding my friends pushed me into it. But the best things in life find you when you need them most, not when you want them.\n\nBudding is where I learned to fight my own battles, work beyond comfort zones, and face the raw realities of the world. It didn't hand me answers it prepared me to find them. It gave me the canvas to bring ideas to life, lead 19 events in 11 months, and build something meaningful.\n\nBudding doesn't just build professionals it builds people. It teaches you that struggles aren't setbacks but opportunities. It shapes you into someone who doesn't just chase results but believes in a value system.\n\nWhat makes Budding truly one of a kind is its soul. It empowers people to learn, fail, grow, and create. It holds values that even large institutions struggle to embody. Its alumni remain committed to its purpose with full spirit, whenever called upon.\n\nBudding is the reason I have my career today. And I mean that with every word.`,
   },
   {
     name: 'Nayan Pote',
     year: '2025 – Present',
+    photo: nayanImg,
     linkedin: 'https://www.linkedin.com/in/nayanpote/',
     testimonial: `Budding, for me, has always represented a journey of purposeful progress.\n\nIt is not defined by positions or visibility, but by the work carried out consistently behind the scenes, the responsibilities we take, the pressure we handle, and the small yet meaningful improvements we strive for each day.\n\nMy vision is clear Budding tomorrow should stand slightly ahead of Budding today. Not through force or superficial change, but through steady, organic growth driven by genuine effort and intent.\n\nWhat truly defines this forum is its people, individuals who take ownership, support one another, and contribute without seeking recognition.\n\nAs the serving President, I consider myself a part of this ongoing journey, learning, contributing, and growing alongside the forum.\n\nBudding, in essence, is about progress that may not always be immediately visible, but is always being built.`,
   },
@@ -80,9 +87,12 @@ const AlumniVoices = () => {
 
                     {/* Photo placeholder + Name */}
                     <div className="flex items-center gap-4 mb-5">
-                      <div className="w-16 h-16 rounded-full bg-muted flex items-center justify-center text-muted-foreground font-display text-xl font-bold shrink-0 ring-2 ring-primary/10">
-                        {president.name.split(' ').map(n => n[0]).join('')}
-                      </div>
+                      <SkeletonImage
+                        src={president.photo}
+                        alt={president.name}
+                        wrapperClassName="w-16 h-16 rounded-full shrink-0 ring-2 ring-primary/10"
+                        className="w-full h-full object-cover rounded-full"
+                      />
                       <div>
                         <h3 className="font-display text-lg font-bold text-foreground">
                           {president.name}

@@ -158,7 +158,7 @@ export const Header = () => {
               <img 
                 src={mitWpuLogo} 
                 alt="MIT-WPU" 
-                className="h-[60px] w-auto object-contain"
+                className="h-[75px] w-auto object-contain"
               />
             </motion.a>
           </div>

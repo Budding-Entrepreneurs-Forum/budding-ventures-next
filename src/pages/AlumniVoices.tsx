@@ -1,7 +1,11 @@
 import { Layout } from '@/components/layout/Layout';
 import { SectionHeading } from '@/components/ui/SectionHeading';
+import { SkeletonImage } from '@/components/ui/SkeletonImage';
 import { motion } from 'framer-motion';
 import { Linkedin, Quote } from 'lucide-react';
+import namanImg from '@/assets/alumni/naman-jain.jpg';
+import anishImg from '@/assets/alumni/anish-kashyap.jpg';
+import nayanImg from '@/assets/alumni/nayan-pote.jpg';
 
 const presidents = [
   {

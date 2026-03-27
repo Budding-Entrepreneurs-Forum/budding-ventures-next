@@ -59,7 +59,7 @@ export const Header = () => {
     >
       <div className="container-wide mx-auto px-4 md:px-8">
         {/* Desktop Navigation - Three Zone Layout */}
-        <nav className="hidden lg:grid grid-cols-3 items-center h-20">
+        <nav className="hidden lg:grid grid-cols-3 items-center h-24">
           {/* LEFT: BEF Logo */}
           <div className="flex items-center justify-start">
             <Link to="/" className="flex items-center gap-3 group">
@@ -158,7 +158,7 @@ export const Header = () => {
               <img 
                 src={mitWpuLogo} 
                 alt="MIT-WPU" 
-                className="h-[75px] w-auto object-contain"
+                className="h-20 w-auto object-contain block"
               />
             </motion.a>
           </div>

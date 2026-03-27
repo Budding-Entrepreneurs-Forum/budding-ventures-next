@@ -59,7 +59,7 @@ export const Header = () => {
     >
       <div className="container-wide mx-auto px-4 md:px-8">
         {/* Desktop Navigation - Three Zone Layout */}
-        <nav className="hidden lg:flex items-center justify-between h-24">
+        <nav className="hidden lg:flex items-center justify-between h-20">
           {/* LEFT: BEF Logo */}
           <div className="flex items-center justify-start flex-shrink-0">
             <Link to="/" className="flex items-center gap-3 group">

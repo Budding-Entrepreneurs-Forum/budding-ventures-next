@@ -17,7 +17,7 @@ const navItems = [
     children: [
       { name: 'About the Forum', path: '/about' },
       { name: 'Forum Members', path: '/members' },
-      { name: 'Our Presidents', path: '/alumni-voices' },
+      { name: 'Our Presidents', path: '/our-presidents' },
     ]
   },
   { name: 'Contact Us', path: '/contact' },

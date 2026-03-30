@@ -229,7 +229,7 @@ export const facultyLeadership = [
   },
   {
     name: 'Dr. Swati Bankar',
-    role: 'Associate Dean - Student Development',
+    role: 'Associate Dean, MIT WPU SOB',
     tag: 'Supported By',
     image: 'swati-bankar',
     description: 'Supporting student development initiatives and fostering entrepreneurial growth among students.',

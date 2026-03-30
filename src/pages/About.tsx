@@ -20,9 +20,16 @@ const leadership = [
     image: deependraSharma,
   },
   {
+    name: 'Dr. Swati Bankar',
+    role: 'Associate Dean - Student Development',
+    position: 'Supported By',
+    linkedin: 'https://www.linkedin.com/in/dr-swati-bankar-024111178/',
+    image: swatiBankar,
+  },
+  {
     name: 'Prof. Dr. Vinita Ahire Kale',
     role: 'Forum Faculty Head, MIT WPU SOB',
-    position: 'Proposed By',
+    position: 'Proposed & Guided By',
     linkedin: 'https://www.linkedin.com/in/dr-vinita-ahire-kale-71619315/',
     image: vinitaAhireKale,
   },

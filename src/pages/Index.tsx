@@ -12,9 +12,9 @@ import { useNewsletters, type DbNewsletter } from '@/hooks/useNewsletters';
 import { FlipbookViewer } from '@/components/FlipbookViewer';
 
 const stats = [
-  { value: '50+', label: 'Forum Members' },
-  { value: '30+', label: 'Events Conducted' },
-  { value: '10+', label: 'Departments' },
+  { value: '150+', label: 'Members Network' },
+  { value: '50+', label: 'Events Conducted' },
+  { value: '12+', label: 'Departments' },
   { value: '2017', label: 'Established' },
 ];
 

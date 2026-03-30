@@ -8,6 +8,7 @@ import brandingReportCover from '@/assets/branding-report-cover.png';
 import encaveLogo from '@/assets/brands/encave.jpg';
 import creatooLogo from '@/assets/brands/creatoo.jpg';
 import riwayatLogo from '@/assets/brands/riwayat.jpg';
+import aaalayLogo from '@/assets/brands/aaalay-logo.jpg';
 import { 
   Palette, 
   Megaphone, 

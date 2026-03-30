@@ -150,49 +150,44 @@ const FacultyCard = ({ faculty, index }: { faculty: typeof facultyLeadership[0];
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ delay: index * 0.1, duration: 0.5 }}
-    className="bg-card rounded-2xl p-6 md:p-8 border border-border/50 shadow-sm hover:shadow-lg transition-all duration-300"
+    className="bg-card rounded-2xl p-6 border border-border/50 shadow-sm hover:shadow-lg transition-all duration-300"
   >
-    <div className="flex flex-col md:flex-row gap-6">
-      {/* Tag and Image */}
-      <div className="flex flex-col items-center md:items-start gap-4">
-        <span className="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium">
-          {faculty.tag}
-        </span>
-        <div className="w-32 h-32 md:w-40 md:h-40 rounded-xl overflow-hidden bg-secondary border-2 border-border">
-          <SkeletonImage
-            src={facultyImage}
-            alt={faculty.name}
-            className="w-full h-full object-cover object-top"
-            wrapperClassName="w-full h-full"
-            skeletonClassName="rounded-xl"
-            loading="lazy"
-          />
-        </div>
-        {faculty.linkedin && (
-          <a
-            href={faculty.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition-colors font-medium"
-          >
-            <Linkedin className="w-4 h-4" />
-            <span>Connect on LinkedIn</span>
-          </a>
-        )}
+    <div className="flex flex-col items-center text-center gap-4">
+      <span className="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium">
+        {faculty.tag}
+      </span>
+      <div className="w-32 h-32 rounded-xl overflow-hidden bg-secondary border-2 border-border">
+        <SkeletonImage
+          src={facultyImage}
+          alt={faculty.name}
+          className="w-full h-full object-cover object-top"
+          wrapperClassName="w-full h-full"
+          skeletonClassName="rounded-xl"
+          loading="lazy"
+        />
       </div>
-      
-      {/* Content */}
-      <div className="flex-1 text-center md:text-left">
-        <h3 className="font-display text-xl md:text-2xl font-bold text-foreground mb-1">
+      <div>
+        <h3 className="font-display text-xl font-bold text-foreground mb-1">
           {faculty.name}
         </h3>
-        <p className="text-primary font-medium mb-4">
+        <p className="text-primary font-medium mb-3">
           {faculty.role}
         </p>
-        <p className="text-muted-foreground leading-relaxed">
+        <p className="text-muted-foreground leading-relaxed text-sm">
           {faculty.description}
         </p>
       </div>
+      {faculty.linkedin && (
+        <a
+          href={faculty.linkedin}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition-colors font-medium"
+        >
+          <Linkedin className="w-4 h-4" />
+          <span>Connect on LinkedIn</span>
+        </a>
+      )}
     </div>
   </motion.div>
   );

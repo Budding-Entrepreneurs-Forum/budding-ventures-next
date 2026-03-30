@@ -46,6 +46,7 @@ import gauravShinde from '@/assets/members/gaurav-shinde.png';
 // Faculty image mapping
 const facultyImages: Record<string, string> = {
   'deependra-sharma': deependraSharma,
+  'swati-bankar': swatiBankar,
   'vinita-ahire-kale': vinitaAhireKale,
 };
 

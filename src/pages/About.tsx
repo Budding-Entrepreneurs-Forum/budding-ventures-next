@@ -8,6 +8,7 @@ import { Linkedin, Users, Lightbulb, Target, BookOpen } from 'lucide-react';
 
 // Faculty images
 import deependraSharma from '@/assets/faculty/deependra-sharma.jpg';
+import swatiBankar from '@/assets/faculty/swati-bankar.jpg';
 import vinitaAhireKale from '@/assets/faculty/vinita-ahire-kale.jpg';
 
 const leadership = [
@@ -19,9 +20,16 @@ const leadership = [
     image: deependraSharma,
   },
   {
+    name: 'Dr. Swati Bankar',
+    role: 'Associate Dean - Student Development',
+    position: 'Supported By',
+    linkedin: 'https://www.linkedin.com/in/dr-swati-bankar-024111178/',
+    image: swatiBankar,
+  },
+  {
     name: 'Prof. Dr. Vinita Ahire Kale',
     role: 'Forum Faculty Head, MIT WPU SOB',
-    position: 'Proposed By',
+    position: 'Proposed & Guided By',
     linkedin: 'https://www.linkedin.com/in/dr-vinita-ahire-kale-71619315/',
     image: vinitaAhireKale,
   },
@@ -138,7 +146,7 @@ const About = () => {
             description="Our forum is guided by distinguished faculty members who bring years of experience in entrepreneurship."
           />
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {leadership.map((person, index) => (
               <motion.div
                 key={person.name}

@@ -9,6 +9,7 @@ import { facultyLeadership, coreCommitteeMembers, leadershipYears } from '@/data
 
 // Faculty images
 import deependraSharma from '@/assets/faculty/deependra-sharma.jpg';
+import swatiBankar from '@/assets/faculty/swati-bankar.jpg';
 import vinitaAhireKale from '@/assets/faculty/vinita-ahire-kale.jpg';
 
 // Member images - Batch 1 (first 10)
@@ -45,6 +46,7 @@ import gauravShinde from '@/assets/members/gaurav-shinde.png';
 // Faculty image mapping
 const facultyImages: Record<string, string> = {
   'deependra-sharma': deependraSharma,
+  'swati-bankar': swatiBankar,
   'vinita-ahire-kale': vinitaAhireKale,
 };
 
@@ -250,7 +252,7 @@ const Members = () => {
             description="Distinguished faculty members guiding our forum with their expertise and vision."
           />
 
-          <div className="grid md:grid-cols-2 gap-6 md:gap-8 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
             {facultyLeadership.map((faculty, index) => (
               <FacultyCard key={faculty.name} faculty={faculty} index={index} />
             ))}

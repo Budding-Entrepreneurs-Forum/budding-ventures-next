@@ -16,9 +16,9 @@ const flagshipEvents = [
     color: 'from-cyan-500 to-blue-500',
   },
   {
-    slug: 'hustle-hawk',
-    title: 'Hustle & Hawk',
-    description: 'An intensive entrepreneurship bootcamp designed to transform ideas into actionable business plans.',
+    slug: 'xchange-sphere',
+    title: 'Xchange Sphere',
+    description: 'Global platform connecting Indian and Spanish Students for business idea exchange.',
     icon: Mic,
     color: 'from-blue-500 to-purple-500',
   },

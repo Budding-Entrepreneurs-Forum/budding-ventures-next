@@ -27,7 +27,7 @@ const leadership = [
     image: swatiBankar,
   },
   {
-    name: 'Prof. Dr. Vinita Ahire Kale',
+    name: 'Dr. Vinita Ahire Kale',
     role: 'Forum Faculty Head, MIT WPU SOB',
     position: 'Proposed & Guided By',
     linkedin: 'https://www.linkedin.com/in/dr-vinita-ahire-kale-71619315/',

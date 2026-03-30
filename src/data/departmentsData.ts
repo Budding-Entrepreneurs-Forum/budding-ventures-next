@@ -236,7 +236,7 @@ export const facultyLeadership = [
     linkedin: 'https://www.linkedin.com/in/dr-swati-bankar-024111178/',
   },
   {
-    name: 'Prof. Dr. Vinita Ahire Kale',
+    name: 'Dr. Vinita Ahire Kale',
     role: 'Forum Faculty Head, MIT WPU SOB',
     tag: 'Proposed & Guided By',
     image: 'vinita-ahire-kale',

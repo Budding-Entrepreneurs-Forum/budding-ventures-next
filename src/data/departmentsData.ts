@@ -228,9 +228,17 @@ export const facultyLeadership = [
     linkedin: 'https://www.linkedin.com/in/dr-deependra-sharma-579771167/',
   },
   {
+    name: 'Dr. Swati Bankar',
+    role: 'Associate Dean - Student Development',
+    tag: 'Supported By',
+    image: 'swati-bankar',
+    description: 'Supporting student development initiatives and fostering entrepreneurial growth among students.',
+    linkedin: 'https://www.linkedin.com/in/dr-swati-bankar-024111178/',
+  },
+  {
     name: 'Prof. Dr. Vinita Ahire Kale',
     role: 'Forum Faculty Head, MIT WPU SOB',
-    tag: 'Proposed By',
+    tag: 'Proposed & Guided By',
     image: 'vinita-ahire-kale',
     description: 'Provides opportunities for stimulating and augmenting the entrepreneurial spirit. Creates a culture of entrepreneurship and promotes entrepreneurial studies.',
     linkedin: 'https://www.linkedin.com/in/dr-vinita-ahire-kale/',

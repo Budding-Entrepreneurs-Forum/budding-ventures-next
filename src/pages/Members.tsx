@@ -9,6 +9,7 @@ import { facultyLeadership, coreCommitteeMembers, leadershipYears } from '@/data
 
 // Faculty images
 import deependraSharma from '@/assets/faculty/deependra-sharma.jpg';
+import swatiBankar from '@/assets/faculty/swati-bankar.jpg';
 import vinitaAhireKale from '@/assets/faculty/vinita-ahire-kale.jpg';
 
 // Member images - Batch 1 (first 10)

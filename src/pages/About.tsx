@@ -21,7 +21,7 @@ const leadership = [
   },
   {
     name: 'Dr. Swati Bankar',
-    role: 'Associate Dean - Student Development',
+    role: 'Associate Dean, MIT WPU SOB',
     position: 'Supported By',
     linkedin: 'https://www.linkedin.com/in/dr-swati-bankar-024111178/',
     image: swatiBankar,

@@ -103,9 +103,9 @@ const testimonials = [
 
 // Portfolio samples
 const portfolioItems = [
-  { image: creatooLogo, title: 'Creatoo', category: 'Social Media', link: 'https://creatoo.in/' },
+  { image: creatooLogo, title: 'Creatoo', category: 'Brand Identity', link: 'https://creatoo.in/' },
   { image: riwayatLogo, title: 'Riwayat', category: 'Brand Identity', link: 'https://www.instagram.com/riwayat.kurtis?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==' },
-  { image: encaveLogo, title: 'Encave Café', category: 'Visual Design', link: 'https://www.instagram.com/encave_cafe?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==' },
+  { image: encaveLogo, title: 'Encave Café', category: 'Brand Identity', link: 'https://www.instagram.com/encave_cafe?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==' },
   { image: aaalayLogo, title: 'Aaalay', category: 'Brand Identity', link: 'https://aaalay.com' },
 ];
 

@@ -8,6 +8,7 @@ import brandingReportCover from '@/assets/branding-report-cover.png';
 import encaveLogo from '@/assets/brands/encave.jpg';
 import creatooLogo from '@/assets/brands/creatoo.jpg';
 import riwayatLogo from '@/assets/brands/riwayat.jpg';
+import aaalayLogo from '@/assets/brands/aaalay-logo.jpg';
 import { 
   Palette, 
   Megaphone, 
@@ -102,9 +103,10 @@ const testimonials = [
 
 // Portfolio samples
 const portfolioItems = [
-  { image: creatooLogo, title: 'Creatoo', category: 'Social Media' },
-  { image: riwayatLogo, title: 'Riwayat', category: 'Brand Identity' },
-  { image: encaveLogo, title: 'Encave Café', category: 'Visual Design' },
+  { image: creatooLogo, title: 'Creatoo', category: 'Social Media', link: 'https://creatoo.in/' },
+  { image: riwayatLogo, title: 'Riwayat', category: 'Brand Identity', link: 'https://www.instagram.com/riwayat.kurtis?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==' },
+  { image: encaveLogo, title: 'Encave Café', category: 'Visual Design', link: 'https://www.instagram.com/encave_cafe?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==' },
+  { image: aaalayLogo, title: 'Aaalay', category: 'Brand Identity', link: 'https://aaalay.com' },
 ];
 
 const Branding = () => {
@@ -506,15 +508,19 @@ const Branding = () => {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {portfolioItems.map((item, index) => (
-              <motion.div
+              <motion.a
                 key={item.title}
+                href={item.link}
+                target="_blank"
+                rel="noopener noreferrer"
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="group relative aspect-square rounded-2xl overflow-hidden cursor-pointer"
+                whileHover={{ scale: 1.03 }}
+                className="group relative aspect-square rounded-2xl overflow-hidden cursor-pointer shadow-card hover:shadow-glow transition-shadow duration-300"
               >
                 <img
                   src={item.image}
@@ -524,9 +530,12 @@ const Branding = () => {
                 {/* Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
                   <span className="text-xs uppercase tracking-wider text-primary mb-1">{item.category}</span>
-                  <h3 className="text-xl font-display font-bold text-foreground">{item.title}</h3>
+                  <h3 className="text-xl font-display font-bold text-foreground flex items-center gap-2">
+                    {item.title}
+                    <ExternalLink className="w-4 h-4 text-primary" />
+                  </h3>
                 </div>
-              </motion.div>
+              </motion.a>
             ))}
           </div>
         </div>

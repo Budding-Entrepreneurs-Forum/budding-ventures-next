@@ -188,13 +188,13 @@ export const departments: Department[] = [
     heads: [
       {
         name: 'Vivek Goondil',
-        role: 'Photography Department Lead',
+        role: 'Visual Production Department Lead',
         image: 'https://buddingentrepreneurs.in/wp-content/uploads/2025/07/Ventures-Voyage-July-2025-By-Budding-Entrepreneurs-Forum-_20250720_142332_0000_Page_19_Image_0025.jpg',
         linkedin: 'https://www.linkedin.com/in/vivek-gondil/',
       },
       {
         name: 'Vishal Ishwale',
-        role: 'Photography Department Lead',
+        role: 'Visual Production Department Lead',
         image: 'vishal-ishwale',
         linkedin: 'https://www.linkedin.com/in/vishal-ishwale-230663245',
       },
@@ -377,13 +377,13 @@ export const coreCommitteeMembers = [
   },
   {
     name: 'Vivek Goondil',
-    role: 'Photography Department Lead',
+    role: 'Visual Production Department Lead',
     image: 'vivek-goondil', // Key for mapping to imported image
     linkedin: 'https://www.linkedin.com/in/vivek-gondil/',
   },
   {
     name: 'Vishal Ishwale',
-    role: 'Photography Department Lead',
+    role: 'Visual Production Department Lead',
     image: 'vishal-ishwale',
     linkedin: 'https://www.linkedin.com/in/vishal-ishwale-230663245',
   },

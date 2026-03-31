@@ -7,18 +7,10 @@ declare global {
   }
 }
 
-const CHATBASE_SCRIPT_ID = 'E3dWQBjyI-sDqO3DZeaQp';
+const CHATBASE_SCRIPT_ID = 'cGalVS_8RdRMd4IO_ZkLx';
 
 export const ChatbaseWidget = () => {
   useEffect(() => {
-    // Set chatbase config with brand color
-    window.chatbaseConfig = {
-      chatbotId: CHATBASE_SCRIPT_ID,
-      theme: {
-        primaryColor: '#3F72AF',
-      },
-    };
-
     // Initialize chatbase
     if (!window.chatbase || window.chatbase("getState") !== "initialized") {
       window.chatbase = (...args: any[]) => {
@@ -33,11 +25,19 @@ export const ChatbaseWidget = () => {
       });
     }
 
-    const script = document.createElement("script");
-    script.src = "https://www.chatbase.co/embed.min.js";
-    script.id = CHATBASE_SCRIPT_ID;
-    (script as any).domain = "www.chatbase.co";
-    document.body.appendChild(script);
+    const onLoad = () => {
+      const script = document.createElement("script");
+      script.src = "https://www.chatbase.co/embed.min.js";
+      script.id = CHATBASE_SCRIPT_ID;
+      (script as any).domain = "www.chatbase.co";
+      document.body.appendChild(script);
+    };
+
+    if (document.readyState === "complete") {
+      onLoad();
+    } else {
+      window.addEventListener("load", onLoad);
+    }
 
     return () => {
       // Cleanup on unmount

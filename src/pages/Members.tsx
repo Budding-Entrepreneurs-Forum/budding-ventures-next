@@ -198,6 +198,8 @@ const hiddenMembers = [
   'Sohira Kshemkalyani',
   'Famiya Kashani',
   'Urja Wadgaye',
+  'Sanjana Kashyap',
+  'Varad Mulgund',
 ];
 
 const Members = () => {

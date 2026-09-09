@@ -59,19 +59,24 @@ serve(async (req) => {
 
     const data = await res.json();
     if (!res.ok) {
-      console.error("Resend API error:", data);
-      throw new Error(`Email send failed [${res.status}]: ${JSON.stringify(data)}`);
+      // Do not fail the application submission when the email provider rejects
+      // the send (e.g. sender domain not yet verified). Log and report softly.
+      console.error(`Resend API error [${res.status}]:`, JSON.stringify(data));
+      return new Response(
+        JSON.stringify({ success: false, emailSent: false, reason: data?.message || "Email provider rejected the send" }),
+        { status: 200, headers: { ...corsHeaders, "Content-Type": "application/json" } },
+      );
     }
 
-    return new Response(JSON.stringify({ success: true }), {
+    return new Response(JSON.stringify({ success: true, emailSent: true }), {
       status: 200,
       headers: { ...corsHeaders, "Content-Type": "application/json" },
     });
   } catch (error: unknown) {
     const message = error instanceof Error ? error.message : "Unknown error";
     console.error("send-recruitment-email error:", message);
-    return new Response(JSON.stringify({ success: false, error: message }), {
-      status: 500,
+    return new Response(JSON.stringify({ success: false, emailSent: false, error: message }), {
+      status: 200,
       headers: { ...corsHeaders, "Content-Type": "application/json" },
     });
   }

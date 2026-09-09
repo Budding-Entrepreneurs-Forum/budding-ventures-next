@@ -11,6 +11,7 @@ import { NewsletterUploadForm } from '@/components/admin/NewsletterUploadForm';
 import { ManageNewsletters } from '@/components/admin/ManageNewsletters';
 import { ForgotPasswordDialog } from '@/components/admin/ForgotPasswordDialog';
 import { AdminHeader } from '@/components/admin/AdminHeader';
+import { ManageApplications } from '@/components/admin/ManageApplications';
 
 const Admin = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -192,7 +193,7 @@ const Admin = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="max-w-2xl mx-auto px-4 py-16 md:py-24"
+          className="max-w-4xl mx-auto px-4 py-16 md:py-24"
         >
           <AdminHeader email={userEmail} onLogout={handleLogout} />
 
@@ -201,6 +202,9 @@ const Admin = () => {
 
           {/* Section B: Manage */}
           <ManageNewsletters />
+
+          {/* Section C: Recruitment applications */}
+          <ManageApplications />
         </motion.div>
       )}
     </div>

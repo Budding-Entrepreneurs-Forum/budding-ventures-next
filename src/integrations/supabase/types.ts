@@ -71,6 +71,63 @@ export type Database = {
         }
         Relationships: []
       }
+      recruitment_applications: {
+        Row: {
+          contact_number: string
+          course: string
+          created_at: string
+          current_year: string
+          departments: string[]
+          division: string
+          email: string
+          full_name: string
+          id: string
+          linkedin_url: string | null
+          prn: string
+          school: string
+          specialization: string | null
+          status: Database["public"]["Enums"]["application_status"]
+          updated_at: string
+          why_join: string
+        }
+        Insert: {
+          contact_number: string
+          course: string
+          created_at?: string
+          current_year: string
+          departments?: string[]
+          division: string
+          email: string
+          full_name: string
+          id?: string
+          linkedin_url?: string | null
+          prn: string
+          school: string
+          specialization?: string | null
+          status?: Database["public"]["Enums"]["application_status"]
+          updated_at?: string
+          why_join: string
+        }
+        Update: {
+          contact_number?: string
+          course?: string
+          created_at?: string
+          current_year?: string
+          departments?: string[]
+          division?: string
+          email?: string
+          full_name?: string
+          id?: string
+          linkedin_url?: string | null
+          prn?: string
+          school?: string
+          specialization?: string | null
+          status?: Database["public"]["Enums"]["application_status"]
+          updated_at?: string
+          why_join?: string
+        }
+        Relationships: []
+      }
       user_roles: {
         Row: {
           id: string
@@ -104,6 +161,12 @@ export type Database = {
     }
     Enums: {
       app_role: "admin" | "user"
+      application_status:
+        | "Pending"
+        | "Under Review"
+        | "Shortlisted"
+        | "Selected"
+        | "Rejected"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -232,6 +295,13 @@ export const Constants = {
   public: {
     Enums: {
       app_role: ["admin", "user"],
+      application_status: [
+        "Pending",
+        "Under Review",
+        "Shortlisted",
+        "Selected",
+        "Rejected",
+      ],
     },
   },
 } as const

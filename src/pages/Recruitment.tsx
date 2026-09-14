@@ -189,9 +189,9 @@ const Recruitment = () => {
               Every Big Idea Starts With <span className="gradient-text">One Bold Step</span>
             </h1>
             <p className="text-base md:text-xl text-muted-foreground mb-8 max-w-2xl">
-              The Budding Entrepreneurs Forum is where MIT-WPU students explore ideas, build real skills, take
-              ownership of meaningful work, and grow alongside ambitious people. This is your chance to learn far
-              beyond the classroom and find out what you are truly capable of.
+              Recognized as one of MIT-WPU’s best forum, the Budding Entrepreneurs Forum brings together ambitious
+              minds to explore ideas, build real-world skills, take ownership, and turn ambition into meaningful
+              impact.
             </p>
             <button
               type="button"

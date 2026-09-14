@@ -211,7 +211,7 @@ const Recruitment = () => {
             Where Ideas Become&nbsp;<span className="gradient-text">Impact</span>
           </h2>
           <p className="text-center text-muted-foreground text-sm md:text-base max-w-xl mx-auto mb-10">
-            Joining BEF is not about getting a position. It is about discovering what you are capable of.
+            Turn your ideas into action, your experiences into growth, and your ambition into impact.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
             {benefits.map((b, i) => (

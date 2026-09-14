@@ -208,7 +208,7 @@ const Recruitment = () => {
       <section className="py-14 md:py-20 bg-card">
         <div className="container-wide mx-auto px-4 md:px-8">
           <h2 className="font-display text-2xl md:text-4xl font-bold text-foreground text-center mb-3">
-            Where Ideas Become&nbsp;<span className="gradient-text">BEF?</span>
+            Where Ideas Become&nbsp;<span className="gradient-text">Impact</span>
           </h2>
           <p className="text-center text-muted-foreground text-sm md:text-base max-w-xl mx-auto mb-10">
             Joining BEF is not about getting a position. It is about discovering what you are capable of.

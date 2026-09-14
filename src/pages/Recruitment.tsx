@@ -183,7 +183,7 @@ const Recruitment = () => {
         <div className="container-wide mx-auto px-4 md:px-8 relative z-10">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="max-w-3xl">
             <span className="inline-block px-4 py-1.5 bg-primary/10 text-primary rounded-full text-xs md:text-sm font-semibold tracking-wide mb-5">
-              BEF RECRUITMENT
+              RECRUITMENT
             </span>
             <h1 className="font-display text-3xl sm:text-4xl md:text-6xl font-bold text-foreground mb-5 leading-tight">
               Every Big Idea Starts With <span className="gradient-text">One Bold Step</span>

@@ -15,6 +15,7 @@ import photo13 from "@/assets/members/2026-2027/bhavil-mehta.asset.json";
 import photo14 from "@/assets/members/2026-2027/lavish-jain.asset.json";
 import photo15 from "@/assets/members/2026-2027/shivani-jha.asset.json";
 import photo16 from "@/assets/members/2026-2027/swaraj-tungatkar.asset.json";
+import photo17 from "@/assets/members/2026-2027/pallavi-rajput.asset.json";
 
 // Excel row order and literal cell values are authoritative; never sort this array.
 export const coreCommittee2026 = [
@@ -31,7 +32,7 @@ export const coreCommittee2026 = [
   { name: "Anjali Johnny", role: "Creatives Department Lead", linkedin: "https://www.linkedin.com/in/anjali-johnny-529a842ab?utm_source=share_via&utm_content=profile&utm_medium=member_android", image: photo10.url },
   { name: "Nilam Choudhary", role: "Creatives Department Lead", linkedin: "https://www.linkedin.com/in/nilam-choudhary-1a52812b2?utm_source=share_via&utm_content=profile&utm_medium=member_ios", image: photo11.url },
   { name: "Nishitha S", role: "Editorial Department  Lead", linkedin: "https://www.linkedin.com/in/nishitha-somashekar-8a2458376", image: photo12.url },
-  { name: "Pallavi Rajput", role: "Editorial Department Lead", linkedin: "https://www.linkedin.com/in/pallavi-rajput-66567937b", image: '' },
+  { name: "Pallavi Rajput", role: "Editorial Department Lead", linkedin: "https://www.linkedin.com/in/pallavi-rajput-66567937b", image: photo17.url },
   { name: "Bhavil mehta", role: "Events Department Lead", linkedin: "https://www.linkedin.com/in/bhavil-mehta-079b5b273?utm_source=share_via&utm_content=profile&utm_medium=member_android", image: photo13.url },
   { name: "Lavish Jain", role: "Events Department Lead", linkedin: "https://www.linkedin.com/in/lavishjain2311?utm_source=share_via&utm_content=profile&utm_medium=member_android", image: photo14.url },
   { name: "Shivani Jha", role: "Governance & Compliance Department Lead", linkedin: "https://www.linkedin.com/in/shivani-jha01?utm_source=share_via&utm_content=profile&utm_medium=member_android", image: photo15.url },

@@ -17,6 +17,17 @@ import photo15 from "@/assets/members/2026-2027/shivani-jha.asset.json";
 import photo16 from "@/assets/members/2026-2027/swaraj-tungatkar.asset.json";
 import photo17 from "@/assets/members/2026-2027/pallavi-rajput.asset.json";
 
+import photo18 from "@/assets/members/2026-2027/prachi-vora.asset.json";
+import photo19 from "@/assets/members/2026-2027/jeet-agrawal.asset.json";
+import photo20 from "@/assets/members/2026-2027/shreyas-kulkarni.asset.json";
+import photo21 from "@/assets/members/2026-2027/shivang-khandelwal.asset.json";
+import photo22 from "@/assets/members/2026-2027/yasin-jummal.asset.json";
+import photo23 from "@/assets/members/2026-2027/tanushri-mahadik.asset.json";
+import photo24 from "@/assets/members/2026-2027/ishika-agrawal.asset.json";
+import photo25 from "@/assets/members/2026-2027/deepshikha.asset.json";
+import photo26 from "@/assets/members/2026-2027/harsh-bhansali.asset.json";
+import photo27 from "@/assets/members/2026-2027/gouri-gorkha.asset.json";
+
 // Excel row order and literal cell values are authoritative; never sort this array.
 export const coreCommittee2026 = [
   { name: "Chinmay Mistry", role: "President", linkedin: "https://linkedin.com/in/chinmay-mistry-a6b114259", image: photo0.url },
@@ -37,16 +48,16 @@ export const coreCommittee2026 = [
   { name: "Lavish Jain", role: "Events Department Lead", linkedin: "https://www.linkedin.com/in/lavishjain2311?utm_source=share_via&utm_content=profile&utm_medium=member_android", image: photo14.url },
   { name: "Shivani Jha", role: "Governance & Compliance Department Lead", linkedin: "https://www.linkedin.com/in/shivani-jha01?utm_source=share_via&utm_content=profile&utm_medium=member_android", image: photo15.url },
   { name: "Swaraj Tungatkar", role: "IT Department Lead", linkedin: "https://www.linkedin.com/in/swaraj-tungatkar/", image: photo16.url },
-  { name: "Gouri Gorkha", role: "Podcast Department Lead", linkedin: "https://www.linkedin.com/in/gouri-gorkha-77592a308?utm_source=share_via&utm_content=profile&utm_medium=member_android", image: '' },
-  { name: "Harsh Bhansali", role: "Promotions Department Lead", linkedin: "https://www.linkedin.com/in/harsh-bhansali1?utm_source=share_via&utm_content=profile&utm_medium=member_android", image: '' },
-  { name: "Deepshikha", role: "Promotions Department Lead", linkedin: "https://www.linkedin.com/in/deepshikha-9585a634a?utm_source=share_via&utm_content=profile&utm_medium=member_android", image: '' },
-  { name: "Ishika Agrawal", role: "Social Media Department Lead", linkedin: "https://www.linkedin.com/in/ishika-agrawal-820778245?trk=contact-info", image: '' },
-  { name: "Tanushri mahadik", role: "Social Media DepartmentLead", linkedin: "https://www.linkedin.com/in/tanushri-mahadik-8b9b44427?utm_source=share_via&utm_content=profile&utm_medium=member_android", image: '' },
-  { name: "Yasin Jummal", role: "Sponsorship DepartmentLead", linkedin: "https://www.linkedin.com/in/yasin-jummal-96788a34b/", image: '' },
-  { name: "Shivang Khandelwal", role: "Sponsorship Department Lead", linkedin: "https://www.linkedin.com/in/shivang-khandelwal-b25362384?utm_source=share_via&utm_content=profile&utm_medium=member_android", image: '' },
-  { name: "Shreyas Ratnakar Kulkarni", role: "Visual Production Department Lead", linkedin: "https://www.linkedin.com/in/shreyas-k-a9328036a?utm_source=share_via&utm_content=profile&utm_medium=member_android", image: '' },
-  { name: "Jeet Agrawal", role: "Visual Production Department Lead", linkedin: "https://www.linkedin.com/in/jeet-agrawal-759153372?utm_source=share_via&utm_content=profile&utm_medium=member_ios", image: '' },
-  { name: "Prachi Vora", role: "Executive Core Member ", linkedin: "https://www.linkedin.com/in/prachi-vora-finance", image: '' },
+  { name: "Gouri Gorkha", role: "Podcast Department Lead", linkedin: "https://www.linkedin.com/in/gouri-gorkha-77592a308?utm_source=share_via&utm_content=profile&utm_medium=member_android", image: photo27.url },
+  { name: "Harsh Bhansali", role: "Promotions Department Lead", linkedin: "https://www.linkedin.com/in/harsh-bhansali1?utm_source=share_via&utm_content=profile&utm_medium=member_android", image: photo26.url },
+  { name: "Deepshikha", role: "Promotions Department Lead", linkedin: "https://www.linkedin.com/in/deepshikha-9585a634a?utm_source=share_via&utm_content=profile&utm_medium=member_android", image: photo25.url },
+  { name: "Ishika Agrawal", role: "Social Media Department Lead", linkedin: "https://www.linkedin.com/in/ishika-agrawal-820778245?trk=contact-info", image: photo24.url },
+  { name: "Tanushri mahadik", role: "Social Media DepartmentLead", linkedin: "https://www.linkedin.com/in/tanushri-mahadik-8b9b44427?utm_source=share_via&utm_content=profile&utm_medium=member_android", image: photo23.url },
+  { name: "Yasin Jummal", role: "Sponsorship DepartmentLead", linkedin: "https://www.linkedin.com/in/yasin-jummal-96788a34b/", image: photo22.url },
+  { name: "Shivang Khandelwal", role: "Sponsorship Department Lead", linkedin: "https://www.linkedin.com/in/shivang-khandelwal-b25362384?utm_source=share_via&utm_content=profile&utm_medium=member_android", image: photo21.url },
+  { name: "Shreyas Ratnakar Kulkarni", role: "Visual Production Department Lead", linkedin: "https://www.linkedin.com/in/shreyas-k-a9328036a?utm_source=share_via&utm_content=profile&utm_medium=member_android", image: photo20.url },
+  { name: "Jeet Agrawal", role: "Visual Production Department Lead", linkedin: "https://www.linkedin.com/in/jeet-agrawal-759153372?utm_source=share_via&utm_content=profile&utm_medium=member_ios", image: photo19.url },
+  { name: "Prachi Vora", role: "Executive Core Member ", linkedin: "https://www.linkedin.com/in/prachi-vora-finance", image: photo18.url },
   { name: "Prem Deshmukh", role: "Executive Core Member ", linkedin: "https://www.linkedin.com/in/prem-deshmukh?utm_source=share_via&utm_content=profile&utm_medium=member_ios", image: '' },
   { name: "Vaishnawi", role: "Executive Core Member ", linkedin: "https://www.linkedin.com/in/vaishnawi-a246533b6?utm_source=share_via&utm_content=profile&utm_medium=member_ios", image: '' },
   { name: "Darsheel Malpani", role: "Executive Core Member ", linkedin: "https://www.linkedin.com/in/darsheel-malpani-b09417340?utm_source=share_via&utm_content=profile&utm_medium=member_android", image: '' },

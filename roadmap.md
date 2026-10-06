@@ -6,4 +6,4 @@
 - [x] Add all ten photographs in the next batch and verify all 32 Excel records are unchanged; 18 photos load.
 - [x] Confirm Editorial_lead_Pallavi_Patil.jpg belongs to Excel member Pallavi Rajput and apply it without renaming her.
 - [x] Match and verify ten more supplied photographs; 28 of 32 members now have photos, with all details and former leaders unchanged.
-- [ ] Match photographs for Prem Deshmukh, Vaishnawi, Darsheel Malpani, and Joon Dahodwala (blocked: photographs not supplied).
+- [x] Match and verify the final four photographs; all 32 portraits load, exact Excel values/order are preserved, and 25 former leaders remain unchanged.

@@ -28,6 +28,11 @@ import photo25 from "@/assets/members/2026-2027/deepshikha.asset.json";
 import photo26 from "@/assets/members/2026-2027/harsh-bhansali.asset.json";
 import photo27 from "@/assets/members/2026-2027/gouri-gorkha.asset.json";
 
+import photo28 from "@/assets/members/2026-2027/prem-deshmukh.asset.json";
+import photo29 from "@/assets/members/2026-2027/vaishnawi.asset.json";
+import photo30 from "@/assets/members/2026-2027/darsheel-malpani.asset.json";
+import photo31 from "@/assets/members/2026-2027/joon-dahodwala.asset.json";
+
 // Excel row order and literal cell values are authoritative; never sort this array.
 export const coreCommittee2026 = [
   { name: "Chinmay Mistry", role: "President", linkedin: "https://linkedin.com/in/chinmay-mistry-a6b114259", image: photo0.url },
@@ -58,8 +63,8 @@ export const coreCommittee2026 = [
   { name: "Shreyas Ratnakar Kulkarni", role: "Visual Production Department Lead", linkedin: "https://www.linkedin.com/in/shreyas-k-a9328036a?utm_source=share_via&utm_content=profile&utm_medium=member_android", image: photo20.url },
   { name: "Jeet Agrawal", role: "Visual Production Department Lead", linkedin: "https://www.linkedin.com/in/jeet-agrawal-759153372?utm_source=share_via&utm_content=profile&utm_medium=member_ios", image: photo19.url },
   { name: "Prachi Vora", role: "Executive Core Member ", linkedin: "https://www.linkedin.com/in/prachi-vora-finance", image: photo18.url },
-  { name: "Prem Deshmukh", role: "Executive Core Member ", linkedin: "https://www.linkedin.com/in/prem-deshmukh?utm_source=share_via&utm_content=profile&utm_medium=member_ios", image: '' },
-  { name: "Vaishnawi", role: "Executive Core Member ", linkedin: "https://www.linkedin.com/in/vaishnawi-a246533b6?utm_source=share_via&utm_content=profile&utm_medium=member_ios", image: '' },
-  { name: "Darsheel Malpani", role: "Executive Core Member ", linkedin: "https://www.linkedin.com/in/darsheel-malpani-b09417340?utm_source=share_via&utm_content=profile&utm_medium=member_android", image: '' },
-  { name: "Joon Dahodwala", role: "Executive Core Member ", linkedin: "https://www.linkedin.com/in/joon-dahodwala-7737212b3?utm_source=share_via&utm_content=profile&utm_medium=member_android", image: '' },
+  { name: "Prem Deshmukh", role: "Executive Core Member ", linkedin: "https://www.linkedin.com/in/prem-deshmukh?utm_source=share_via&utm_content=profile&utm_medium=member_ios", image: photo28.url },
+  { name: "Vaishnawi", role: "Executive Core Member ", linkedin: "https://www.linkedin.com/in/vaishnawi-a246533b6?utm_source=share_via&utm_content=profile&utm_medium=member_ios", image: photo29.url },
+  { name: "Darsheel Malpani", role: "Executive Core Member ", linkedin: "https://www.linkedin.com/in/darsheel-malpani-b09417340?utm_source=share_via&utm_content=profile&utm_medium=member_android", image: photo30.url },
+  { name: "Joon Dahodwala", role: "Executive Core Member ", linkedin: "https://www.linkedin.com/in/joon-dahodwala-7737212b3?utm_source=share_via&utm_content=profile&utm_medium=member_android", image: photo31.url },
 ];

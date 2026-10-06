@@ -3,9 +3,10 @@ import { motion } from 'framer-motion';
 import { Layout } from '@/components/layout/Layout';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { SkeletonImage } from '@/components/ui/SkeletonImage';
-import { Linkedin, Mail } from 'lucide-react';
+import { Linkedin, Mail, UserRound } from 'lucide-react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { facultyLeadership, coreCommitteeMembers, leadershipYears } from '@/data/departmentsData';
+import { coreCommittee2026 } from '@/data/coreCommittee2026';
 
 // Faculty images
 import deependraSharma from '@/assets/faculty/deependra-sharma.jpg';
@@ -88,7 +89,7 @@ const imageOverrides: Record<string, string> = {
   'dnyanesh-patil': 'scale-[1.35] object-[center_35%]',
 };
 
-const MemberCard = ({ member, index, showFullText = false }: { member: typeof coreCommitteeMembers[0]; index: number; showFullText?: boolean }) => {
+const MemberCard = ({ member, index, showFullText = false, currentDelegation = false }: { member: typeof coreCommitteeMembers[0]; index: number; showFullText?: boolean; currentDelegation?: boolean }) => {
   // Use local image if available, otherwise fall back to external URL
   const memberImage = memberImages[member.image] || member.image;
   const overrideClass = imageOverrides[member.image] || '';
@@ -99,27 +100,27 @@ const MemberCard = ({ member, index, showFullText = false }: { member: typeof co
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ delay: index * 0.03, duration: 0.4 }}
-    className={`group ${showFullText ? 'flex h-full' : ''}`}
+    className={`group ${showFullText || currentDelegation ? 'flex h-full min-w-0' : ''}`}
   >
-    <div className={`relative bg-card rounded-2xl overflow-hidden border border-border/50 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 ${showFullText ? 'flex h-full w-full flex-col' : ''}`}>
+    <div className={`relative bg-card rounded-2xl overflow-hidden border border-border/50 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 ${showFullText ? 'flex h-full w-full flex-col' : ''} ${currentDelegation ? 'flex w-full aspect-[3/4] flex-col' : ''}`}>
       {/* Image Container */}
-      <div className="aspect-[3/4] overflow-hidden bg-secondary">
-        <SkeletonImage
+      <div className={`aspect-[3/4] overflow-hidden bg-secondary ${currentDelegation ? 'absolute inset-0' : ''}`}>
+        {memberImage ? <SkeletonImage
           src={memberImage}
           alt={member.name}
-          className={`w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105 ${overrideClass}`}
+          className={`w-full h-full object-cover ${currentDelegation ? 'object-[center_35%]' : 'object-top'} transition-transform duration-500 group-hover:scale-105 ${overrideClass}`}
           wrapperClassName="w-full h-full"
           skeletonClassName="rounded-none"
           loading="lazy"
-        />
+        /> : <div role="img" aria-label={`${member.name}: photograph pending`} className="flex h-full items-start justify-center pt-6 text-primary/40"><UserRound className="h-16 w-16" aria-hidden="true" /></div>}
       </div>
       
       {/* Content Overlay */}
-      <div className={`${showFullText ? 'relative -mt-12 flex flex-1 flex-col' : 'absolute bottom-0 left-0 right-0'} bg-gradient-to-t from-brand-dark via-brand-dark/90 to-transparent p-4 pt-12`}>
-        <h3 className={`font-display text-lg font-bold text-primary-foreground mb-1 ${showFullText ? 'break-words' : 'line-clamp-1'}`}>
+      <div className={`${showFullText ? 'relative -mt-12 flex flex-1 flex-col' : 'absolute bottom-0 left-0 right-0'} bg-gradient-to-t from-brand-dark via-brand-dark/90 to-transparent p-4 ${currentDelegation ? 'flex h-[188px] flex-col pt-4' : 'pt-12'}`}>
+        <h3 className={`font-display text-lg font-bold text-primary-foreground mb-1 ${currentDelegation ? 'h-[60px] shrink-0 break-words leading-5' : showFullText ? 'break-words' : 'line-clamp-1'}`}>
           {member.name}
         </h3>
-        <p className={`text-primary-foreground/80 text-sm mb-3 ${showFullText ? 'break-words' : 'line-clamp-2'}`}>
+        <p className={`text-primary-foreground/80 text-sm mb-3 ${currentDelegation ? 'h-[60px] shrink-0 break-words leading-5' : showFullText ? 'break-words' : 'line-clamp-2'}`}>
           {member.role}
         </p>
         
@@ -128,7 +129,7 @@ const MemberCard = ({ member, index, showFullText = false }: { member: typeof co
             href={member.linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            className={`inline-flex items-center gap-1.5 text-xs text-white/70 hover:text-white transition-colors ${showFullText ? 'mt-auto' : ''}`}
+            className={`inline-flex items-center gap-1.5 text-xs text-primary-foreground/70 hover:text-primary-foreground transition-colors ${showFullText || currentDelegation ? 'mt-auto' : ''}`}
           >
             <Linkedin className="w-4 h-4" />
             <span>Connect</span>
@@ -204,7 +205,7 @@ const hiddenMembers = [
 
 const Members = () => {
   const [selectedYear, setSelectedYear] = useState('2025-2026');
-  const visibleMembers = coreCommitteeMembers.filter(m => !hiddenMembers.includes(m.name));
+  const visibleMembers = coreCommittee2026;
 
   useEffect(() => {
     document.title = 'Forum Members | Budding Entrepreneurs Forum MIT-WPU School of Business';
@@ -268,7 +269,7 @@ const Members = () => {
 
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 md:gap-6">
             {visibleMembers.map((member, index) => (
-              <MemberCard key={member.name} member={member} index={index} />
+              <MemberCard key={member.name} member={member} index={index} currentDelegation />
             ))}
           </div>
         </div>

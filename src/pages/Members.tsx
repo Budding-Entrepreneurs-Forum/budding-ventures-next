@@ -108,11 +108,11 @@ const MemberCard = ({ member, index, showFullText = false, currentDelegation = f
         {memberImage ? <SkeletonImage
           src={memberImage}
           alt={member.name}
-          className={`w-full h-full object-cover ${currentDelegation ? 'object-[center_35%]' : 'object-top'} transition-transform duration-500 group-hover:scale-105 ${overrideClass}`}
+          className={`w-full h-full object-cover ${currentDelegation ? 'object-[center_35%] scale-150 origin-[center_40%] group-hover:scale-[1.55]' : 'object-top group-hover:scale-105'} transition-transform duration-500 ${overrideClass}`}
           wrapperClassName="w-full h-full"
           skeletonClassName="rounded-none"
           loading="lazy"
-        /> : <div role="img" aria-label={`${member.name}: photograph pending`} className="flex h-full items-start justify-center pt-6 text-primary/40"><UserRound className="h-16 w-16" aria-hidden="true" /></div>}
+        /> : <div role="img" aria-label={`${member.name}: photograph pending`} className="flex h-full items-start justify-center pt-2 text-primary/40"><UserRound className="h-8 w-8" aria-hidden="true" /></div>}
       </div>
       
       {/* Content Overlay */}
@@ -267,7 +267,7 @@ const Members = () => {
             description="The complete leadership body of the current year, including all student leaders and department heads."
           />
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 md:gap-6">
+          <div className="grid grid-cols-1 min-[360px]:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 md:gap-6">
             {visibleMembers.map((member, index) => (
               <MemberCard key={member.name} member={member} index={index} currentDelegation />
             ))}

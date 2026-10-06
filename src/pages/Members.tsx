@@ -274,8 +274,7 @@ const Members = () => {
         </div>
       </section>
 
-      {/* Our Legacy / Former Leaders Timeline - TEMPORARILY HIDDEN (set to true to re-enable) */}
-      {false && (
+      {/* Our Legacy / Former Leaders Timeline */}
       <section className="section-padding bg-background">
         <div className="container-wide mx-auto">
           <SectionHeading
@@ -316,7 +315,6 @@ const Members = () => {
           </Tabs>
         </div>
       </section>
-      )}
 
       {/* Contact Block */}
       <section className="section-padding bg-secondary/30">

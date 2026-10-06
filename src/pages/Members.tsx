@@ -99,9 +99,9 @@ const MemberCard = ({ member, index, showFullText = false }: { member: typeof co
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ delay: index * 0.03, duration: 0.4 }}
-    className="group"
+    className={`group ${showFullText ? 'flex h-full' : ''}`}
   >
-    <div className="relative bg-card rounded-2xl overflow-hidden border border-border/50 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+    <div className={`relative bg-card rounded-2xl overflow-hidden border border-border/50 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 ${showFullText ? 'flex h-full w-full flex-col' : ''}`}>
       {/* Image Container */}
       <div className="aspect-[3/4] overflow-hidden bg-secondary">
         <SkeletonImage

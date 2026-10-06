@@ -116,11 +116,11 @@ const MemberCard = ({ member, index, showFullText = false, currentDelegation = f
       </div>
       
       {/* Content Overlay */}
-      <div className={`${showFullText ? 'relative -mt-12 flex flex-1 flex-col' : 'absolute bottom-0 left-0 right-0'} bg-gradient-to-t from-brand-dark via-brand-dark/90 to-transparent p-4 ${currentDelegation ? 'flex h-[188px] flex-col pt-4' : 'pt-12'}`}>
-        <h3 className={`font-display text-lg font-bold text-primary-foreground mb-1 ${currentDelegation ? 'h-[60px] shrink-0 break-words leading-5' : showFullText ? 'break-words' : 'line-clamp-1'}`}>
+      <div className={`${showFullText ? 'relative -mt-12 flex flex-1 flex-col' : 'absolute bottom-0 left-0 right-0'} bg-gradient-to-t from-brand-dark via-brand-dark/90 to-transparent p-4 ${currentDelegation ? 'flex h-[188px] flex-col justify-end pt-4' : 'pt-12'}`}>
+        <h3 className={`font-display text-lg font-bold text-primary-foreground mb-1 ${currentDelegation ? 'break-words leading-5' : showFullText ? 'break-words' : 'line-clamp-1'}`}>
           {member.name}
         </h3>
-        <p className={`text-primary-foreground/80 text-sm mb-3 ${currentDelegation ? 'h-[60px] shrink-0 break-words leading-5' : showFullText ? 'break-words' : 'line-clamp-2'}`}>
+        <p className={`text-primary-foreground/80 text-sm mb-3 ${currentDelegation ? 'break-words leading-5' : showFullText ? 'break-words' : 'line-clamp-2'}`}>
           {member.role}
         </p>
         
@@ -129,7 +129,7 @@ const MemberCard = ({ member, index, showFullText = false, currentDelegation = f
             href={member.linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            className={`inline-flex items-center gap-1.5 text-xs text-primary-foreground/70 hover:text-primary-foreground transition-colors ${showFullText || currentDelegation ? 'mt-auto' : ''}`}
+            className={`inline-flex items-center gap-1.5 text-xs text-primary-foreground/70 hover:text-primary-foreground transition-colors ${showFullText ? 'mt-auto' : ''}`}
           >
             <Linkedin className="w-4 h-4" />
             <span>Connect</span>

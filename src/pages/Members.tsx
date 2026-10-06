@@ -88,7 +88,7 @@ const imageOverrides: Record<string, string> = {
   'dnyanesh-patil': 'scale-[1.35] object-[center_35%]',
 };
 
-const MemberCard = ({ member, index }: { member: typeof coreCommitteeMembers[0]; index: number }) => {
+const MemberCard = ({ member, index, showFullText = false }: { member: typeof coreCommitteeMembers[0]; index: number; showFullText?: boolean }) => {
   // Use local image if available, otherwise fall back to external URL
   const memberImage = memberImages[member.image] || member.image;
   const overrideClass = imageOverrides[member.image] || '';
@@ -115,11 +115,11 @@ const MemberCard = ({ member, index }: { member: typeof coreCommitteeMembers[0];
       </div>
       
       {/* Content Overlay */}
-      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-brand-dark via-brand-dark/90 to-transparent p-4 pt-12">
-        <h3 className="font-display text-lg font-bold text-white mb-1 line-clamp-1">
+      <div className={`${showFullText ? 'relative -mt-12' : 'absolute bottom-0 left-0 right-0'} bg-gradient-to-t from-brand-dark via-brand-dark/90 to-transparent p-4 pt-12`}>
+        <h3 className={`font-display text-lg font-bold text-primary-foreground mb-1 ${showFullText ? 'break-words' : 'line-clamp-1'}`}>
           {member.name}
         </h3>
-        <p className="text-white/80 text-sm mb-3 line-clamp-2">
+        <p className={`text-primary-foreground/80 text-sm mb-3 ${showFullText ? 'break-words' : 'line-clamp-2'}`}>
           {member.role}
         </p>
         
@@ -307,7 +307,7 @@ const Members = () => {
                   className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 md:gap-6"
                 >
                   {yearData.members.map((member, index) => (
-                    <MemberCard key={`${yearData.year}-${member.name}`} member={member} index={index} />
+                    <MemberCard key={`${yearData.year}-${member.name}`} member={member} index={index} showFullText />
                   ))}
                 </motion.div>
               </TabsContent>

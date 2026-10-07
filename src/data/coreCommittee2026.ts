@@ -32,6 +32,7 @@ import photo28 from "@/assets/members/2026-2027/prem-deshmukh.asset.json";
 import photo29 from "@/assets/members/2026-2027/vaishnawi.asset.json";
 import photo30 from "@/assets/members/2026-2027/darsheel-malpani.asset.json";
 import photo31 from "@/assets/members/2026-2027/joon-dahodwala.asset.json";
+import photo32 from "@/assets/members/2026-2027/dhwani-sambyal.asset.json";
 
 // Excel row order and literal cell values are authoritative; never sort this array.
 export const coreCommittee2026 = [
@@ -67,4 +68,5 @@ export const coreCommittee2026 = [
   { name: "Vaishnawi", role: "Executive Core Member ", linkedin: "https://www.linkedin.com/in/vaishnawi-a246533b6?utm_source=share_via&utm_content=profile&utm_medium=member_ios", image: photo29.url },
   { name: "Darsheel Malpani", role: "Executive Core Member ", linkedin: "https://www.linkedin.com/in/darsheel-malpani-b09417340?utm_source=share_via&utm_content=profile&utm_medium=member_android", image: photo30.url },
   { name: "Joon Dahodwala", role: "Executive Core Member ", linkedin: "https://www.linkedin.com/in/joon-dahodwala-7737212b3?utm_source=share_via&utm_content=profile&utm_medium=member_android", image: photo31.url },
+  { name: "Dhwani Sambyal", role: "Executive Core Member", linkedin: "https://www.linkedin.com/in/dhwani-sambyal-08494a441?utm_source=share_via&utm_content=profile&utm_medium=member_android", image: photo32.url },
 ];

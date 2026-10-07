@@ -89,10 +89,25 @@ const imageOverrides: Record<string, string> = {
   'dnyanesh-patil': 'scale-[1.35] object-[center_35%]',
 };
 
+// Individual framing applies only to current Core Committee portraits.
+const currentImageOverrides: Record<string, string> = {
+  'Chinmay Mistry': 'object-[center_35%] scale-[1.35] group-hover:scale-[1.40]',
+  'Shivam Kale': 'object-[center_35%] scale-[1.65] group-hover:scale-[1.70]',
+  'Anushka Arora': 'object-[center_35%] scale-[1.35] group-hover:scale-[1.40]',
+  'Yugandhara Arekar': 'object-[center_35%] scale-[1.35] group-hover:scale-[1.40]',
+  'Aarya Gurave': 'object-[center_35%] scale-[1.35] group-hover:scale-[1.40]',
+  'Swaroop Bibave': 'object-[center_35%] scale-150 -translate-y-[6%] group-hover:scale-[1.55]',
+  'Naisha Kapoor': 'object-[center_35%] scale-[1.65] group-hover:scale-[1.70]',
+  'Sweta kumari': 'object-[center_35%] scale-[1.30] group-hover:scale-[1.35]',
+  'Anjali Johnny': 'object-[center_35%] scale-[1.35] group-hover:scale-[1.40]',
+  'Nilam Choudhary': 'object-[center_35%] scale-[1.35] group-hover:scale-[1.40]',
+};
+
 const MemberCard = ({ member, index, showFullText = false, currentDelegation = false }: { member: typeof coreCommitteeMembers[0]; index: number; showFullText?: boolean; currentDelegation?: boolean }) => {
   // Use local image if available, otherwise fall back to external URL
   const memberImage = memberImages[member.image] || member.image;
   const overrideClass = imageOverrides[member.image] || '';
+  const currentImageClass = currentImageOverrides[member.name] || 'object-[center_35%] scale-150 group-hover:scale-[1.55]';
   
   return (
   <motion.div
@@ -108,7 +123,7 @@ const MemberCard = ({ member, index, showFullText = false, currentDelegation = f
         {memberImage ? <SkeletonImage
           src={memberImage}
           alt={member.name}
-          className={`w-full h-full object-cover ${currentDelegation ? 'object-[center_35%] scale-150 origin-[center_40%] group-hover:scale-[1.55]' : 'object-top group-hover:scale-105'} transition-transform duration-500 ${overrideClass}`}
+          className={`w-full h-full object-cover ${currentDelegation ? `${currentImageClass} origin-[center_40%]` : 'object-top group-hover:scale-105'} transition-transform duration-500 ${overrideClass}`}
           wrapperClassName="w-full h-full"
           skeletonClassName="rounded-none"
           loading="lazy"

@@ -10,3 +10,4 @@
 - [x] Compact the internal vertical spacing of Core Committee cards (name → 4px → designation → 12px → Connect) without changing card size, photo crop, gradient, or the Former Forum Leaders section.
 - [x] Add Dhwani Sambyal after Joon Dahodwala in the Core Committee with her supplied portrait and LinkedIn profile.
 - [x] Adjust only the ten requested Core Committee photo crops and verify unchanged card geometry and content; preserve Anjali Bardia and Khushi Kumar framing.
+- [ ] Adjust remaining requested individual portraits, preserving Swaraj and Vaishnawi and all card presentation; verify framing and responsive dimensions.

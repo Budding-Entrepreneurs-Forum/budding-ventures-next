@@ -93,7 +93,7 @@ const imageOverrides: Record<string, string> = {
 const currentImageOverrides: Record<string, string> = {
   'Chinmay Mistry': 'object-[center_35%] scale-[1.35] group-hover:scale-[1.40]',
   'Shivam Kale': 'object-[center_35%] scale-[1.65] group-hover:scale-[1.70]',
-  'Anushka Arora': 'object-[center_35%] scale-[1.35] group-hover:scale-[1.40]',
+  'Anushka Arora': 'object-[center_35%] scale-[1.20] group-hover:scale-[1.25]',
   'Yugandhara Arekar': 'object-[center_35%] scale-[1.35] group-hover:scale-[1.40]',
   'Aarya Gurave': 'object-[center_35%] scale-[1.35] group-hover:scale-[1.40]',
   'Swaroop Bibave': 'object-[center_35%] scale-150 -translate-y-[6%] group-hover:scale-[1.55]',

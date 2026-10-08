@@ -127,17 +127,18 @@ const MemberCard = ({ member, index, showFullText = false, currentDelegation = f
   const overrideClass = imageOverrides[member.image] || '';
   const currentImageClass = currentImageOverrides[member.name] || 'object-[center_35%] scale-150 group-hover:scale-[1.55]';
   
+  const fullPhoto = showFullText || currentDelegation;
   return (
   <motion.div
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ delay: index * 0.03, duration: 0.4 }}
-    className={`group ${showFullText || currentDelegation ? 'flex h-full min-w-0' : ''}`}
+    className={`group ${fullPhoto ? 'flex h-full min-w-0' : ''}`}
   >
-    <div className={`relative rounded-2xl overflow-hidden border border-border/50 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 ${showFullText ? 'flex h-full w-full flex-col bg-brand-dark' : 'bg-card'} ${currentDelegation ? 'flex w-full aspect-[3/4] flex-col' : ''}`}>
+    <div className={`relative rounded-2xl overflow-hidden border border-border/50 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-card ${fullPhoto ? 'flex w-full aspect-[3/4] flex-col' : ''}`}>
       {/* Image Container */}
-      <div className={`aspect-[3/4] overflow-hidden bg-secondary ${currentDelegation ? 'absolute inset-0' : ''}`}>
+      <div className={`aspect-[3/4] overflow-hidden bg-secondary ${fullPhoto ? 'absolute inset-0' : ''}`}>
         {memberImage ? <SkeletonImage
           src={memberImage}
           alt={member.name}
@@ -147,16 +148,16 @@ const MemberCard = ({ member, index, showFullText = false, currentDelegation = f
           loading="lazy"
         /> : <div role="img" aria-label={`${member.name}: photograph pending`} className="flex h-full items-start justify-center pt-2 text-primary/40"><UserRound className="h-8 w-8" aria-hidden="true" /></div>}
       </div>
-      
+
       {/* Content Overlay */}
-      <div className={`${showFullText ? 'relative -mt-12 flex flex-col' : 'absolute bottom-0 left-0 right-0'} bg-gradient-to-t from-brand-dark via-brand-dark/90 to-transparent p-4 ${currentDelegation ? 'flex h-[188px] flex-col justify-end pt-4' : 'pt-12'}`}>
-        <h3 className={`font-display text-lg font-bold text-primary-foreground mb-1 ${currentDelegation ? 'break-words leading-5' : showFullText ? 'break-words' : 'line-clamp-1'}`}>
+      <div className={`${fullPhoto ? 'absolute bottom-0 left-0 right-0 flex h-[188px] flex-col justify-end pt-4' : 'absolute bottom-0 left-0 right-0 pt-12'} bg-gradient-to-t from-brand-dark via-brand-dark/90 to-transparent p-4`}>
+        <h3 className={`font-display text-lg font-bold text-primary-foreground mb-1 ${fullPhoto ? 'break-words leading-5' : 'line-clamp-1'}`}>
           {member.name}
         </h3>
-        <p className={`text-primary-foreground/80 text-sm mb-3 ${currentDelegation ? 'break-words leading-5' : showFullText ? 'break-words' : 'line-clamp-2'}`}>
+        <p className={`text-primary-foreground/80 text-sm mb-3 ${fullPhoto ? 'break-words leading-5' : 'line-clamp-2'}`}>
           {member.role}
         </p>
-        
+
         {member.linkedin && (
           <a
             href={member.linkedin}

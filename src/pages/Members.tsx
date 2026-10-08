@@ -135,7 +135,7 @@ const MemberCard = ({ member, index, showFullText = false, currentDelegation = f
     transition={{ delay: index * 0.03, duration: 0.4 }}
     className={`group ${showFullText || currentDelegation ? 'flex h-full min-w-0' : ''}`}
   >
-    <div className={`relative bg-card rounded-2xl overflow-hidden border border-border/50 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 ${showFullText ? 'flex h-full w-full flex-col' : ''} ${currentDelegation ? 'flex w-full aspect-[3/4] flex-col' : ''}`}>
+    <div className={`relative rounded-2xl overflow-hidden border border-border/50 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 ${showFullText ? 'flex h-full w-full flex-col bg-brand-dark' : 'bg-card'} ${currentDelegation ? 'flex w-full aspect-[3/4] flex-col' : ''}`}>
       {/* Image Container */}
       <div className={`aspect-[3/4] overflow-hidden bg-secondary ${currentDelegation ? 'absolute inset-0' : ''}`}>
         {memberImage ? <SkeletonImage

@@ -6,6 +6,7 @@ import { Linkedin, Quote } from 'lucide-react';
 import namanImg from '@/assets/alumni/naman-jain.jpg';
 import anishImg from '@/assets/alumni/anish-kashyap.jpg';
 import nayanImg from '@/assets/alumni/nayan-pote.jpg';
+import chinmayImg from '@/assets/alumni/chinmay-mistry.jpg';
 
 const presidents = [
   {
@@ -28,6 +29,13 @@ const presidents = [
     photo: nayanImg,
     linkedin: 'https://www.linkedin.com/in/nayanpote/',
     testimonial: `Budding, for me, has always represented a journey of purposeful progress.\n\nIt is not defined by positions or visibility, but by the work carried out consistently behind the scenes, the responsibilities we take, the pressure we handle, and the small yet meaningful improvements we strive for each day.\n\nMy vision is clear Budding tomorrow should stand slightly ahead of Budding today. Not through force or superficial change, but through steady, organic growth driven by genuine effort and intent.\n\nWhat truly defines this forum is its people, individuals who take ownership, support one another, and contribute without seeking recognition.\n\nAs the serving President, I consider myself a part of this ongoing journey, learning, contributing, and growing alongside the forum.\n\nBudding, in essence, is about progress that may not always be immediately visible, but is always being built.`,
+  },
+  {
+    name: 'Chinmay Mistry',
+    year: '2026 – Present',
+    photo: chinmayImg,
+    linkedin: 'https://www.linkedin.com/in/chinmay-mistry-a6b114259/',
+    testimonial: `"When I first entered college, I thought it was mostly about studies, activities, and making the most of college life. I had little idea about forums, how they worked, or what they could teach you. Then I joined Budding Entrepreneurs Forum and slowly, that perspective changed.\n\nBudding became my introduction to professionalism, leadership, entrepreneurship, people, and real responsibility. From interacting with entrepreneurs and industry professionals to managing events, handling pressure, overcoming stage fear, and learning to take ownership, every experience pushed me a little beyond my comfort zone.\n\nToday, I realise that many of the qualities I carry confidence, communication, time management, and the courage to take initiative were shaped here.\n\nFor me, Budding is more than a forum. It is a part of my growth story a place that didn’t just give me opportunities, but helped me become capable of creating something with them."`,
   },
 ];
 

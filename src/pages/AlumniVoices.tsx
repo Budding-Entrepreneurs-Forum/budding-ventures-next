@@ -24,7 +24,7 @@ const presidents = [
   },
   {
     name: 'Nayan Pote',
-    year: '2025 – Present',
+    year: '2025 – 2026',
     photo: nayanImg,
     linkedin: 'https://www.linkedin.com/in/nayanpote/',
     testimonial: `Budding, for me, has always represented a journey of purposeful progress.\n\nIt is not defined by positions or visibility, but by the work carried out consistently behind the scenes, the responsibilities we take, the pressure we handle, and the small yet meaningful improvements we strive for each day.\n\nMy vision is clear Budding tomorrow should stand slightly ahead of Budding today. Not through force or superficial change, but through steady, organic growth driven by genuine effort and intent.\n\nWhat truly defines this forum is its people, individuals who take ownership, support one another, and contribute without seeking recognition.\n\nAs the serving President, I consider myself a part of this ongoing journey, learning, contributing, and growing alongside the forum.\n\nBudding, in essence, is about progress that may not always be immediately visible, but is always being built.`,
